@@ -1,4 +1,9 @@
-# xml-drift-lakehouse
+# xml-drift-lakehouse 
+![Status](https://img.shields.io/badge/status-work%20in%20progress-yellow)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow-informational)
+ 
+> Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
 
 A portable, schema-on-read toolkit for ingesting XML data sources with structural drift into a lakehouse architecture.
 
