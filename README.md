@@ -1,8 +1,8 @@
-# xml-drift-lakehouse 
+# xml-drift-lakehouse
 ![Status](https://img.shields.io/badge/status-work%20in%20progress-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow-informational)
- 
+
 > Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
 
 A portable, schema-on-read toolkit for ingesting XML data sources with structural drift into a lakehouse architecture.
@@ -34,10 +34,10 @@ Instead of defining what the XML should look like, the pipeline discovers what i
 Key patterns:
 
 - **Schema-on-read ingestion** — no hard-coded field mapping at the ingestion stage
-- **Surrogate key injection** — a timestamp-based epoch key is injected at ingestion, propagated through all child records to maintain join integrity across entities
+- **Surrogate key injection** — a timestamp-based epoch key is injected at ingestion and propagated through all child records to maintain join integrity across entities
 - **Relational explosion** — hierarchical XML nodes are flattened into separate tables preserving parent-child relationships
 - **Variant reconciliation** — multiple structural variants of the same entity are unified at the analytical layer via UNION ALL and COALESCE across divergent field names
-- **Defensive casting** — CAST/COALESCE/NULLIF patterns handle empty strings, null fields and type mismatches across variants
+- **Defensive casting** — CAST/COALESCE/NULLIF patterns handle empty strings, null fields, and type mismatches across variants
 
 ---
 
@@ -50,11 +50,11 @@ XML Source
 [ Ingestion Layer ]
   - XML parsed via xmltodict
   - Surrogate key injected (epoch timestamp)
-  - Stored as JSON / Parquet in landing zone
+  - Stored as Parquet in landing zone
     |
     v
 [ Schema Discovery ]
-  - DynamicFrame-style schema-on-read
+  - Schema-on-read variant detection
   - Structural variants auto-discovered
   - Raw tables generated per variant
     |
@@ -91,14 +91,18 @@ This toolkit runs entirely locally without cloud dependencies, making it portabl
 | Orchestration | Apache Airflow (Docker) |
 | Visualization | Apache Superset |
 
-The architecture is deliberately compatible with cloud-native equivalents:
+### Cloud Portability
 
-| Local | Cloud equivalent |
-|-------|-----------------|
-| DuckDB | Amazon Athena |
-| Local Parquet | Amazon S3 + AWS Glue |
-| dbt Core | dbt Core on any platform |
-| Airflow (Docker) | AWS Glue Workflows / MWAA |
+The local stack is deliberately designed to mirror the architectural patterns of any major cloud platform. Each component maps cleanly to cloud-native equivalents without requiring changes to the core transformation logic.
+
+| Local | AWS | Azure | GCP |
+|-------|-----|-------|-----|
+| DuckDB | Amazon Athena | Synapse Serverless | BigQuery |
+| Local Parquet | S3 + Glue | ADLS Gen2 + Synapse | GCS + Dataproc |
+| dbt Core | dbt Core (any platform) | dbt Core (any platform) | dbt Core (any platform) |
+| Airflow (Docker) | MWAA / Glue Workflows | Azure Data Factory | Cloud Composer |
+
+The transformation logic, surrogate key patterns, and reconciliation models are cloud-agnostic by design. Deploying to any cloud platform requires infrastructure configuration only, not logic changes.
 
 ---
 
@@ -107,25 +111,25 @@ The architecture is deliberately compatible with cloud-native equivalents:
 ```
 xml-drift-lakehouse/
 ├── ingestion/
-│   ├── parser.py          # XML to JSON/Parquet with surrogate key injection
-│   ├── schema_discovery.py # Schema-on-read, variant detection
-│   └── compaction.py      # Small file compaction for query performance
+│   ├── parser.py            # XML to Parquet with surrogate key injection
+│   ├── schema_discovery.py  # Schema-on-read, variant detection
+│   └── compaction.py        # Small file compaction for query performance
 ├── models/
-│   ├── staging/           # Raw variant tables, one per structural variant
-│   ├── intermediate/      # Exploded relational tables
-│   └── marts/             # Reconciled consumer-ready views
+│   ├── staging/             # Raw variant tables, one per structural variant
+│   ├── intermediate/        # Exploded relational tables
+│   └── marts/               # Reconciled consumer-ready views
 ├── dbt/
-│   ├── models/            # dbt transformation models
-│   ├── tests/             # dbt data quality tests
+│   ├── models/              # dbt transformation models
+│   ├── tests/               # dbt data quality tests
 │   └── dbt_project.yml
 ├── airflow/
-│   └── dags/              # Pipeline orchestration DAGs
+│   └── dags/                # Pipeline orchestration DAGs
 ├── docker/
-│   └── docker-compose.yml # Full local stack
+│   └── docker-compose.yml   # Full local stack
 ├── data/
-│   └── sample/            # Sample XML files with intentional schema drift
+│   └── sample/              # Sample XML files with intentional schema drift
 └── docs/
-    └── architecture.md    # Architecture decisions and patterns
+    └── architecture.md      # Architecture decisions and patterns
 ```
 
 ---
@@ -154,16 +158,23 @@ cd dbt && dbt run
 
 ## Roadmap
 
-- [x] Core XML parser with surrogate key injection
-- [x] Schema-on-read variant detection
-- [x] Local Parquet storage layer
-- [ ] dbt staging and mart models
-- [ ] Multi-variant UNION ALL reconciliation layer
-- [ ] Airflow DAG for end-to-end orchestration
-- [ ] dbt data quality tests and freshness checks
+### Phase 1 — Core Pipeline (in progress)
+
+- [ ] Core XML parser with surrogate key injection
+- [ ] Schema-on-read variant detection
+- [ ] Local Parquet storage layer
 - [ ] Sample dataset with 3+ structural variants demonstrating drift
-- [ ] Documentation of surrogate key propagation pattern
-- [ ] AWS Glue/Athena deployment guide
+- [ ] dbt staging models — one per structural variant
+- [ ] Multi-variant UNION ALL reconciliation mart
+- [ ] dbt data quality tests and freshness checks
+
+### Phase 2 — RAG-Assisted Schema Intelligence
+
+- [ ] Embed field-level semantic knowledge from known XML variants into a vector store
+- [ ] RAG lookup layer: identify unknown variants by semantic similarity rather than structural matching
+- [ ] LLM-assisted mapping suggestion for new or unseen field names
+- [ ] Hybrid execution: deterministic reconciliation for known variants, RAG fallback for drift beyond known patterns
+- [ ] Evaluation framework: measure mapping accuracy across synthetic drift scenarios
 
 ---
 
@@ -173,7 +184,7 @@ This toolkit grew out of a production problem involving large-scale XML ingestio
 
 The patterns here — schema-on-read, surrogate key propagation, variant reconciliation — are generalized from that experience and designed to work with any XML source that has accumulated structural drift over time, regardless of industry or platform.
 
-The local stack (DuckDB + dbt + Airflow) replicates the same architectural patterns without cloud dependencies, making the approach portable across environments.
+The local stack (DuckDB + dbt + Airflow) replicates the same architectural patterns without cloud dependencies, making the approach portable across environments and deployable to any cloud platform without changes to the core logic.
 
 ---
 
