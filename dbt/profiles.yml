@@ -1,0 +1,7 @@
+xml_drift_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', '../output/lakehouse.duckdb') }}"
+      threads: 4

@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Parquet files produced by parser.py"
+    meta:
+      external_location: "read_parquet('{path}')"
+
+    tables:
+      - name: invoices
+        description: "One row per invoice header, all variants"
+        meta:
+          external_location: "read_parquet('../output/invoices/invoices.parquet')"
+        columns:
+          - name: sk
+            description: "Surrogate key (sha256 of source_file + invoice_id)"
+          - name: invoice_id
+            description: "Document number — natural key"
+          - name: variant
+            description: "DetailedInvoice or SummaryInvoice"
+          - name: ingested_at
+            description: "ISO timestamp of parser.py run"
+          - name: source_file
+            description: "Source XML filename"
+
+      - name: line_items
+        description: "One row per line entry, all variants"
+        meta:
+          external_location: "read_parquet('../output/line_items/line_items.parquet')"
+        columns:
+          - name: sk
+            description: "Surrogate key (sha256 of source_file + invoice_id + line_number)"
+          - name: invoice_sk
+            description: "FK to invoices.sk"
+          - name: invoice_id
+            description: "Natural key back to invoice"
+          - name: variant
+            description: "DetailedInvoice or SummaryInvoice"
+          - name: line_number
+            description: "Line number within invoice"

@@ -1,0 +1,87 @@
+version: 2
+
+models:
+  - name: mart_invoices
+    description: "Final analytical invoice mart — both variants reconciled, deduplicated, enriched"
+    columns:
+      - name: line_sk
+        description: "Surrogate key — unique per line in the mart"
+        tests:
+          - not_null
+          - unique
+
+      - name: invoice_id
+        description: "Natural invoice identifier"
+        tests:
+          - not_null
+
+      - name: variant
+        description: "DetailedInvoice or SummaryInvoice"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["DetailedInvoice", "SummaryInvoice"]
+
+      - name: document_date
+        description: "Invoice date — must always be present"
+        tests:
+          - not_null
+
+      - name: document_year
+        description: "Extracted year — must be a plausible invoice year"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018,
+                       2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+              config:
+                severity: warn
+
+      - name: invoice_total
+        description: "Total invoice amount"
+        tests:
+          - not_null
+
+      - name: effective_line_total
+        description: "Resolved line total — must never be null in the mart"
+        tests:
+          - not_null
+
+      - name: vendor_entity_name
+        description: "Vendor name"
+        tests:
+          - not_null
+
+      - name: client_entity_name
+        description: "Client name"
+        tests:
+          - not_null
+
+      - name: line_number
+        description: "Line number"
+        tests:
+          - not_null
+
+      - name: action_status
+        description: "Approval workflow status"
+        tests:
+          - accepted_values:
+              values: ["Approved", "Pending", "Rejected", "Disputed", "Cancelled", "On Hold", "Submitted", "Re-Submitted"]
+              config:
+                severity: warn
+      
+      - name: charge_class
+        description: "Line charge classification"
+        tests:
+          - accepted_values:
+              values: ["Itemized", "Non-Itemized", "ShortPay"]
+              config:
+                severity: warn
+
+      - name: currency_code
+        description: "Should always be USD for this dataset"
+        tests:
+          - accepted_values:
+              values: ["USD", "CAD", "UYI"]
+              config:
+                severity: warn

@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: int_invoices_deduped
+    description: "Deduplicated invoices — one row per invoice_id + line_number, latest status"
+    columns:
+      - name: line_sk
+        description: "Surrogate key — must be unique after dedup"
+        tests:
+          - not_null
+          - unique
+
+      - name: invoice_id
+        description: "Natural invoice identifier"
+        tests:
+          - not_null
+
+      - name: variant
+        description: "DetailedInvoice or SummaryInvoice"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["DetailedInvoice", "SummaryInvoice"]
+
+      - name: line_number
+        description: "Line number within invoice"
+        tests:
+          - not_null
+
+      - name: document_date
+        description: "Invoice date"
+        tests:
+          - not_null
+
+      - name: invoice_total
+        description: "Total invoice amount"
+        tests:
+          - not_null
+
+      - name: action_status
+        description: "Approval status"
+        tests:
+          - accepted_values:
+              values: ["Approved", "Pending", "Rejected", "Disputed", "Cancelled", "On Hold", "Submitted", "Re-Submitted"]
+              config:
+                severity: warn
