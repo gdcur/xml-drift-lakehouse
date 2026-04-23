@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63540859">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8470064154</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND852841</fops:EntityCode>
+<fops:EntityName>Sexton Bennett and Morris</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WH-1782-MLWB</fops:LocationCode>
+<fops:LocationName>Goal Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>41892 Craig Cliff Apt. 813</fops:AddressLine>
+<fops:City>East Ricardostad</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>71372</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">6587765404</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">783319731</fops:EntityCode>
+<fops:EntityName>Turner Brandt and Vargas</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LH-9865-KAWK</fops:LocationCode>
+<fops:LocationName>Beyond Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0199 Hernandez Burg Apt. 655</fops:AddressLine>
+<fops:City>Rogerstad</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>74292</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-01-11</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>10362.5</fops:Total>
+<fops:VendorTotal>10362.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Anthony</fops:FirstName>
+<fops:LastName>Melendez</fops:LastName>
+<fops:EmailAddress>dvillarreal@tyler.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">CB-7200-LQWH</fops:LocationCode>
+<fops:LocationName>Information Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:TransactionDateTime>2014-06-19T11:00:18</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:LastName>Johnston</fops:LastName>
+<fops:EmailAddress>annjones@miller.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">MU-6419-UIWO</fops:LocationCode>
+<fops:LocationName>Answer Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Frac Tank</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>10362.5</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2013-12-23</fops:PeriodStartDate>
+<fops:PeriodDate>2014-01-07</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>10362.5</fops:LineSubTotal>
+<fops:LinePretaxTotal>10362.5</fops:LinePretaxTotal>
+<fops:Total>10362.5</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>10362.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63540859">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63540859/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

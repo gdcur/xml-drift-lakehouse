@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63726857">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8683652020</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND938238</fops:EntityCode>
+<fops:EntityName>Miller PLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">OX-6088-ODWT</fops:LocationCode>
+<fops:LocationName>Example Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>6721 Williams Shore</fops:AddressLine>
+<fops:City>West Erinland</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>88940</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8237239226</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">743674813</fops:EntityCode>
+<fops:EntityName>Reynolds-Welch</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">SX-4255-ZCWS</fops:LocationCode>
+<fops:LocationName>Citizen Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>526 Duarte Vista Apt. 010</fops:AddressLine>
+<fops:City>Lintown</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>45520</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-07-25</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>4184</fops:Total>
+<fops:VendorTotal>4184</fops:VendorTotal>
+<fops:LineCount>9</fops:LineCount>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Joel</fops:FirstName>
+<fops:LastName>Cobb</fops:LastName>
+<fops:EmailAddress>whitneyjones@adams.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HT-9973-FNWC</fops:LocationCode>
+<fops:LocationName>Hot Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:TransactionDateTime>2014-07-10T11:20:57</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Caleb</fops:FirstName>
+<fops:LastName>Cisneros</fops:LastName>
+<fops:EmailAddress>millermichelle@huff.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">QS-0415-QXWT</fops:LocationCode>
+<fops:LocationName>Bit Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1002</fops:ServiceCode>
+<fops:ProductDescription>Flowback Equipment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>12</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>42.5</fops:UnitPrice>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:PeriodStartDate>2014-07-17</fops:PeriodStartDate>
+<fops:PeriodDate>2014-07-17</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>510</fops:LineSubTotal>
+<fops:LinePretaxTotal>510</fops:LinePretaxTotal>
+<fops:Total>510</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Personnel</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>510</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1004</fops:ServiceCode>
+<fops:ProductDescription>Flowback Equipment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>12</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>39</fops:UnitPrice>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:PeriodStartDate>2014-07-17</fops:PeriodStartDate>
+<fops:PeriodDate>2014-07-17</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>468</fops:LineSubTotal>
+<fops:LinePretaxTotal>468</fops:LinePretaxTotal>
+<fops:Total>468</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Personnel</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>468</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63726857">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63726857/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

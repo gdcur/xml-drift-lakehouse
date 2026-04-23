@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65211965">
+<fops:DocumentHeader>
+<fops:DocumentNumber>6011372279</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND774668</fops:EntityCode>
+<fops:EntityName>Velazquez Hudson and Stewart</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">TF-7062-QKWC</fops:LocationCode>
+<fops:LocationName>Entire Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>76088 Dalton Locks Apt. 080</fops:AddressLine>
+<fops:City>Amymouth</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>14087</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">035220025</fops:EntityCode>
+<fops:EntityName>Reynolds Johnson and Bennett</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EC-5094-VZWC</fops:LocationCode>
+<fops:LocationName>Program Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>415 Garcia Oval Suite 879</fops:AddressLine>
+<fops:City>New Michaelstad</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>70941</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-12-22</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>80</fops:Total>
+<fops:VendorTotal>80</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Teresa</fops:FirstName>
+<fops:LastName>Perry</fops:LastName>
+<fops:EmailAddress>dthompson@miller-jones.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DB-8055-UFWA</fops:LocationCode>
+<fops:LocationName>Size Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:TransactionDateTime>2014-07-18T06:20:11</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Alvin</fops:FirstName>
+<fops:LastName>Lopez</fops:LastName>
+<fops:EmailAddress>jgaines@robinson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">IG-7152-KCWJ</fops:LocationCode>
+<fops:LocationName>Fear Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-12-22</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>80</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>80</fops:UnitPrice>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:PeriodDate>2014-12-22</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>80</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65211965">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65211965/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

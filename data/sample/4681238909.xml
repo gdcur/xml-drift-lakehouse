@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63451433">
+<fops:DocumentHeader>
+<fops:DocumentNumber>4681238909</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND304339</fops:EntityCode>
+<fops:EntityName>Rosario Group</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RY-1111-BYWH</fops:LocationCode>
+<fops:LocationName>Great Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>2303 House Stream</fops:AddressLine>
+<fops:City>Rickyland</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>53515</fops:PostalZipCode>
+<fops:EmailAddress>dcobb@bennett-roberts.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">953729452</fops:EntityCode>
+<fops:EntityName>Smith-Brown</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">OQ-6480-LJWU</fops:LocationCode>
+<fops:LocationName>Medical Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>7561 Harris Motorway Apt. 636</fops:AddressLine>
+<fops:City>North Kimberly</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>32239</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-07-15</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>1300</fops:Total>
+<fops:VendorTotal>1300</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Gina</fops:FirstName>
+<fops:LastName>Bennett</fops:LastName>
+<fops:EmailAddress>robertjones@tucker.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RG-2072-GIWL</fops:LocationCode>
+<fops:LocationName>Institution Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:TransactionDateTime>2014-07-02T07:40:21</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Jeffrey</fops:FirstName>
+<fops:LastName>Robinson</fops:LastName>
+<fops:EmailAddress>lanepaul@orozco-martin.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">WU-3699-OQWM</fops:LocationCode>
+<fops:LocationName>Call Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Wellhead Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>1300</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1300</fops:LineSubTotal>
+<fops:LinePretaxTotal>1300</fops:LinePretaxTotal>
+<fops:Total>1300</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1300</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63451433">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63451433/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

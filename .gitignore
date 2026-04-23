@@ -1,0 +1,37 @@
+# Output data
+output/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Raw / sanitized data — NEVER in repo
+data/raw/
+data/sanitized/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/.user.yml
+dbt/profiles.yml   # has local paths
+
+
+# Airflow
+airflow/logs/
+airflow/plugins/
+airflow.cfg
+airflow.db
+standalone_admin_password.txt
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+
+# OS
+.DS_Store
+.idea/
+.vscode/
+*.swp

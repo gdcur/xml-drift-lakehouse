@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65321759">
+<fops:DocumentHeader>
+<fops:DocumentNumber>5816271705</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND663385</fops:EntityCode>
+<fops:EntityName>White Crosby and Williams</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XQ-4920-TGWZ</fops:LocationCode>
+<fops:LocationName>Happy Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>8174 Patterson Isle</fops:AddressLine>
+<fops:City>South George</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>11013</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">7843298488</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">335092349</fops:EntityCode>
+<fops:EntityName>Lyons and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZZ-3286-BAWZ</fops:LocationCode>
+<fops:LocationName>Daughter Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>4332 Angela Union Suite 648</fops:AddressLine>
+<fops:City>Lake Tiffany</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>21431</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-06-21</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>413146.39</fops:Total>
+<fops:VendorTotal>413146.39</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Dustin</fops:FirstName>
+<fops:LastName>Barnes</fops:LastName>
+<fops:EmailAddress>whiteashley@smith.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WM-3663-TRWI</fops:LocationCode>
+<fops:LocationName>Later Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T10:30:16</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Megan</fops:FirstName>
+<fops:LastName>Green</fops:LastName>
+<fops:EmailAddress>patrickharvey@case.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">WE-0571-VAWG</fops:LocationCode>
+<fops:LocationName>The Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2015-06-21</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>413146.39</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>413146.39</fops:UnitPrice>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:PeriodDate>2015-06-21</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>413146.39</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="3">
+<fops:Attachment type="pdfInvoice" id="0genPdf65321759">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65321759/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

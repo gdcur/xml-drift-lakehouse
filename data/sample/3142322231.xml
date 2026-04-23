@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63334824">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3142322231</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND331486</fops:EntityCode>
+<fops:EntityName>Thompson-Vaughan</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">QW-2917-WEWX</fops:LocationCode>
+<fops:LocationName>Across Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>071 Samantha Port Suite 651</fops:AddressLine>
+<fops:City>Williamsmouth</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>34306</fops:PostalZipCode>
+<fops:EmailAddress>enixon@ayers-lane.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">219353073</fops:EntityCode>
+<fops:EntityName>Mcneil-Santos</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RT-0263-PTWX</fops:LocationCode>
+<fops:LocationName>Society Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>98239 Gutierrez Ports</fops:AddressLine>
+<fops:City>Rosariotown</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>29743</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-04-08</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>420</fops:Total>
+<fops:VendorTotal>420</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Debra</fops:FirstName>
+<fops:LastName>Bowman</fops:LastName>
+<fops:EmailAddress>mmcconnell@rogers.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">JC-7137-FQWJ</fops:LocationCode>
+<fops:LocationName>Loss Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:TransactionDateTime>2014-06-17T15:00:37</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:LastName>Smith</fops:LastName>
+<fops:EmailAddress>christine75@nicholson.biz</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">VU-0394-GQWQ</fops:LocationCode>
+<fops:LocationName>Feeling Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>60</fops:Quantity>
+<fops:UnitPrice>7</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2015-03-23</fops:PeriodStartDate>
+<fops:PeriodDate>2015-03-23</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>420</fops:LineSubTotal>
+<fops:LinePretaxTotal>420</fops:LinePretaxTotal>
+<fops:Total>420</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>420</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63334824">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63334824/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

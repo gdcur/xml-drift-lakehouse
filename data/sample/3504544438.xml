@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65730125">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3504544438</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND222373</fops:EntityCode>
+<fops:EntityName>Williams Ltd</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DV-2204-ODWQ</fops:LocationCode>
+<fops:LocationName>Attorney Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>289 Sara Fort</fops:AddressLine>
+<fops:City>North Noah</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>16178</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">9599357671</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">240397032</fops:EntityCode>
+<fops:EntityName>George-Mcclain</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PK-9214-PYWD</fops:LocationCode>
+<fops:LocationName>Great Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>37755 Freeman Forge</fops:AddressLine>
+<fops:City>South David</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>18668</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-10-06</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>8866.25</fops:Total>
+<fops:VendorTotal>8866.25</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Gabriel</fops:FirstName>
+<fops:LastName>Davis</fops:LastName>
+<fops:EmailAddress>sharon88@lewis-brown.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HU-1831-ZLWZ</fops:LocationCode>
+<fops:LocationName>Shoulder Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T15:11:09</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Jason</fops:FirstName>
+<fops:LastName>Murphy</fops:LastName>
+<fops:EmailAddress>ronald91@taylor.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">CT-0947-ZHWW</fops:LocationCode>
+<fops:LocationName>Which Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>8866.25</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>8866.25</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>8866.25</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65730125">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65730125/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

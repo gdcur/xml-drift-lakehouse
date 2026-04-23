@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65579336">
+<fops:DocumentHeader>
+<fops:DocumentNumber>9826324313</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND111159</fops:EntityCode>
+<fops:EntityName>Ellis PLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ID-8533-RSWQ</fops:LocationCode>
+<fops:LocationName>Maybe Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>55170 Nicole Garden</fops:AddressLine>
+<fops:City>Davidland</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>09774</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">9344806454</fops:PhoneNumber>
+<fops:EmailAddress>esparzathomas@smith-berry.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">644605480</fops:EntityCode>
+<fops:EntityName>Tran-Lee</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">OT-0774-GNWY</fops:LocationCode>
+<fops:LocationName>Charge Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0495 Justin Street Apt. 403</fops:AddressLine>
+<fops:City>Amandahaven</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>05199</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-04-04</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>466</fops:Total>
+<fops:VendorTotal>466</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Nancy</fops:FirstName>
+<fops:LastName>Hill</fops:LastName>
+<fops:EmailAddress>nicholasjones@hayes-odom.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RI-1080-PGWW</fops:LocationCode>
+<fops:LocationName>My Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T06:20:48</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Steven</fops:FirstName>
+<fops:LastName>Zhang</fops:LastName>
+<fops:EmailAddress>cartermichelle@gonzalez-schwartz.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">JT-1184-TBWC</fops:LocationCode>
+<fops:LocationName>Hear Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2015-02-28</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>466</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>466</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodDate>2015-02-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>466</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65579336">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65579336/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

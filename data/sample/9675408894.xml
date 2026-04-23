@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65560382">
+<fops:DocumentHeader>
+<fops:DocumentNumber>9675408894</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND441801</fops:EntityCode>
+<fops:EntityName>Morris and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NP-2216-XQWC</fops:LocationCode>
+<fops:LocationName>Dark Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>33261 Joseph Parks Apt. 420</fops:AddressLine>
+<fops:City>Alexville</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>54950</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">470600822</fops:EntityCode>
+<fops:EntityName>Estrada Key and Fisher</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">FI-7181-CGWK</fops:LocationCode>
+<fops:LocationName>Local Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0978 John Terrace Suite 422</fops:AddressLine>
+<fops:City>New Kurtville</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>94570</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-03</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>200</fops:Total>
+<fops:VendorTotal>200</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Maria</fops:FirstName>
+<fops:LastName>Taylor</fops:LastName>
+<fops:EmailAddress>kobrien@gaines.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EE-4385-BAWZ</fops:LocationCode>
+<fops:LocationName>Different Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T10:40:19</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Amanda</fops:FirstName>
+<fops:LastName>Cardenas</fops:LastName>
+<fops:EmailAddress>jamessanchez@lindsey.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">LL-4149-YQWR</fops:LocationCode>
+<fops:LocationName>Million Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2013-11-03</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>200</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>200</fops:UnitPrice>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:PeriodDate>2013-11-03</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>200</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65560382">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65560382/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

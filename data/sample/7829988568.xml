@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="64910047">
+<fops:DocumentHeader>
+<fops:DocumentNumber>7829988568</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND322186</fops:EntityCode>
+<fops:EntityName>Gardner Fowler and Murray</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">CR-1198-GCWW</fops:LocationCode>
+<fops:LocationName>Guy Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>92000 Rodriguez Prairie Suite 996</fops:AddressLine>
+<fops:City>South Lacey</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>44119</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0808136496</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">257100466</fops:EntityCode>
+<fops:EntityName>Rogers-Kim</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RZ-5703-FEWE</fops:LocationCode>
+<fops:LocationName>Dream Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>84080 Karen Haven Apt. 934</fops:AddressLine>
+<fops:City>Schroederton</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>72033</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-05-12</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>10272.5</fops:Total>
+<fops:VendorTotal>10272.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Amy</fops:FirstName>
+<fops:LastName>Oneill</fops:LastName>
+<fops:EmailAddress>gilmorepeter@martinez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">SQ-0295-LLWU</fops:LocationCode>
+<fops:LocationName>Manager Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:TransactionDateTime>2014-07-14T14:00:21</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Amy</fops:FirstName>
+<fops:LastName>Gardner</fops:LastName>
+<fops:EmailAddress>ebrewer@hooper-summers.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">AF-6832-IQWR</fops:LocationCode>
+<fops:LocationName>Head Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>10272.5</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>10272.5</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>10272.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64910047">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64910047/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

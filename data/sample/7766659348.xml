@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63508436">
+<fops:DocumentHeader>
+<fops:DocumentNumber>7766659348</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND610625</fops:EntityCode>
+<fops:EntityName>Walsh Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PT-8734-BMWB</fops:LocationCode>
+<fops:LocationName>Cell Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>916 Alyssa Corners</fops:AddressLine>
+<fops:City>Port Michael</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>67692</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">5982620568</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">813567552</fops:EntityCode>
+<fops:EntityName>Noble PLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YR-1391-SHWZ</fops:LocationCode>
+<fops:LocationName>Letter Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>299 Thomas Course Suite 864</fops:AddressLine>
+<fops:City>South Timborough</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>05354</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-03</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>9500</fops:Total>
+<fops:VendorTotal>9500</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Erica</fops:FirstName>
+<fops:LastName>Lopez</fops:LastName>
+<fops:EmailAddress>marksuarez@larson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RK-6248-ABWS</fops:LocationCode>
+<fops:LocationName>Get Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-08T08:00:41</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Brandy</fops:FirstName>
+<fops:LastName>Gonzalez</fops:LastName>
+<fops:EmailAddress>raymonddavis@blankenship.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">YC-9784-INWW</fops:LocationCode>
+<fops:LocationName>Remain Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">8500</fops:ServiceCode>
+<fops:ProductDescription>Chemical Injection</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>day rate</fops:Units>
+<fops:UnitPrice>9500</fops:UnitPrice>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:PeriodStartDate>2013-11-03</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-03</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>9500</fops:LineSubTotal>
+<fops:LinePretaxTotal>9500</fops:LinePretaxTotal>
+<fops:Total>9500</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>9500</fops:Total>
+<fops:WorkOrder>WO-53691913</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63508436">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63508436/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

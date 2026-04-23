@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65297619">
+<fops:DocumentHeader>
+<fops:DocumentNumber>9892742728</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND984005</fops:EntityCode>
+<fops:EntityName>Smith Turner and Wagner</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KW-3616-WAWS</fops:LocationCode>
+<fops:LocationName>At Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>188 Carmen Lake</fops:AddressLine>
+<fops:City>Mcdonaldshire</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>57952</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8533495556</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">282255257</fops:EntityCode>
+<fops:EntityName>Hunt-Perry</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">FC-1335-DYWT</fops:LocationCode>
+<fops:LocationName>Choice Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>260 Thomas Ford</fops:AddressLine>
+<fops:City>Thomasborough</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>32231</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-06-21</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>2263.97</fops:Total>
+<fops:VendorTotal>2263.97</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Eric</fops:FirstName>
+<fops:LastName>Martinez</fops:LastName>
+<fops:EmailAddress>jennifer78@kline.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">QQ-0843-BBWN</fops:LocationCode>
+<fops:LocationName>Bad Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T11:44:35</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Gloria</fops:FirstName>
+<fops:LastName>Mcdowell</fops:LastName>
+<fops:EmailAddress>amywillis@rios.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">ZY-5987-PFWA</fops:LocationCode>
+<fops:LocationName>Involve Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-06-15</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2263.97</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>2263.97</fops:UnitPrice>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:PeriodDate>2014-06-15</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2263.97</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65297619">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65297619/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

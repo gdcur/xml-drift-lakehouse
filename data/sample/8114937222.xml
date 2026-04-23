@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="64327698">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8114937222</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND324002</fops:EntityCode>
+<fops:EntityName>Jones Johnston and Mathews</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XE-0782-XBWB</fops:LocationCode>
+<fops:LocationName>Sometimes Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>51198 Cooper Squares Suite 479</fops:AddressLine>
+<fops:City>Port Stephaniefort</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>28652</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">5841302793</fops:PhoneNumber>
+<fops:EmailAddress>nathancastillo@mcdonald.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">184146781</fops:EntityCode>
+<fops:EntityName>Keller PLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YL-3552-RJWP</fops:LocationCode>
+<fops:LocationName>Exist Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0484 Dominguez Islands</fops:AddressLine>
+<fops:City>West Sandy</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>54698</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-03-23</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>3260</fops:Total>
+<fops:VendorTotal>3260</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Tiffany</fops:FirstName>
+<fops:LastName>King</fops:LastName>
+<fops:EmailAddress>connorjohnson@rangel.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IT-5296-SWWE</fops:LocationCode>
+<fops:LocationName>Series Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:TransactionDateTime>2014-07-23T13:00:25</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:LastName>Norton</fops:LastName>
+<fops:EmailAddress>dustin10@clark.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">PB-3948-WIWZ</fops:LocationCode>
+<fops:LocationName>Provide Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>3260</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>3260</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>3260</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64327698">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64327698/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

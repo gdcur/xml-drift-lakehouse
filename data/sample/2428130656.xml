@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65270650">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2428130656</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND182736</fops:EntityCode>
+<fops:EntityName>Henry LLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YB-9512-ZHWQ</fops:LocationCode>
+<fops:LocationName>Often Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>4557 Wells Wells Apt. 229</fops:AddressLine>
+<fops:City>New Samantha</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>88643</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">7054686926</fops:PhoneNumber>
+<fops:EmailAddress>campbellbreanna@diaz.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">252062301</fops:EntityCode>
+<fops:EntityName>Chan-Lewis</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WL-5738-CZWE</fops:LocationCode>
+<fops:LocationName>She Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>03038 Paul Loop</fops:AddressLine>
+<fops:City>West Michaelborough</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>73897</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-12</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>2545.4</fops:Total>
+<fops:VendorTotal>2545.4</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Jay</fops:FirstName>
+<fops:LastName>Savage</fops:LastName>
+<fops:EmailAddress>amanda62@hall.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RC-8745-PIWR</fops:LocationCode>
+<fops:LocationName>Civil Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T11:00:11</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Linda</fops:FirstName>
+<fops:LastName>Newman</fops:LastName>
+<fops:EmailAddress>jamesjohnson@jennings.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">YW-9640-NUWP</fops:LocationCode>
+<fops:LocationName>Fight Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Wellhead Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>2545.4</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>2545.4</fops:LineSubTotal>
+<fops:LinePretaxTotal>2545.4</fops:LinePretaxTotal>
+<fops:Total>2545.4</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2545.4</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65270650">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65270650/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

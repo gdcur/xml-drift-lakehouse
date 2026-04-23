@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63729018">
+<fops:DocumentHeader>
+<fops:DocumentNumber>6490500647</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND308444</fops:EntityCode>
+<fops:EntityName>Jones Johnson and Acosta</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EJ-1041-MJWR</fops:LocationCode>
+<fops:LocationName>International Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0617 Jimenez Ports Suite 502</fops:AddressLine>
+<fops:City>North Pamela</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>54055</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">7614568668</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">319214127</fops:EntityCode>
+<fops:EntityName>Black-Roberts</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KN-7648-IQWL</fops:LocationCode>
+<fops:LocationName>Others Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>87756 Best Avenue Suite 371</fops:AddressLine>
+<fops:City>Dorothyshire</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>44250</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-26</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>996</fops:Total>
+<fops:VendorTotal>996</fops:VendorTotal>
+<fops:LineCount>8</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Anthony</fops:FirstName>
+<fops:LastName>Carlson</fops:LastName>
+<fops:EmailAddress>hartamanda@collier.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">VV-6886-EBWN</fops:LocationCode>
+<fops:LocationName>Already Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:TransactionDateTime>2014-07-10T08:20:20</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Walter</fops:FirstName>
+<fops:LastName>Meyer</fops:LastName>
+<fops:EmailAddress>veronica89@diaz.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">VM-2407-PNWX</fops:LocationCode>
+<fops:LocationName>Stuff Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1002</fops:ServiceCode>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>3</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>42.5</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2013-11-22</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-22</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>127.5</fops:LineSubTotal>
+<fops:LinePretaxTotal>127.5</fops:LinePretaxTotal>
+<fops:Total>127.5</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Personnel</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>127.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1004</fops:ServiceCode>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>3</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>39</fops:UnitPrice>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:PeriodStartDate>2013-11-22</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-22</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>117</fops:LineSubTotal>
+<fops:LinePretaxTotal>117</fops:LinePretaxTotal>
+<fops:Total>117</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Personnel</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>117</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63729018">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63729018/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65550886">
+<fops:DocumentHeader>
+<fops:DocumentNumber>5555710844</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND355314</fops:EntityCode>
+<fops:EntityName>Patel-Ramirez</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IB-4473-PDWZ</fops:LocationCode>
+<fops:LocationName>Along Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>6337 Rachel Point</fops:AddressLine>
+<fops:City>South Stephen</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>90592</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">5371519253</fops:PhoneNumber>
+<fops:EmailAddress>taylorheather@huff.biz</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">174702352</fops:EntityCode>
+<fops:EntityName>Maxwell-Pineda</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XW-5203-AAWZ</fops:LocationCode>
+<fops:LocationName>Modern Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>2632 Adam Brooks</fops:AddressLine>
+<fops:City>Andersonmouth</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>59948</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-09-15</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>896.25</fops:Total>
+<fops:VendorTotal>896.25</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Monica</fops:FirstName>
+<fops:LastName>Watson</fops:LastName>
+<fops:EmailAddress>zcastillo@matthews.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MT-6786-BFWM</fops:LocationCode>
+<fops:LocationName>Side Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T16:10:17</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Erica</fops:FirstName>
+<fops:LastName>Brooks</fops:LastName>
+<fops:EmailAddress>robert46@livingston.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">XJ-0465-GWWT</fops:LocationCode>
+<fops:LocationName>Low Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>896.25</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>896.25</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>896.25</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65550886">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65550886/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

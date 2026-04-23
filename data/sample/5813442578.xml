@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64040044">
+<fops:DocumentHeader>
+<fops:DocumentNumber>5813442578</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND634915</fops:EntityCode>
+<fops:EntityName>Roberts Holt and Estrada</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NB-4509-IWWT</fops:LocationCode>
+<fops:LocationName>Into Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>5138 Brittany Lodge</fops:AddressLine>
+<fops:City>Brandonbury</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>16576</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0545932944</fops:PhoneNumber>
+<fops:EmailAddress>kathrynrobertson@avery-hunter.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">800532827</fops:EntityCode>
+<fops:EntityName>Ross Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DH-7766-MIWU</fops:LocationCode>
+<fops:LocationName>Type Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>929 Brian Streets Apt. 525</fops:AddressLine>
+<fops:City>North Jessicaport</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>09454</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-09-24</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>9892</fops:Total>
+<fops:VendorTotal>9892</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>John</fops:FirstName>
+<fops:LastName>Herman</fops:LastName>
+<fops:EmailAddress>william65@peterson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NR-0133-OMWV</fops:LocationCode>
+<fops:LocationName>Suddenly Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:TransactionDateTime>2014-07-18T09:10:22</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Jason</fops:FirstName>
+<fops:LastName>Adams</fops:LastName>
+<fops:EmailAddress>evelyn18@williams-williams.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">PZ-7362-TUWT</fops:LocationCode>
+<fops:LocationName>This Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Hot Oil Treatment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>39568</fops:Quantity>
+<fops:Units>Bbl</fops:Units>
+<fops:UnitPrice>0.25</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2013-09-22</fops:PeriodStartDate>
+<fops:PeriodDate>2013-09-23</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>9892</fops:LineSubTotal>
+<fops:LinePretaxTotal>9892</fops:LinePretaxTotal>
+<fops:Total>9892</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>9892</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64040044">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64040044/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

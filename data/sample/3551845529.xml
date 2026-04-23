@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="64342276">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3551845529</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND170401</fops:EntityCode>
+<fops:EntityName>Conner-Brennan</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZN-1664-ETWE</fops:LocationCode>
+<fops:LocationName>Space Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>26844 Alexander Meadows</fops:AddressLine>
+<fops:City>Mooreberg</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>85203</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0965504385</fops:PhoneNumber>
+<fops:EmailAddress>gsolomon@silva-young.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">635198531</fops:EntityCode>
+<fops:EntityName>Glenn-Christensen</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NI-5784-EVWZ</fops:LocationCode>
+<fops:LocationName>Born Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>18003 Tran Radial Suite 297</fops:AddressLine>
+<fops:City>Christinemouth</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>75804</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-01-28</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>2449.5</fops:Total>
+<fops:VendorTotal>2449.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Douglas</fops:FirstName>
+<fops:LastName>Reyes</fops:LastName>
+<fops:EmailAddress>terri04@ward-ramirez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">RH-7031-KUWF</fops:LocationCode>
+<fops:LocationName>Author Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:TransactionDateTime>2014-07-08T12:30:16</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Maurice</fops:FirstName>
+<fops:LastName>Jones</fops:LastName>
+<fops:EmailAddress>hlopez@smith.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">FL-5672-IYWJ</fops:LocationCode>
+<fops:LocationName>Summer Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2015-01-28</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2449.5</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>2449.5</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:PeriodDate>2015-01-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2449.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64342276">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64342276/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64947514">
+<fops:DocumentHeader>
+<fops:DocumentNumber>4417881085</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND287450</fops:EntityCode>
+<fops:EntityName>Brown LLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LG-2047-CZWT</fops:LocationCode>
+<fops:LocationName>Rise Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>48012 Robert Lane Suite 155</fops:AddressLine>
+<fops:City>South Michele</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>00995</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">9956833301</fops:PhoneNumber>
+<fops:EmailAddress>james42@cherry.org</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">504922729</fops:EntityCode>
+<fops:EntityName>Cook Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HZ-8702-RUWB</fops:LocationCode>
+<fops:LocationName>Eye Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>556 Levy Hills</fops:AddressLine>
+<fops:City>Lake Michael</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>57868</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-06-19</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>862.5</fops:Total>
+<fops:VendorTotal>862.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Sheri</fops:FirstName>
+<fops:LastName>Padilla</fops:LastName>
+<fops:EmailAddress>qwhite@lewis-smith.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WV-3731-NRWH</fops:LocationCode>
+<fops:LocationName>Commercial Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T09:11:25</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Kim</fops:FirstName>
+<fops:LastName>Cook</fops:LastName>
+<fops:EmailAddress>christine02@armstrong.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">IJ-0789-CJWP</fops:LocationCode>
+<fops:LocationName>Majority Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>862.5</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>862.5</fops:LineSubTotal>
+<fops:LinePretaxTotal>862.5</fops:LinePretaxTotal>
+<fops:Total>862.5</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>862.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64947514">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64947514/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

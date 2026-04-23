@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63508200">
+<fops:DocumentHeader>
+<fops:DocumentNumber>7001540469</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND527461</fops:EntityCode>
+<fops:EntityName>Warner Miller and Mata</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">UC-9665-DXWZ</fops:LocationCode>
+<fops:LocationName>Seat Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>68271 Guerrero Row</fops:AddressLine>
+<fops:City>Johnsonburgh</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>06772</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">7343856947</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">938156551</fops:EntityCode>
+<fops:EntityName>Vazquez Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">QO-5471-PYWK</fops:LocationCode>
+<fops:LocationName>Skill Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>968 Williams Mills</fops:AddressLine>
+<fops:City>Lake Andrea</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>65447</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-04-26</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>3500</fops:Total>
+<fops:VendorTotal>3500</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Arthur</fops:FirstName>
+<fops:LastName>Cooper</fops:LastName>
+<fops:EmailAddress>jameswelch@evans-orozco.biz</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">OC-5492-TVWQ</fops:LocationCode>
+<fops:LocationName>If Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:TransactionDateTime>2014-07-08T08:20:41</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Carlos</fops:FirstName>
+<fops:LastName>Lane</fops:LastName>
+<fops:EmailAddress>john84@turner.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">JY-5488-RQWO</fops:LocationCode>
+<fops:LocationName>Force Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">8500</fops:ServiceCode>
+<fops:ProductDescription>Chemical Injection</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>day rate</fops:Units>
+<fops:UnitPrice>3500</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:PeriodStartDate>2014-04-26</fops:PeriodStartDate>
+<fops:PeriodDate>2014-04-26</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>3500</fops:LineSubTotal>
+<fops:LinePretaxTotal>3500</fops:LinePretaxTotal>
+<fops:Total>3500</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>3500</fops:Total>
+<fops:WorkOrder>WO-60356298</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63508200">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63508200/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="202205367">
+<fops:DocumentHeader>
+<fops:DocumentNumber>7955966655</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID4">200795843</fops:EntityCode>
+<fops:EntityName>Olsen Contreras and Lewis</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PE-9106-NIWD</fops:LocationCode>
+<fops:LocationName>Meet Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>1880 Franklin Oval Apt. 109</fops:AddressLine>
+<fops:City>Watkinsfort</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>25727</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">6359619102</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">401187109</fops:EntityCode>
+<fops:EntityName>Kane Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NI-8955-AAWC</fops:LocationCode>
+<fops:LocationName>About Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>89174 Jennifer Viaduct Suite 055</fops:AddressLine>
+<fops:City>Lake Vincent</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>09957</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2022-01-02</fops:DocumentDate>
+<fops:DocumentType>Credit Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>-5357.36</fops:Total>
+<fops:VendorTotal>-5357.36</fops:VendorTotal>
+<fops:LineCount>11</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Brooke</fops:FirstName>
+<fops:LastName>Monroe</fops:LastName>
+<fops:EmailAddress>mileskenneth@kelly-rodriguez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationName>According Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Operations Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2022-06-03T09:46:29</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554745</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Candace</fops:FirstName>
+<fops:LastName>Johnson</fops:LastName>
+<fops:EmailAddress>maryhodge@thomas.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationName>Husband Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Operations Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:CrossReference>
+<fops:DocumentNumber>7955966655</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+</fops:CrossReference>
+<fops:DiscountTotal>-165.69</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Rebecca</fops:FirstName>
+<fops:LastName>Merritt</fops:LastName>
+<fops:EmailAddress>antoniowhitney@davis-coffey.com</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">2200269</fops:ServiceCode>
+<fops:ProductDescription>Hot Oil Treatment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>-2</fops:Quantity>
+<fops:Units>EACH</fops:Units>
+<fops:UnitPrice>111.27</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:PeriodStartDate>2021-10-31</fops:PeriodStartDate>
+<fops:PeriodDate>2021-10-31</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>-6.67</fops:Total>
+<fops:AllocationRate>0.0299721398</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>-222.54</fops:LineSubTotal>
+<fops:LinePretaxTotal>-215.87</fops:LinePretaxTotal>
+<fops:Total>-215.87</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>0.3333487747</fops:AllocationRate>
+<fops:Total>-71.96</fops:Total>
+<fops:CostCenter>CC-92174</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Choose Lease</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>047</fops:AccountCode>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">03/23/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>03/23/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>7955966655</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Hot-shot transportation and logistics</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Hernandez, Javier </fops:ContactNameOrLocation>
+<fops:EntityName>Kane Inc</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Seth</fops:FirstName>
+<fops:LastName>Hensley</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">3234458430</fops:PhoneNumber>
+<fops:EmailAddress>melissaroth@ortega.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="BLUE">
+<fops:NoticeType>BelowPrice</fops:NoticeType>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">2200270</fops:ServiceCode>
+<fops:ProductDescription>Compression Unit</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>-4</fops:Quantity>
+<fops:Units>EACH</fops:Units>
+<fops:UnitPrice>167.58</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2021-10-31</fops:PeriodStartDate>
+<fops:PeriodDate>2021-10-31</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>-20.11</fops:Total>
+<fops:AllocationRate>0.0300005967</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>-670.32</fops:LineSubTotal>
+<fops:LinePretaxTotal>-650.21</fops:LinePretaxTotal>
+<fops:Total>-650.21</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>0.3333384599</fops:AllocationRate>
+<fops:Total>-216.74</fops:Total>
+<fops:CostCenter>CC-66901</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Rule Lease</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>047</fops:AccountCode>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">03/23/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>03/23/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>7955966655</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Electrical installation and commissioning</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Hernandez, Javier </fops:ContactNameOrLocation>
+<fops:EntityName>Kane Inc</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>William</fops:FirstName>
+<fops:LastName>Smith</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">5825146666</fops:PhoneNumber>
+<fops:EmailAddress>hbell@brooks.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="BLUE">
+<fops:NoticeType>BelowPrice</fops:NoticeType>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf202205367">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/202205367/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

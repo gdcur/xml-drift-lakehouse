@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="65579359">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3391020597</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND968371</fops:EntityCode>
+<fops:EntityName>Johnson LLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">BJ-9517-PSWQ</fops:LocationCode>
+<fops:LocationName>Show Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>94887 Brown Junction</fops:AddressLine>
+<fops:City>South Thomasberg</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>12415</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">9392991652</fops:PhoneNumber>
+<fops:EmailAddress>tamarawelch@bennett-garcia.biz</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">693662597</fops:EntityCode>
+<fops:EntityName>Miller Campbell and Lucero</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KA-6453-GDWM</fops:LocationCode>
+<fops:LocationName>President Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>5484 Campbell Curve Suite 118</fops:AddressLine>
+<fops:City>North Rubenton</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>26971</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-04-19</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>760</fops:Total>
+<fops:VendorTotal>760</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Tony</fops:FirstName>
+<fops:LastName>Roberts</fops:LastName>
+<fops:EmailAddress>baileydeborah@walton-kelly.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MT-7861-YAWR</fops:LocationCode>
+<fops:LocationName>Thought Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T06:21:07</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Jerry</fops:FirstName>
+<fops:LastName>Walker</fops:LastName>
+<fops:EmailAddress>levynicole@marshall-nolan.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">SC-4266-QNWX</fops:LocationCode>
+<fops:LocationName>Group Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-03-15</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>760</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>760</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodDate>2014-03-15</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>760</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65579359">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65579359/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

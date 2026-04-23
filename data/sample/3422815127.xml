@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63919940">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3422815127</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND071763</fops:EntityCode>
+<fops:EntityName>Flores Nelson and Brock</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">SN-7749-YIWC</fops:LocationCode>
+<fops:LocationName>Because Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>75781 Bender Corner</fops:AddressLine>
+<fops:City>South Jorge</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>20887</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0506199052</fops:PhoneNumber>
+<fops:EmailAddress>mossjeffrey@hoffman.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">280319889</fops:EntityCode>
+<fops:EntityName>Hopkins Collins and Walker</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LS-6578-TXWN</fops:LocationCode>
+<fops:LocationName>Meeting Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>580 Lambert Drives Suite 676</fops:AddressLine>
+<fops:City>Lake Jacquelineburgh</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>97155</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-06-11</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>1110</fops:Total>
+<fops:VendorTotal>1110</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Katie</fops:FirstName>
+<fops:LastName>Mayo</fops:LastName>
+<fops:EmailAddress>xnichols@deleon.biz</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">UL-3800-GPWW</fops:LocationCode>
+<fops:LocationName>Family Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:TransactionDateTime>2014-07-07T13:50:38</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Emily</fops:FirstName>
+<fops:LastName>Bowman</fops:LastName>
+<fops:EmailAddress>aedwards@lee-george.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">NS-7751-CNWZ</fops:LocationCode>
+<fops:LocationName>View Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Hot Oil Treatment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>600</fops:Quantity>
+<fops:UnitPrice>1.85</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1110</fops:LineSubTotal>
+<fops:LinePretaxTotal>1110</fops:LinePretaxTotal>
+<fops:Total>1110</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1110</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63919940">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63919940/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

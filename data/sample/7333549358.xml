@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65079849">
+<fops:DocumentHeader>
+<fops:DocumentNumber>7333549358</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND316830</fops:EntityCode>
+<fops:EntityName>Weber Diaz and Stokes</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IW-1402-YPWC</fops:LocationCode>
+<fops:LocationName>Join Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>388 Ross Falls Suite 749</fops:AddressLine>
+<fops:City>North Andrewmouth</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>30259</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">3437855252</fops:PhoneNumber>
+<fops:EmailAddress>thompsonemily@anderson.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">667570241</fops:EntityCode>
+<fops:EntityName>Blankenship Webb and Williams</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KH-1230-CEWC</fops:LocationCode>
+<fops:LocationName>Wide Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0948 Perez Knolls</fops:AddressLine>
+<fops:City>Port Laurie</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>68402</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-08-10</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>694.2</fops:Total>
+<fops:VendorTotal>694.2</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Andre</fops:FirstName>
+<fops:LastName>Gibson</fops:LastName>
+<fops:EmailAddress>lauren08@scott.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WY-9562-GRWI</fops:LocationCode>
+<fops:LocationName>Than Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T10:21:02</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Juan</fops:FirstName>
+<fops:LastName>Maxwell</fops:LastName>
+<fops:EmailAddress>dstark@castillo.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">OA-7216-TBWP</fops:LocationCode>
+<fops:LocationName>Rate Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Vacuum Truck</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>694.2</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>694.2</fops:LineSubTotal>
+<fops:LinePretaxTotal>694.2</fops:LinePretaxTotal>
+<fops:Total>694.2</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>694.2</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65079849">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65079849/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

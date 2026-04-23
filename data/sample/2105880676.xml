@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64990953">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2105880676</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND347027</fops:EntityCode>
+<fops:EntityName>Marks Group</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LC-7162-ZTWF</fops:LocationCode>
+<fops:LocationName>Big Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>404 Kimberly Drive</fops:AddressLine>
+<fops:City>Bryanttown</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>76433</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">3430695489</fops:PhoneNumber>
+<fops:EmailAddress>meghan35@maxwell.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">044007403</fops:EntityCode>
+<fops:EntityName>Hayes Baker and Gonzalez</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XG-9882-FJWE</fops:LocationCode>
+<fops:LocationName>Major Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>819 Mckay Rest</fops:AddressLine>
+<fops:City>West Markmouth</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>21675</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-10-29</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>429.5</fops:Total>
+<fops:VendorTotal>429.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:LastName>Garcia</fops:LastName>
+<fops:EmailAddress>vchen@davis.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">CL-9738-XBWX</fops:LocationCode>
+<fops:LocationName>Need Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T07:01:20</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Ashley</fops:FirstName>
+<fops:LastName>Ingram</fops:LastName>
+<fops:EmailAddress>rwalker@bass-holt.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">EL-0677-PSWM</fops:LocationCode>
+<fops:LocationName>Board Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Chemical Injection</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>429.5</fops:UnitPrice>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>429.5</fops:LineSubTotal>
+<fops:LinePretaxTotal>429.5</fops:LinePretaxTotal>
+<fops:Total>429.5</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>429.5</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64990953">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64990953/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

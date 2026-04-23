@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63512126">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3382283379</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND305474</fops:EntityCode>
+<fops:EntityName>Gray Ltd</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IH-3952-JZWA</fops:LocationCode>
+<fops:LocationName>Identify Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>237 Austin Circles Suite 659</fops:AddressLine>
+<fops:City>Petersonburgh</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>95958</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">9013991355</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">480858893</fops:EntityCode>
+<fops:EntityName>Moreno-Campbell</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KK-5696-JGWS</fops:LocationCode>
+<fops:LocationName>Skill Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0712 Tyler Ville</fops:AddressLine>
+<fops:City>Thomasfurt</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>58140</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-10-28</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>9500</fops:Total>
+<fops:VendorTotal>9500</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Marvin</fops:FirstName>
+<fops:LastName>Aguirre</fops:LastName>
+<fops:EmailAddress>nelsonbrett@taylor-alvarez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IS-8862-JMWT</fops:LocationCode>
+<fops:LocationName>Often Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:TransactionDateTime>2014-07-08T08:10:53</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Chad</fops:FirstName>
+<fops:LastName>Adams</fops:LastName>
+<fops:EmailAddress>stephanie15@douglas.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">OG-8858-HRWJ</fops:LocationCode>
+<fops:LocationName>Seven Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">8500</fops:ServiceCode>
+<fops:ProductDescription>Hot Oil Treatment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>day rate</fops:Units>
+<fops:UnitPrice>9500</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2014-10-28</fops:PeriodStartDate>
+<fops:PeriodDate>2014-10-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>9500</fops:LineSubTotal>
+<fops:LinePretaxTotal>9500</fops:LinePretaxTotal>
+<fops:Total>9500</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>9500</fops:Total>
+<fops:WorkOrder>WO-40455102</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63512126">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63512126/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

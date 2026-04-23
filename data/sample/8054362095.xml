@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="64322065">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8054362095</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">228861704</fops:EntityCode>
+<fops:EntityName>Gonzalez Simpson and Hall</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">TY-0269-BGWQ</fops:LocationCode>
+<fops:LocationName>Exactly Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>912 Dakota Row Suite 367</fops:AddressLine>
+<fops:City>West Curtis</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>80595</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">2092271728</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">905929181</fops:EntityCode>
+<fops:EntityName>Woods Hernandez and Taylor</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XG-1970-EVWJ</fops:LocationCode>
+<fops:LocationName>Sister Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>9587 Valerie Shoal</fops:AddressLine>
+<fops:City>Lake Gregory</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>40077</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-12-31</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Image_Direct</fops:SubmissionMethod>
+<fops:Total>30233.82</fops:Total>
+<fops:VendorTotal>30233.82</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Eric</fops:FirstName>
+<fops:LastName>Collins</fops:LastName>
+<fops:EmailAddress>gonzaleslaura@wood.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EE-3190-XHWQ</fops:LocationCode>
+<fops:LocationName>West Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T10:50:30</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Mackenzie</fops:FirstName>
+<fops:LastName>Buck</fops:LastName>
+<fops:EmailAddress>kim23@jackson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">UV-2854-EZWJ</fops:LocationCode>
+<fops:LocationName>Show Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-11-11</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>30233.82</fops:Total>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>30233.82</fops:UnitPrice>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:PeriodDate>2014-11-11</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>30233.82</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64322065">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64322065/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

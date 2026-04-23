@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="UAPINVOICE"><fops:DetailedInvoice id="204777725">
+<fops:DocumentHeader>
+<fops:DocumentNumber>6539618379</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID4">088111329</fops:EntityCode>
+<fops:EntityName>Simon Bautista and Parker</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HH-3013-DHWZ</fops:LocationCode>
+<fops:LocationName>Both Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>225 Donald Viaduct</fops:AddressLine>
+<fops:City>Lopezstad</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>88924</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">1436308073</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">895120874</fops:EntityCode>
+<fops:EntityName>Martinez Wiley and Harris</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">AH-6573-FOWO</fops:LocationCode>
+<fops:LocationName>I Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>77727 Angel Branch Apt. 368</fops:AddressLine>
+<fops:City>Matthewsport</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>24375</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2021-11-05</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>27187.6</fops:Total>
+<fops:VendorTotal>27187.6</fops:VendorTotal>
+<fops:LineCount>8</fops:LineCount>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Melissa</fops:FirstName>
+<fops:LastName>Price</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">2207539994</fops:PhoneNumber>
+<fops:EmailAddress>uford@dunn.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XB-4836-LNWQ</fops:LocationCode>
+<fops:LocationName>Drug Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Drilling</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Comment</fops:ActionType>
+<fops:Status>Submitted</fops:Status>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:TransactionDateTime>2022-08-24T13:26:38</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554853</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>George</fops:FirstName>
+<fops:LastName>Collins</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">6592616589</fops:PhoneNumber>
+<fops:EmailAddress>teresaparker@smith-graves.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">SF-3385-ICWY</fops:LocationCode>
+<fops:LocationName>Material Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Drilling</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:CrossReference>
+<fops:DocumentNumber>6539618379</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+</fops:CrossReference>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Drilling</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">2328</fops:ServiceCode>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+<fops:ProductCategory>ISS-U4UT  UNILOK TUB</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>60</fops:Quantity>
+<fops:Units>EACH</fops:Units>
+<fops:UnitPrice>25.4</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2021-09-13</fops:PeriodStartDate>
+<fops:PeriodDate>2021-09-13</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1524</fops:LineSubTotal>
+<fops:LinePretaxTotal>1524</fops:LinePretaxTotal>
+<fops:Total>1524</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Product Sale</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1524</fops:Total>
+<fops:OrderReference>PO-10286072</fops:OrderReference>
+<fops:OrderLineRef>218</fops:OrderLineRef>
+<fops:EarlyPayment>
+<fops:Total>1478.28</fops:Total>
+<fops:AllocationRate>0.03</fops:AllocationRate>
+<fops:DueDate>2022-07-25</fops:DueDate>
+<fops:DaysDue>20</fops:DaysDue>
+<fops:EligibleFlag>false</fops:EligibleFlag>
+</fops:EarlyPayment>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>6539618379</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Martinez, Daniel </fops:ContactNameOrLocation>
+<fops:EntityName>Martinez Wiley and Harris</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Raymond</fops:FirstName>
+<fops:LastName>Orr</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">0904259107</fops:PhoneNumber>
+<fops:EmailAddress>ipadilla@jackson-horton.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Electrical installation and commissioning</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Wellsite services rendered per contract terms</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">2129</fops:ServiceCode>
+<fops:ProductDescription>Frac Tank</fops:ProductDescription>
+<fops:ProductCategory>ISS-U4MBT4 UNILOK TU</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>20</fops:Quantity>
+<fops:Units>EACH</fops:Units>
+<fops:UnitPrice>30.92</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2021-09-13</fops:PeriodStartDate>
+<fops:PeriodDate>2021-09-13</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>618.4</fops:LineSubTotal>
+<fops:LinePretaxTotal>618.4</fops:LinePretaxTotal>
+<fops:Total>618.4</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Product Sale</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>618.4</fops:Total>
+<fops:OrderReference>PO-86042965</fops:OrderReference>
+<fops:OrderLineRef>973</fops:OrderLineRef>
+<fops:EarlyPayment>
+<fops:Total>599.85</fops:Total>
+<fops:AllocationRate>0.03</fops:AllocationRate>
+<fops:DueDate>2022-07-25</fops:DueDate>
+<fops:DaysDue>20</fops:DaysDue>
+<fops:EligibleFlag>false</fops:EligibleFlag>
+</fops:EarlyPayment>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>6539618379</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Martinez, Daniel </fops:ContactNameOrLocation>
+<fops:EntityName>Martinez Wiley and Harris</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Bryan</fops:FirstName>
+<fops:LastName>Lee</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">6860508733</fops:PhoneNumber>
+<fops:EmailAddress>sherireyes@newman-greene.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Wellsite services rendered per contract terms</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf204777725">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/204777725/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

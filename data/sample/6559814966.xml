@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63949546">
+<fops:DocumentHeader>
+<fops:DocumentNumber>6559814966</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">675982728</fops:EntityCode>
+<fops:EntityName>Medina Taylor and Jones</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YN-9608-SSWY</fops:LocationCode>
+<fops:LocationName>Discover Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>47353 John Isle</fops:AddressLine>
+<fops:City>North Autumnview</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>14175</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8589718007</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">661350313</fops:EntityCode>
+<fops:EntityName>Dillon Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MG-3506-WVWD</fops:LocationCode>
+<fops:LocationName>Wide Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>186 Adam Avenue Apt. 138</fops:AddressLine>
+<fops:City>New Brian</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>86124</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-09-07</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>1620.66</fops:Total>
+<fops:VendorTotal>1620.66</fops:VendorTotal>
+<fops:LineCount>13</fops:LineCount>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Kimberly</fops:FirstName>
+<fops:LastName>Smith</fops:LastName>
+<fops:EmailAddress>williskimberly@griffith.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IR-2511-YNWP</fops:LocationCode>
+<fops:LocationName>Mention Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-06-23T10:10:24</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:LastName>Ramos</fops:LastName>
+<fops:EmailAddress>kimberlyatkins@perez.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">SF-5843-JMWZ</fops:LocationCode>
+<fops:LocationName>Involve Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-09-05</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">CF626</fops:ServiceCode>
+<fops:ProductDescription>Flowback Equipment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>243.206448</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2014-09-05</fops:PeriodStartDate>
+<fops:PeriodDate>2014-09-05</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>StateandLocal</fops:TaxType>
+<fops:ExemptCode>Exempt</fops:ExemptCode>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>243.21</fops:LineSubTotal>
+<fops:LinePretaxTotal>243.21</fops:LinePretaxTotal>
+<fops:Total>243.21</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>243.21</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>6559814966</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">01B108</fops:ServiceCode>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>249.364673</fops:UnitPrice>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:PeriodStartDate>2014-09-05</fops:PeriodStartDate>
+<fops:PeriodDate>2014-09-05</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>StateandLocal</fops:TaxType>
+<fops:ExemptCode>Exempt</fops:ExemptCode>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>249.36</fops:LineSubTotal>
+<fops:LinePretaxTotal>249.36</fops:LinePretaxTotal>
+<fops:Total>249.36</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>249.36</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>6559814966</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63949546">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63949546/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

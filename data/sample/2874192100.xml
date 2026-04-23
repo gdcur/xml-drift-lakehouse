@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65272214">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2874192100</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND269904</fops:EntityCode>
+<fops:EntityName>Peterson Group</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZF-2850-KDWM</fops:LocationCode>
+<fops:LocationName>Any Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>18078 Harmon Trafficway Apt. 736</fops:AddressLine>
+<fops:City>Lake Benjamin</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>44266</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">6923018823</fops:PhoneNumber>
+<fops:EmailAddress>charlesnelson@dunn.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">802343121</fops:EntityCode>
+<fops:EntityName>Brown-Lawrence</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KX-7057-NGWM</fops:LocationCode>
+<fops:LocationName>With Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>557 Martinez Gateway Suite 668</fops:AddressLine>
+<fops:City>Aliciaside</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>71443</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2015-05-14</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>10963.8</fops:Total>
+<fops:VendorTotal>10963.8</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Joann</fops:FirstName>
+<fops:LastName>Carlson</fops:LastName>
+<fops:EmailAddress>william78@jones.biz</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">FY-4430-JTWT</fops:LocationCode>
+<fops:LocationName>Maintain Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:TransactionDateTime>2014-07-18T08:50:07</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>John</fops:FirstName>
+<fops:LastName>Burke</fops:LastName>
+<fops:EmailAddress>tmaddox@rosario.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">XZ-0609-IFWA</fops:LocationCode>
+<fops:LocationName>Western Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>10963.8</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>10963.8</fops:LineSubTotal>
+<fops:LinePretaxTotal>10963.8</fops:LinePretaxTotal>
+<fops:Total>10963.8</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>10963.8</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65272214">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65272214/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

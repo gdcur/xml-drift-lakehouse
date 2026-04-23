@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64679078">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8993692006</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">616699711</fops:EntityCode>
+<fops:EntityName>Bautista PLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">JX-5550-RHWD</fops:LocationCode>
+<fops:LocationName>Represent Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>206 Fisher Freeway Suite 116</fops:AddressLine>
+<fops:City>Stacyside</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>87744</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">3607082023</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">208473677</fops:EntityCode>
+<fops:EntityName>Pierce-Wilson</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XG-8443-CBWZ</fops:LocationCode>
+<fops:LocationName>Employee Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>513 Mary Lake</fops:AddressLine>
+<fops:City>Lewisfort</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>66225</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-07-11</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>619.81</fops:Total>
+<fops:VendorTotal>619.81</fops:VendorTotal>
+<fops:LineCount>7</fops:LineCount>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Linda</fops:FirstName>
+<fops:LastName>Ayala</fops:LastName>
+<fops:EmailAddress>terricruz@perez-neal.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HP-1909-ESWB</fops:LocationCode>
+<fops:LocationName>Fine Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T11:20:24</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Joseph</fops:FirstName>
+<fops:LastName>Herrera</fops:LastName>
+<fops:EmailAddress>tabithaguerra@myers-rodriguez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">RB-5774-MIWJ</fops:LocationCode>
+<fops:LocationName>Allow Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-07-04</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">02033</fops:ServiceCode>
+<fops:ProductDescription>Vacuum Truck</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>210.53561</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:PeriodStartDate>2014-07-04</fops:PeriodStartDate>
+<fops:PeriodDate>2014-07-04</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>StateandLocal</fops:TaxType>
+<fops:ExemptCode>Exempt</fops:ExemptCode>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>210.54</fops:LineSubTotal>
+<fops:LinePretaxTotal>210.54</fops:LinePretaxTotal>
+<fops:Total>210.54</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>210.54</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>8993692006</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">02006</fops:ServiceCode>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>1.758581</fops:UnitPrice>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:PeriodStartDate>2014-07-04</fops:PeriodStartDate>
+<fops:PeriodDate>2014-07-04</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>StateandLocal</fops:TaxType>
+<fops:ExemptCode>Exempt</fops:ExemptCode>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1.76</fops:LineSubTotal>
+<fops:LinePretaxTotal>1.76</fops:LinePretaxTotal>
+<fops:Total>1.76</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1.76</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>8993692006</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64679078">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64679078/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

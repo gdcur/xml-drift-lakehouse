@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64413283">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8706599050</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND488195</fops:EntityCode>
+<fops:EntityName>Hughes-Robles</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DE-9854-QHWZ</fops:LocationCode>
+<fops:LocationName>Head Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>71525 Simmons Estates Apt. 045</fops:AddressLine>
+<fops:City>North Brent</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>63075</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8333627165</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">853539665</fops:EntityCode>
+<fops:EntityName>Schultz-Fritz</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">FL-8189-YLWM</fops:LocationCode>
+<fops:LocationName>Scene Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0592 Miller Light Apt. 785</fops:AddressLine>
+<fops:City>Taylorland</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>07821</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-07-01</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>9500</fops:Total>
+<fops:VendorTotal>9500</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Rachel</fops:FirstName>
+<fops:LastName>Wallace</fops:LastName>
+<fops:EmailAddress>jonesbenjamin@jacobs-cobb.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">XH-9015-VYWM</fops:LocationCode>
+<fops:LocationName>Grow Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T12:20:29</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>John</fops:FirstName>
+<fops:LastName>Steele</fops:LastName>
+<fops:EmailAddress>ejohnson@oliver.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">GE-4719-AEWR</fops:LocationCode>
+<fops:LocationName>Science Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">8500</fops:ServiceCode>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>day rate</fops:Units>
+<fops:UnitPrice>9500</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2013-07-01</fops:PeriodStartDate>
+<fops:PeriodDate>2013-07-01</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>9500</fops:LineSubTotal>
+<fops:LinePretaxTotal>9500</fops:LinePretaxTotal>
+<fops:Total>9500</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>9500</fops:Total>
+<fops:WorkOrder>WO-97738983</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64413283">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64413283/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

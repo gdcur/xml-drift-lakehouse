@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65587217">
+<fops:DocumentHeader>
+<fops:DocumentNumber>1904813334</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND713519</fops:EntityCode>
+<fops:EntityName>Mcdaniel-Blake</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">WH-0118-VFWG</fops:LocationCode>
+<fops:LocationName>Lead Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>743 Timothy Forest Suite 244</fops:AddressLine>
+<fops:City>East Laurenton</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>32521</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">1796166714</fops:PhoneNumber>
+<fops:EmailAddress>khunter@porter-klein.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">893107613</fops:EntityCode>
+<fops:EntityName>Morrison Byrd and Herring</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NO-3800-EEWR</fops:LocationCode>
+<fops:LocationName>Marriage Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>11897 Penny Terrace</fops:AddressLine>
+<fops:City>Steveville</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>59449</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-19</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>16635</fops:Total>
+<fops:VendorTotal>16635</fops:VendorTotal>
+<fops:LineCount>8</fops:LineCount>
+<fops:Notes>Electrical installation and commissioning</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Andrew</fops:FirstName>
+<fops:LastName>Smith</fops:LastName>
+<fops:EmailAddress>gjacobs@smith-reyes.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MA-2974-IMWZ</fops:LocationCode>
+<fops:LocationName>Dark Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T07:01:07</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Nicholas</fops:FirstName>
+<fops:LastName>Smith</fops:LastName>
+<fops:EmailAddress>garrettroberto@adkins.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">KL-9207-LZWU</fops:LocationCode>
+<fops:LocationName>Wear Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>9</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>200</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:PeriodStartDate>2013-11-11</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-19</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1800</fops:LineSubTotal>
+<fops:LinePretaxTotal>1800</fops:LinePretaxTotal>
+<fops:Total>1800</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1800</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-72164484</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">PRODUCT</fops:ServiceCode>
+<fops:ProductDescription>Frac Tank</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>45</fops:Quantity>
+<fops:UnitPrice>35</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2013-11-11</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-19</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1575</fops:LineSubTotal>
+<fops:LinePretaxTotal>1575</fops:LinePretaxTotal>
+<fops:Total>1575</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1575</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-18649578</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65587217">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65587217/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

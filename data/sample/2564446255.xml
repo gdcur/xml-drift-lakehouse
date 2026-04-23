@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65585267">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2564446255</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND073245</fops:EntityCode>
+<fops:EntityName>Miller-Marshall</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">BI-3246-MGWK</fops:LocationCode>
+<fops:LocationName>Nation Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>99403 Powers Parks Apt. 453</fops:AddressLine>
+<fops:City>Jonathanview</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>36564</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">2514159077</fops:PhoneNumber>
+<fops:EmailAddress>bentleyamber@hughes.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">224247701</fops:EntityCode>
+<fops:EntityName>Barnett and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MY-4611-EYWE</fops:LocationCode>
+<fops:LocationName>No Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>1616 Byrd Row</fops:AddressLine>
+<fops:City>Port Meganport</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>34746</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-12-15</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>48560</fops:Total>
+<fops:VendorTotal>48560</fops:VendorTotal>
+<fops:LineCount>7</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Mary</fops:FirstName>
+<fops:LastName>Hampton</fops:LastName>
+<fops:EmailAddress>stephenslauren@cochran.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MM-1263-JAWF</fops:LocationCode>
+<fops:LocationName>Central Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T09:11:53</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Olivia</fops:FirstName>
+<fops:LastName>Roman</fops:LastName>
+<fops:EmailAddress>mckinneyronald@edwards.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">QL-7149-HTWH</fops:LocationCode>
+<fops:LocationName>While Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Compression Unit</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>96</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>200</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2014-11-14</fops:PeriodStartDate>
+<fops:PeriodDate>2014-12-15</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>19200</fops:LineSubTotal>
+<fops:LinePretaxTotal>19200</fops:LinePretaxTotal>
+<fops:Total>19200</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>19200</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-18909774</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Compression Unit</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>320</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>50</fops:UnitPrice>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:PeriodStartDate>2014-11-14</fops:PeriodStartDate>
+<fops:PeriodDate>2014-12-15</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>16000</fops:LineSubTotal>
+<fops:LinePretaxTotal>16000</fops:LinePretaxTotal>
+<fops:Total>16000</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>16000</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-46941150</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65585267">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65585267/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

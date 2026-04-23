@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63285615">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3324616676</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND974520</fops:EntityCode>
+<fops:EntityName>Lopez Maynard and Pace</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">CW-4998-NOWK</fops:LocationCode>
+<fops:LocationName>As Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>34764 Moore Forge Suite 222</fops:AddressLine>
+<fops:City>Lake Christopher</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>40088</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">4714426700</fops:PhoneNumber>
+<fops:EmailAddress>dbaker@ryan.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">105416300</fops:EntityCode>
+<fops:EntityName>Riggs Jordan and Pineda</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YV-8258-OPWP</fops:LocationCode>
+<fops:LocationName>Former Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>390 Kayla Walk Suite 688</fops:AddressLine>
+<fops:City>New Tammychester</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>10861</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-04-28</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>671.55</fops:Total>
+<fops:VendorTotal>671.55</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Kevin</fops:FirstName>
+<fops:LastName>Ashley</fops:LastName>
+<fops:EmailAddress>crichardson@garcia.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ON-3278-APWV</fops:LocationCode>
+<fops:LocationName>Once Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:TransactionDateTime>2014-07-23T11:30:27</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Donald</fops:FirstName>
+<fops:LastName>Evans</fops:LastName>
+<fops:EmailAddress>zsalas@gutierrez-mitchell.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">ME-3815-KVWY</fops:LocationCode>
+<fops:LocationName>Might Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>363</fops:Quantity>
+<fops:UnitPrice>1.85</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2013-04-28</fops:PeriodStartDate>
+<fops:PeriodDate>2013-04-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>671.55</fops:LineSubTotal>
+<fops:LinePretaxTotal>671.55</fops:LinePretaxTotal>
+<fops:Total>671.55</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>671.55</fops:Total>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63285615">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63285615/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

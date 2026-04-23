@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="234389968">
+<fops:DocumentHeader>
+<fops:DocumentNumber>1829677705</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND301329</fops:EntityCode>
+<fops:EntityName>Brown Cross and Cantrell</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">GT-3757-TLWS</fops:LocationCode>
+<fops:LocationName>Somebody Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>21788 Jackson Drive Apt. 226</fops:AddressLine>
+<fops:City>Wanghaven</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>88457</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">5351197531</fops:PhoneNumber>
+<fops:EmailAddress>cwilliams@lee-kennedy.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">928487392</fops:EntityCode>
+<fops:EntityName>Brown Inc</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DV-6631-NPWK</fops:LocationCode>
+<fops:LocationName>Suddenly Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>5291 Lisa Prairie</fops:AddressLine>
+<fops:City>Butlerburgh</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>01074</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2023-12-24</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>1512</fops:Total>
+<fops:VendorTotal>1512</fops:VendorTotal>
+<fops:LineCount>7</fops:LineCount>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Matthew</fops:FirstName>
+<fops:LastName>Kelley</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">7022074340</fops:PhoneNumber>
+<fops:EmailAddress>harpermichelle@flores-walker.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YC-7302-CDWT</fops:LocationCode>
+<fops:LocationName>Better Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Operations South Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2023-11-20T08:35:07</fops:TransactionDateTime>
+<fops:TransactionIdentifier>556361</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Francisco</fops:FirstName>
+<fops:LastName>Boyd</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">7486383063</fops:PhoneNumber>
+<fops:EmailAddress>john17@long-powell.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">GW-4738-UGWI</fops:LocationCode>
+<fops:LocationName>Wife Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Operations South Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:CrossReference>
+<fops:DocumentNumber>1829677705</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+</fops:CrossReference>
+<fops:PeriodDate>2023-12-22</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Teresa</fops:FirstName>
+<fops:LastName>Taylor</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">7571792588</fops:PhoneNumber>
+<fops:EmailAddress>chasenicole@santana.net</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>120</fops:Quantity>
+<fops:Units>bbl</fops:Units>
+<fops:UnitPrice>1.8</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2023-12-20</fops:PeriodStartDate>
+<fops:PeriodDate>2023-12-20</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>216</fops:LineSubTotal>
+<fops:LinePretaxTotal>216</fops:LinePretaxTotal>
+<fops:Total>216</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>216</fops:Total>
+<fops:CostCenter>CC-34913</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Federal Pad</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>014</fops:AccountCode>
+<fops:Description>Electrical installation and commissioning</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">11/06/2023</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>11/06/2023</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>1829677705</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Jimenez, Estevan </fops:ContactNameOrLocation>
+<fops:EntityName>Brown Inc</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Sarah</fops:FirstName>
+<fops:LastName>Johnson</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Secondary">3781341001</fops:PhoneNumber>
+<fops:EmailAddress>shannon42@adams.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>120</fops:Quantity>
+<fops:Units>bbl</fops:Units>
+<fops:UnitPrice>1.8</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2023-12-19</fops:PeriodStartDate>
+<fops:PeriodDate>2023-12-19</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>216</fops:LineSubTotal>
+<fops:LinePretaxTotal>216</fops:LinePretaxTotal>
+<fops:Total>216</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>216</fops:Total>
+<fops:CostCenter>CC-61360</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Factor Lease</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>014</fops:AccountCode>
+<fops:Description>Wellsite services rendered per contract terms</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">11/06/2023</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>11/06/2023</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>1829677705</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Consulting services for production optimization</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Jimenez, Estevan </fops:ContactNameOrLocation>
+<fops:EntityName>Brown Inc</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Benjamin</fops:FirstName>
+<fops:LastName>Avila</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Secondary">1053420633</fops:PhoneNumber>
+<fops:EmailAddress>lindseywells@hill.com</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Field maintenance and inspection services</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="16">
+<fops:Attachment type="pdfInvoice" id="0genPdf234389968">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/234389968/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

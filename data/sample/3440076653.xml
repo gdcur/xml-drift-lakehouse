@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65733197">
+<fops:DocumentHeader>
+<fops:DocumentNumber>3440076653</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND198001</fops:EntityCode>
+<fops:EntityName>Stephens Levine and Charles</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EC-1532-UPWS</fops:LocationCode>
+<fops:LocationName>Radio Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>39364 Levine Drive</fops:AddressLine>
+<fops:City>New Valerieport</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>09259</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8783919092</fops:PhoneNumber>
+<fops:EmailAddress>jeromemonroe@garcia.info</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">406593120</fops:EntityCode>
+<fops:EntityName>Phillips-Smith</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">TA-5663-WQWP</fops:LocationCode>
+<fops:LocationName>Stay Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>5718 Sophia Grove Apt. 290</fops:AddressLine>
+<fops:City>Scottton</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>22547</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-05-17</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>240</fops:Total>
+<fops:VendorTotal>240</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Tyler</fops:FirstName>
+<fops:LastName>Sutton</fops:LastName>
+<fops:EmailAddress>moralesrhonda@wright-johnson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EP-1995-BXWY</fops:LocationCode>
+<fops:LocationName>Figure Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:TransactionDateTime>2014-07-29T14:10:55</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Tiffany</fops:FirstName>
+<fops:LastName>Moore</fops:LastName>
+<fops:EmailAddress>marie39@smith.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">ZY-1795-QWWA</fops:LocationCode>
+<fops:LocationName>Anyone Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Wellhead Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>6</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>40</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:PeriodStartDate>2014-04-18</fops:PeriodStartDate>
+<fops:PeriodDate>2014-04-23</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>240</fops:LineSubTotal>
+<fops:LinePretaxTotal>240</fops:LinePretaxTotal>
+<fops:Total>240</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>240</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-83666280</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65733197">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65733197/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

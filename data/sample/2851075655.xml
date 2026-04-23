@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64224862">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2851075655</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">319134411</fops:EntityCode>
+<fops:EntityName>Harmon LLC</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HI-1999-PWWI</fops:LocationCode>
+<fops:LocationName>Kid Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>09625 Bradley Motorway</fops:AddressLine>
+<fops:City>Bullockfurt</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>10360</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">8511820426</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">503505958</fops:EntityCode>
+<fops:EntityName>Reid-Hill</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">MY-5814-RUWW</fops:LocationCode>
+<fops:LocationName>Into Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>1851 Chavez Ville Apt. 016</fops:AddressLine>
+<fops:City>North Sean</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>86377</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-10-19</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>32.39</fops:Total>
+<fops:VendorTotal>32.39</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Matthew</fops:FirstName>
+<fops:LastName>Harrington</fops:LastName>
+<fops:EmailAddress>ashley38@boone.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">FZ-9962-SAWG</fops:LocationCode>
+<fops:LocationName>Her Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:TransactionDateTime>2014-06-30T10:30:11</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Dustin</fops:FirstName>
+<fops:LastName>Cannon</fops:LastName>
+<fops:EmailAddress>imoreno@williams.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">WZ-7212-GTWJ</fops:LocationCode>
+<fops:LocationName>Together Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2014-10-11</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">24GNITXLG</fops:ServiceCode>
+<fops:ProductDescription>Frac Tank</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>3</fops:Quantity>
+<fops:Units>BX</fops:Units>
+<fops:UnitPrice>10.795</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:PeriodStartDate>2014-10-11</fops:PeriodStartDate>
+<fops:PeriodDate>2014-10-11</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>StateandLocal</fops:TaxType>
+<fops:ExemptCode>Exempt</fops:ExemptCode>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>32.39</fops:LineSubTotal>
+<fops:LinePretaxTotal>32.39</fops:LinePretaxTotal>
+<fops:Total>32.39</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>32.39</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>2851075655</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64224862">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64224862/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

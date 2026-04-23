@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="202478069">
+<fops:DocumentHeader>
+<fops:DocumentNumber>5841992844</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">555159973</fops:EntityCode>
+<fops:EntityName>Johnson and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZW-5295-WCWZ</fops:LocationCode>
+<fops:LocationName>Center Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>67987 Christine Junction</fops:AddressLine>
+<fops:City>East Meredith</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>69287</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">7896144765</fops:PhoneNumber>
+<fops:EmailAddress>hallmelissa@tran.net</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">459662428</fops:EntityCode>
+<fops:EntityName>Davis-Patrick</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PJ-1295-LYWN</fops:LocationCode>
+<fops:LocationName>Best Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>843 Steve Harbor Suite 680</fops:AddressLine>
+<fops:City>Davidtown</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>91801</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2021-11-22</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>17270</fops:Total>
+<fops:VendorTotal>17270</fops:VendorTotal>
+<fops:LineCount>2</fops:LineCount>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Kristin</fops:FirstName>
+<fops:Initial>A</fops:Initial>
+<fops:LastName>Cole</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">2093727798</fops:PhoneNumber>
+<fops:EmailAddress>stephaniemiller@burns.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">TI-8097-WJWW</fops:LocationCode>
+<fops:LocationName>Girl Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Drilling Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2022-05-26T14:53:01</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554767</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Michael</fops:FirstName>
+<fops:Initial>A</fops:Initial>
+<fops:LastName>Duran</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">5007468710</fops:PhoneNumber>
+<fops:EmailAddress>ryan51@jones.info</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">YZ-8899-QDWN</fops:LocationCode>
+<fops:LocationName>Direction Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Drilling Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:CrossReference>
+<fops:DocumentNumber>5841992844</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+</fops:CrossReference>
+<fops:PeriodDate>2021-11-22</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Tom</fops:FirstName>
+<fops:Initial>A</fops:Initial>
+<fops:LastName>Ferguson</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">9956078879</fops:PhoneNumber>
+<fops:EmailAddress>dennis36@kennedy.com</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Flowback Equipment</fops:ProductDescription>
+<fops:ProductCategory>Drill Bit - Drill Bit</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>16575</fops:UnitPrice>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:PeriodStartDate>2021-11-22</fops:PeriodStartDate>
+<fops:PeriodDate>2021-11-22</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>State</fops:TaxType>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>16575</fops:LineSubTotal>
+<fops:LinePretaxTotal>16575</fops:LinePretaxTotal>
+<fops:Total>16575</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>16575</fops:Total>
+<fops:ProjectCode>PJ-4045-412</fops:ProjectCode>
+<fops:CostCenter>CC-01528</fops:CostCenter>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8120</fops:AccountCode>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>011</fops:AccountCode>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">05/01/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>05/01/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>5841992844</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Rig, Nabors7507 </fops:ContactNameOrLocation>
+<fops:EntityName>Davis-Patrick</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Brian</fops:FirstName>
+<fops:LastName>Kennedy</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">1727987616</fops:PhoneNumber>
+<fops:EmailAddress>melissa12@gibbs.org</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+<fops:ProductCategory>Freight Charge</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>1</fops:Quantity>
+<fops:Units>EA</fops:Units>
+<fops:UnitPrice>695</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2021-11-22</fops:PeriodStartDate>
+<fops:PeriodDate>2021-11-22</fops:PeriodDate>
+<fops:TaxEntry>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+<fops:TaxType>State</fops:TaxType>
+</fops:TaxEntry>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>695</fops:LineSubTotal>
+<fops:LinePretaxTotal>695</fops:LinePretaxTotal>
+<fops:Total>695</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>695</fops:Total>
+<fops:ProjectCode>MX-0587-888</fops:ProjectCode>
+<fops:CostCenter>CC-34959</fops:CostCenter>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8120</fops:AccountCode>
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>011</fops:AccountCode>
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">05/01/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>05/01/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>5841992844</fops:DocumentNumber>
+<fops:DocumentType>CONTRACT</fops:DocumentType>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Rig, Nabors7507 </fops:ContactNameOrLocation>
+<fops:EntityName>Davis-Patrick</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Angela</fops:FirstName>
+<fops:LastName>Gill</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">1375857741</fops:PhoneNumber>
+<fops:EmailAddress>greenkristin@williams-bradley.net</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+<fops:Notice code="GREEN">
+<fops:NoticeType>Ok</fops:NoticeType>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+<fops:RefInfo referenceInformationIndicator="Other" definitionOfOther="ContractRate">
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+</fops:RefInfo>
+</fops:Notice>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="4">
+<fops:Attachment type="pdfInvoice" id="0genPdf202478069">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/202478069/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

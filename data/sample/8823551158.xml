@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65582894">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8823551158</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND086503</fops:EntityCode>
+<fops:EntityName>Clay and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZC-7388-CZWG</fops:LocationCode>
+<fops:LocationName>Scene Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>7813 Brittney Points Suite 078</fops:AddressLine>
+<fops:City>Perezhaven</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>35682</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">2673296622</fops:PhoneNumber>
+<fops:EmailAddress>tracey47@clark-dunlap.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">047683958</fops:EntityCode>
+<fops:EntityName>Perez Shaw and Herring</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PD-3797-STWL</fops:LocationCode>
+<fops:LocationName>Become Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>124 Sanchez Manor Apt. 286</fops:AddressLine>
+<fops:City>West Charles</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>11775</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-11-22</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>9715</fops:Total>
+<fops:VendorTotal>9715</fops:VendorTotal>
+<fops:LineCount>6</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Jonathan</fops:FirstName>
+<fops:LastName>Hopkins</fops:LastName>
+<fops:EmailAddress>edward80@young-villarreal.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YP-6829-EDWF</fops:LocationCode>
+<fops:LocationName>Audience Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:TransactionDateTime>2014-07-28T14:40:44</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>James</fops:FirstName>
+<fops:LastName>Nguyen</fops:LastName>
+<fops:EmailAddress>cheryl99@bush-hill.biz</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">WL-1820-GCWJ</fops:LocationCode>
+<fops:LocationName>Mouth Lease</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>9</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>200</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2014-10-23</fops:PeriodStartDate>
+<fops:PeriodDate>2014-11-22</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1800</fops:LineSubTotal>
+<fops:LinePretaxTotal>1800</fops:LinePretaxTotal>
+<fops:Total>1800</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1800</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-83413245</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Wellhead Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>54</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>50</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:PeriodStartDate>2014-10-23</fops:PeriodStartDate>
+<fops:PeriodDate>2014-11-22</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>2700</fops:LineSubTotal>
+<fops:LinePretaxTotal>2700</fops:LinePretaxTotal>
+<fops:Total>2700</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2700</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-43903455</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65582894">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65582894/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

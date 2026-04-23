@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63510256">
+<fops:DocumentHeader>
+<fops:DocumentNumber>4544666241</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND006531</fops:EntityCode>
+<fops:EntityName>Snow Rivera and Vaughn</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LS-8303-RLWN</fops:LocationCode>
+<fops:LocationName>Partner Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>366 Cunningham Mountains</fops:AddressLine>
+<fops:City>Sparksberg</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>21619</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0290988592</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">209698807</fops:EntityCode>
+<fops:EntityName>Davis Liu and Riley</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">HL-3408-HAWV</fops:LocationCode>
+<fops:LocationName>Movement Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>4742 Rachel Expressway</fops:AddressLine>
+<fops:City>Matthewmouth</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>39931</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-11-23</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>117000</fops:Total>
+<fops:VendorTotal>117000</fops:VendorTotal>
+<fops:LineCount>9</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Adam</fops:FirstName>
+<fops:LastName>Murphy</fops:LastName>
+<fops:EmailAddress>catherinewilliams@hughes.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">CQ-9419-HGWK</fops:LocationCode>
+<fops:LocationName>Thought Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:TransactionDateTime>2014-06-24T10:20:36</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>David</fops:FirstName>
+<fops:LastName>Mata</fops:LastName>
+<fops:EmailAddress>longlisa@washington-lopez.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">JI-9505-TPWC</fops:LocationCode>
+<fops:LocationName>Senior Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>385327.2</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1001</fops:ServiceCode>
+<fops:ProductDescription>Compression Unit</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>21</fops:Quantity>
+<fops:Units>per trip</fops:Units>
+<fops:UnitPrice>3000</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2013-11-23</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-23</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>48326.3</fops:Total>
+<fops:AllocationRate>0.7670841</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>63000</fops:LineSubTotal>
+<fops:LinePretaxTotal>14673.7</fops:LinePretaxTotal>
+<fops:Total>14673.7</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>14673.7</fops:Total>
+<fops:WorkOrder>WO-61530506</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1027</fops:ServiceCode>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>26</fops:Quantity>
+<fops:Units>per run</fops:Units>
+<fops:UnitPrice>780</fops:UnitPrice>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:PeriodStartDate>2013-11-23</fops:PeriodStartDate>
+<fops:PeriodDate>2013-11-23</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>15556.47</fops:Total>
+<fops:AllocationRate>0.7670843</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>20280</fops:LineSubTotal>
+<fops:LinePretaxTotal>4723.53</fops:LinePretaxTotal>
+<fops:Total>4723.53</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>4723.53</fops:Total>
+<fops:WorkOrder>WO-91497981</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63510256">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63510256/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

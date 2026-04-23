@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="63834698">
+<fops:DocumentHeader>
+<fops:DocumentNumber>1567336256</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND233429</fops:EntityCode>
+<fops:EntityName>Ibarra-Gray</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IO-2724-NPWQ</fops:LocationCode>
+<fops:LocationName>Up Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>0061 Moore Flats Suite 498</fops:AddressLine>
+<fops:City>Williamsfort</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>05707</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">1984545665</fops:PhoneNumber>
+<fops:EmailAddress>matthew13@heath-mcfarland.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">140920345</fops:EntityCode>
+<fops:EntityName>Mathews and Sons</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">IV-5867-UUWH</fops:LocationCode>
+<fops:LocationName>Far Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>754 Nelson Inlet</fops:AddressLine>
+<fops:City>South Neil</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>28084</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-02-13</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>1028.5</fops:Total>
+<fops:VendorTotal>1028.5</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Catherine</fops:FirstName>
+<fops:LastName>Rodriguez</fops:LastName>
+<fops:EmailAddress>hilljesus@murphy.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LB-5176-PKWQ</fops:LocationCode>
+<fops:LocationName>Western Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:TransactionDateTime>2014-07-09T12:51:06</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Charles</fops:FirstName>
+<fops:LastName>Scott</fops:LastName>
+<fops:EmailAddress>vmoore@marsh-shaw.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">EH-4098-SOWY</fops:LocationCode>
+<fops:LocationName>Name Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Wireline Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>8.5</fops:Quantity>
+<fops:Units>hour</fops:Units>
+<fops:UnitPrice>121</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2014-02-13</fops:PeriodStartDate>
+<fops:PeriodDate>2014-02-13</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>1028.5</fops:LineSubTotal>
+<fops:LinePretaxTotal>1028.5</fops:LinePretaxTotal>
+<fops:Total>1028.5</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1028.5</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>1567336256</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf63834698">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/63834698/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

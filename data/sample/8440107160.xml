@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="64728989">
+<fops:DocumentHeader>
+<fops:DocumentNumber>8440107160</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND076319</fops:EntityCode>
+<fops:EntityName>Bass-Willis</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">DW-5469-OKWF</fops:LocationCode>
+<fops:LocationName>He Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>505 Velasquez Wells Suite 694</fops:AddressLine>
+<fops:City>Williamsborough</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>65345</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">5508762251</fops:PhoneNumber>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">293083592</fops:EntityCode>
+<fops:EntityName>Richard-Robinson</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">NZ-8217-KRWW</fops:LocationCode>
+<fops:LocationName>Year Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>4659 White Junction</fops:AddressLine>
+<fops:City>Ingramton</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>43726</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2013-06-25</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_LIDO</fops:SubmissionMethod>
+<fops:Total>21988.94</fops:Total>
+<fops:VendorTotal>21988.94</fops:VendorTotal>
+<fops:LineCount>17</fops:LineCount>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Jennifer</fops:FirstName>
+<fops:LastName>Arnold</fops:LastName>
+<fops:EmailAddress>rachel48@hart.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YL-3163-EOWT</fops:LocationCode>
+<fops:LocationName>Grow Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Chemical treatment program — Q3 operations</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T12:30:36</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Angela</fops:FirstName>
+<fops:LastName>Cooper</fops:LastName>
+<fops:EmailAddress>karen02@rodgers.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">YJ-1968-CHWJ</fops:LocationCode>
+<fops:LocationName>Economic Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>54687.09</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1001</fops:ServiceCode>
+<fops:ProductDescription>Wellhead Service</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>3</fops:Quantity>
+<fops:Units>per trip</fops:Units>
+<fops:UnitPrice>3000</fops:UnitPrice>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:PeriodStartDate>2013-06-25</fops:PeriodStartDate>
+<fops:PeriodDate>2013-06-25</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>7815.64</fops:Total>
+<fops:AllocationRate>0.8684044</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>9000</fops:LineSubTotal>
+<fops:LinePretaxTotal>1184.36</fops:LinePretaxTotal>
+<fops:Total>1184.36</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>1184.36</fops:Total>
+<fops:WorkOrder>WO-82093805</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">1003</fops:ServiceCode>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>3</fops:Quantity>
+<fops:Units>min</fops:Units>
+<fops:UnitPrice>1980</fops:UnitPrice>
+<fops:Notes>Equipment rental and mobilization charges</fops:Notes>
+<fops:PeriodStartDate>2013-06-25</fops:PeriodStartDate>
+<fops:PeriodDate>2013-06-25</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>5940</fops:LineSubTotal>
+<fops:LinePretaxTotal>5940</fops:LinePretaxTotal>
+<fops:Total>5940</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>5940</fops:Total>
+<fops:WorkOrder>WO-01249447</fops:WorkOrder>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf64728989">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/64728989/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

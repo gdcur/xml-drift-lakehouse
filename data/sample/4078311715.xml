@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="216453402">
+<fops:DocumentHeader>
+<fops:DocumentNumber>4078311715</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND946869</fops:EntityCode>
+<fops:EntityName>Rollins-Schroeder</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">YB-6700-KMWE</fops:LocationCode>
+<fops:LocationName>Popular Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>4704 Elizabeth Track Suite 037</fops:AddressLine>
+<fops:City>West Michael</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>19344</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">642816921</fops:EntityCode>
+<fops:EntityName>Eaton Anderson and Ochoa</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">PR-4888-OSWV</fops:LocationCode>
+<fops:LocationName>Project Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>975 Baker Ridge Suite 840</fops:AddressLine>
+<fops:City>Orozcochester</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>43764</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2022-08-03</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Buyer_Image_OnBehalfOf</fops:SubmissionMethod>
+<fops:Total>338.09</fops:Total>
+<fops:VendorTotal>338.09</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Lisa</fops:FirstName>
+<fops:LastName>Anderson</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">8234264129</fops:PhoneNumber>
+<fops:EmailAddress>tholden@wright.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZN-4288-ZEWH</fops:LocationCode>
+<fops:LocationName>What Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Engineering Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2023-01-19T07:10:59</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554848</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Deborah</fops:FirstName>
+<fops:LastName>Valdez</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">9976788353</fops:PhoneNumber>
+<fops:EmailAddress>andrewallen@ward-dixon.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">NC-3391-GCWR</fops:LocationCode>
+<fops:LocationName>Data Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Engineering Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2022-07-28</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Jill</fops:FirstName>
+<fops:LastName>Zimmerman</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">7544281700</fops:PhoneNumber>
+<fops:EmailAddress>aliciahernandez@russell.com</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>338.09</fops:Total>
+<fops:CostCenter>CC-12348</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Nearly Well</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>015</fops:AccountCode>
+<fops:Description>Field maintenance and inspection services</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">12/29/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>12/29/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>338.09</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodDate>2022-07-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>338.09</fops:Total>
+<fops:CostCenter>CC-78936</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Different Block</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>015</fops:AccountCode>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">12/29/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>12/29/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:RequestedBy>Martin, Shaun </fops:RequestedBy>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf216453402">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/216453402/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

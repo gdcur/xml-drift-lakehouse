@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:SummaryInvoice id="216453221">
+<fops:DocumentHeader>
+<fops:DocumentNumber>2471407327</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND831708</fops:EntityCode>
+<fops:EntityName>Garcia Mclaughlin and Riddle</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ZW-6560-EZWV</fops:LocationCode>
+<fops:LocationName>Town Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>681 Mathis Lake</fops:AddressLine>
+<fops:City>West Ericburgh</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>43034</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">287381622</fops:EntityCode>
+<fops:EntityName>Rodriguez-Harris</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">EG-0299-QOWO</fops:LocationCode>
+<fops:LocationName>On Lease</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>377 Ruiz Port Apt. 765</fops:AddressLine>
+<fops:City>Marquezport</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>81994</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2023-09-15</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Buyer_Image_OnBehalfOf</fops:SubmissionMethod>
+<fops:Total>161.7</fops:Total>
+<fops:VendorTotal>161.7</fops:VendorTotal>
+<fops:LineCount>1</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Lori</fops:FirstName>
+<fops:LastName>Williams</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">4155328662</fops:PhoneNumber>
+<fops:EmailAddress>christinerosario@howell-ramos.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">JG-1587-VCWQ</fops:LocationCode>
+<fops:LocationName>Ability Block</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Engineering Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2023-01-19T07:10:50</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554848</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Holly</fops:FirstName>
+<fops:LastName>Clark</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">2398987119</fops:PhoneNumber>
+<fops:EmailAddress>richarddavis@garza-hancock.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">EF-0318-LCWD</fops:LocationCode>
+<fops:LocationName>Focus Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Engineering Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:PeriodDate>2023-09-09</fops:PeriodDate>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Jamie</fops:FirstName>
+<fops:LastName>Miller</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">9065931662</fops:PhoneNumber>
+<fops:EmailAddress>roger61@espinoza.com</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>161.7</fops:Total>
+<fops:CostCenter>CC-34309</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>See Lease</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Electrical installation and commissioning</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>015</fops:AccountCode>
+<fops:Description>Wellsite services rendered per contract terms</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">12/29/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>12/29/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:Quantity>1</fops:Quantity>
+<fops:UnitPrice>161.7</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodDate>2023-09-09</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Other</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>161.7</fops:Total>
+<fops:CostCenter>CC-44216</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Month Basin</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>015</fops:AccountCode>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">12/29/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>12/29/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:RequestedBy>Martin, Shaun </fops:RequestedBy>
+<fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:SummaryInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf216453221">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/216453221/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

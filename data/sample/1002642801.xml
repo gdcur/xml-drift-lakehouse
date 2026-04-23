@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="65605339">
+<fops:DocumentHeader>
+<fops:DocumentNumber>1002642801</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND736257</fops:EntityCode>
+<fops:EntityName>Pitts Moon and Brown</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">AK-0963-OYWJ</fops:LocationCode>
+<fops:LocationName>Before Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>6990 Miranda Crest Apt. 429</fops:AddressLine>
+<fops:City>West Kaylachester</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>25740</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">0537870032</fops:PhoneNumber>
+<fops:EmailAddress>jamesgomez@johnson.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">194115715</fops:EntityCode>
+<fops:EntityName>Robinson-Randolph</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">JR-9777-REWT</fops:LocationCode>
+<fops:LocationName>Safe Block</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>30228 Michelle Points</fops:AddressLine>
+<fops:City>Diazfurt</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>34834</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2014-04-10</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>13170</fops:Total>
+<fops:VendorTotal>13170</fops:VendorTotal>
+<fops:LineCount>3</fops:LineCount>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Sabrina</fops:FirstName>
+<fops:LastName>Little</fops:LastName>
+<fops:EmailAddress>robertfrench@shaffer-brown.net</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">ML-3507-KNWS</fops:LocationCode>
+<fops:LocationName>Pm Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:TransactionDateTime>2014-07-24T07:20:13</fops:TransactionDateTime>
+<fops:TransactionIdentifier>51327</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Daniel</fops:FirstName>
+<fops:LastName>Pugh</fops:LastName>
+<fops:EmailAddress>michelefowler@thomas.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">CX-5788-ANWX</fops:LocationCode>
+<fops:LocationName>Every Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Accounts Payable</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Compression Unit</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>44</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>200</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2014-03-11</fops:PeriodStartDate>
+<fops:PeriodDate>2014-04-10</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>8800</fops:LineSubTotal>
+<fops:LinePretaxTotal>8800</fops:LinePretaxTotal>
+<fops:Total>8800</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>8800</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-84042631</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Coiled Tubing</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>44</fops:Quantity>
+<fops:Units>1</fops:Units>
+<fops:UnitPrice>50</fops:UnitPrice>
+<fops:Notes>Wellsite services rendered per contract terms</fops:Notes>
+<fops:PeriodStartDate>2014-03-11</fops:PeriodStartDate>
+<fops:PeriodDate>2014-04-10</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>2200</fops:LineSubTotal>
+<fops:LinePretaxTotal>2200</fops:LinePretaxTotal>
+<fops:Total>2200</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>2200</fops:Total>
+<fops:SiteReference locationType="DestinationLocation">
+</fops:SiteReference>
+<fops:OrderReference>PO-03418234</fops:OrderReference>
+</fops:Allocation>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf65605339">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/65605339/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

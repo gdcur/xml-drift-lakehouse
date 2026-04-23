@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="UAPINVOICE"><fops:DetailedInvoice id="213669556">
+<fops:DocumentHeader>
+<fops:DocumentNumber>5079337274</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">998104562</fops:EntityCode>
+<fops:EntityName>Mendoza Ltd</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">KP-8598-WWWK</fops:LocationCode>
+<fops:LocationName>Trouble Pad</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>650 Mary Run</fops:AddressLine>
+<fops:City>West Tinamouth</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>96879</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">3319403521</fops:PhoneNumber>
+<fops:EmailAddress>barbaraowens@malone.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">326185844</fops:EntityCode>
+<fops:EntityName>Vance Sherman and Vargas</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">OL-3636-LRWD</fops:LocationCode>
+<fops:LocationName>Catch Field</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>9838 Cannon Square</fops:AddressLine>
+<fops:City>Floresfort</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>57076</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2022-09-08</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_B2B</fops:SubmissionMethod>
+<fops:Total>597</fops:Total>
+<fops:VendorTotal>597</fops:VendorTotal>
+<fops:LineCount>2</fops:LineCount>
+<fops:Notes>Mechanical services — compressor overhaul</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Abigail</fops:FirstName>
+<fops:LastName>Evans</fops:LastName>
+<fops:PhoneNumber PhoneNumberType="Primary">1924181776</fops:PhoneNumber>
+<fops:EmailAddress>oroman@fernandez-flynn.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">VX-7141-TGWG</fops:LocationCode>
+<fops:LocationName>Really Pad</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Tax</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Forward</fops:ActionType>
+<fops:Status>Re-Submitted</fops:Status>
+<fops:TransactionDateTime>2023-03-22T12:03:48</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554853</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Ricardo</fops:FirstName>
+<fops:LastName>Robbins</fops:LastName>
+<fops:PhoneNumber phoneNumberIndicator="Primary">0090858324</fops:PhoneNumber>
+<fops:EmailAddress>qbooth@levy.org</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">SC-9073-MAWQ</fops:LocationCode>
+<fops:LocationName>Partner Well</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Operations Dispute Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Department>
+<fops:DepartmentName>Tax</fops:DepartmentName>
+</fops:Department>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">10-1008HRS</fops:ServiceCode>
+<fops:ProductDescription>Frac Tank</fops:ProductDescription>
+<fops:ProductCategory>Transportation and Logistics</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>5</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>105</fops:UnitPrice>
+<fops:Notes>Hot-shot transportation and logistics</fops:Notes>
+<fops:PeriodStartDate>2022-08-21</fops:PeriodStartDate>
+<fops:PeriodDate>2022-08-21</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>525</fops:LineSubTotal>
+<fops:LinePretaxTotal>525</fops:LinePretaxTotal>
+<fops:Total>525</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>525</fops:Total>
+<fops:CostCenter>CC-32152</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Kid Field</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>028</fops:AccountCode>
+<fops:Description>Pipeline integrity assessment services</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">11/11/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>11/11/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>5079337274</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Morgan, James </fops:ContactNameOrLocation>
+<fops:EntityName>Vance Sherman and Vargas</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Emily</fops:FirstName>
+<fops:LastName>Stevens</fops:LastName>
+<fops:EmailAddress>rpage@hawkins-higgins.net</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ServiceCode codeIndicator="AssignedByVendor">21-5020BBL</fops:ServiceCode>
+<fops:ProductDescription>Flowback Equipment</fops:ProductDescription>
+<fops:ProductCategory>NPT Rental</fops:ProductCategory>
+</fops:ServiceItem>
+<fops:Quantity>120</fops:Quantity>
+<fops:Units>BBL</fops:Units>
+<fops:UnitPrice>0.6</fops:UnitPrice>
+<fops:Notes>Environmental monitoring and compliance</fops:Notes>
+<fops:PeriodStartDate>2022-08-21</fops:PeriodStartDate>
+<fops:PeriodDate>2022-08-21</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>72</fops:LineSubTotal>
+<fops:LinePretaxTotal>72</fops:LinePretaxTotal>
+<fops:Total>72</fops:Total>
+<fops:Category CategorizationScheme="ocpChargeType">
+<fops:CategoryCode>Service and Equipment</fops:CategoryCode>
+</fops:Category>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>72</fops:Total>
+<fops:CostCenter>CC-48012</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Lay Well</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>028</fops:AccountCode>
+<fops:Description>Electrical installation and commissioning</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">11/11/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>11/11/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>5079337274</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Morgan, James </fops:ContactNameOrLocation>
+<fops:EntityName>Vance Sherman and Vargas</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>David</fops:FirstName>
+<fops:LastName>Rubio</fops:LastName>
+<fops:EmailAddress>james19@williams.org</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf213669556">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/213669556/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" type="APINVOICE"><fops:DetailedInvoice id="198207537">
+<fops:DocumentHeader>
+<fops:DocumentNumber>4422565572</fops:DocumentNumber>
+<fops:Party PartyRole="Vendor">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="VendorID">VEND359784</fops:EntityCode>
+<fops:EntityName>Guerrero-Diaz</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">AK-5346-JYWH</fops:LocationCode>
+<fops:LocationName>Know Basin</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>63058 Amy Extensions Suite 246</fops:AddressLine>
+<fops:City>New Dale</fops:City>
+<fops:StateProvince>Texas</fops:StateProvince>
+<fops:StateProvinceCode>TX</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>27976</fops:PostalZipCode>
+<fops:PhoneNumber PhoneNumberType="Primary">4990612552</fops:PhoneNumber>
+<fops:EmailAddress>jonathanreeves@vance.com</fops:EmailAddress>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:Party PartyRole="Client">
+<fops:Entity>
+<fops:EntityCode EntityCodeType="GlobalID">149641429</fops:EntityCode>
+<fops:EntityName>Garcia Austin and Walsh</fops:EntityName>
+</fops:Entity>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">JK-9840-LQWN</fops:LocationCode>
+<fops:LocationName>Certain Well</fops:LocationName>
+<fops:Address AddressType="Mailing">
+<fops:AddressLine>3051 Hill Junctions Suite 024</fops:AddressLine>
+<fops:City>Chungbury</fops:City>
+<fops:StateProvince>Oklahoma</fops:StateProvince>
+<fops:StateProvinceCode>OK</fops:StateProvinceCode>
+<fops:Country>United States of America</fops:Country>
+<fops:CountryCode>US</fops:CountryCode>
+<fops:PostalZipCode>94663</fops:PostalZipCode>
+</fops:Address>
+</fops:Location>
+</fops:Party>
+<fops:DocumentDate>2021-02-28</fops:DocumentDate>
+<fops:DocumentType>Original Invoice</fops:DocumentType>
+<fops:SubmissionMethod>Supplier_Regular_Direct</fops:SubmissionMethod>
+<fops:Total>772</fops:Total>
+<fops:VendorTotal>772</fops:VendorTotal>
+<fops:LineCount>2</fops:LineCount>
+<fops:Notes>Pipeline integrity assessment services</fops:Notes>
+<fops:CurrencyCode>USD</fops:CurrencyCode>
+<fops:Action>
+<fops:Contact Role="DocumentActionPerformer">
+<fops:FirstName>Kyle</fops:FirstName>
+<fops:LastName>Mitchell</fops:LastName>
+<fops:EmailAddress>collinsdustin@jones-swanson.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode LocationCodeType="AssignedByClient">LT-0852-GMWM</fops:LocationCode>
+<fops:LocationName>Lay Basin</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Ops Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:Contact>
+<fops:ActionType>Approve</fops:ActionType>
+<fops:Status>Approved</fops:Status>
+<fops:TransactionDateTime>2022-08-08T10:07:02</fops:TransactionDateTime>
+<fops:TransactionIdentifier>554766</fops:TransactionIdentifier>
+<fops:ActionSource role="DocumentActionPerformer">
+<fops:FirstName>Crystal</fops:FirstName>
+<fops:LastName>Shepherd</fops:LastName>
+<fops:EmailAddress>kimberlywilliams@juarez-joseph.com</fops:EmailAddress>
+<fops:Location>
+<fops:LocationCode siteCodeIndicator="AssignedByClient">WL-8213-DOWB</fops:LocationCode>
+<fops:LocationName>Message Field</fops:LocationName>
+</fops:Location>
+<fops:Department>
+<fops:DepartmentName>Production Ops Approval Dept.</fops:DepartmentName>
+</fops:Department>
+</fops:ActionSource>
+</fops:Action>
+<fops:DiscountTotal>0</fops:DiscountTotal>
+<fops:CurrentOwner>
+<fops:Contact Role="Contact">
+<fops:FirstName>Amber</fops:FirstName>
+<fops:LastName>Lucas</fops:LastName>
+<fops:EmailAddress>sosajudith@greer.com</fops:EmailAddress>
+</fops:Contact>
+</fops:CurrentOwner>
+</fops:DocumentHeader>
+<fops:DocumentLines>
+<fops:LineEntry>
+<fops:LineNumber>1</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Hot Oil Treatment</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>4</fops:Quantity>
+<fops:Units>HR</fops:Units>
+<fops:UnitPrice>118</fops:UnitPrice>
+<fops:Notes>Field maintenance and inspection services</fops:Notes>
+<fops:PeriodStartDate>2021-02-28</fops:PeriodStartDate>
+<fops:PeriodDate>2021-02-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>472</fops:LineSubTotal>
+<fops:LinePretaxTotal>472</fops:LinePretaxTotal>
+<fops:Total>472</fops:Total>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>472</fops:Total>
+<fops:CostCenter>CC-97523</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Inside Block</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Chemical treatment program — Q3 operations</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>028</fops:AccountCode>
+<fops:Description>Environmental monitoring and compliance</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">02/16/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>02/16/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>4422565572</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Morgan, James </fops:ContactNameOrLocation>
+<fops:EntityName>Garcia Austin and Walsh</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>Rhonda</fops:FirstName>
+<fops:LastName>Gentry</fops:LastName>
+<fops:EmailAddress>ryan16@cox-matthews.biz</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+</fops:LineEntry>
+<fops:LineEntry>
+<fops:LineNumber>2</fops:LineNumber>
+<fops:ServiceItem>
+<fops:ProductDescription>Rod Pump</fops:ProductDescription>
+</fops:ServiceItem>
+<fops:Quantity>4</fops:Quantity>
+<fops:Units>Hour</fops:Units>
+<fops:UnitPrice>75</fops:UnitPrice>
+<fops:Notes>Consulting services for production optimization</fops:Notes>
+<fops:PeriodStartDate>2021-02-28</fops:PeriodStartDate>
+<fops:PeriodDate>2021-02-28</fops:PeriodDate>
+<fops:Discount>
+<fops:Total>0</fops:Total>
+<fops:AllocationRate>0</fops:AllocationRate>
+</fops:Discount>
+<fops:LineSubTotal>300</fops:LineSubTotal>
+<fops:LinePretaxTotal>300</fops:LinePretaxTotal>
+<fops:Total>300</fops:Total>
+<fops:Allocation>
+<fops:AllocationRate>1</fops:AllocationRate>
+<fops:Total>300</fops:Total>
+<fops:CostCenter>CC-58302</fops:CostCenter>
+<fops:SiteReference locationType="DestinationLocation">
+<fops:SiteRefName>Rate Field</fops:SiteRefName>
+</fops:SiteReference>
+<fops:AccountInfo>
+<fops:AccountMajor>
+<fops:AccountCode>8200</fops:AccountCode>
+<fops:Description>Equipment rental and mobilization charges</fops:Description>
+<fops:AccountType>E</fops:AccountType>
+</fops:AccountMajor>
+<fops:AccountMinor>
+<fops:AccountCode>028</fops:AccountCode>
+<fops:Description>Mechanical services — compressor overhaul</fops:Description>
+</fops:AccountMinor>
+</fops:AccountInfo>
+<fops:Metadata internal_code="SerDatOverride">02/16/2022</fops:Metadata>
+<fops:RefData code="SerDatOverride" name="Activity Date" type="Date">
+<fops:Value>02/16/2022</fops:Value>
+</fops:RefData>
+</fops:Allocation>
+<fops:CrossReference>
+<fops:DocumentNumber>4422565572</fops:DocumentNumber>
+<fops:DocumentType>SERVICERECORD</fops:DocumentType>
+</fops:CrossReference>
+<fops:ChargeClass>Itemized</fops:ChargeClass>
+<fops:Contact contactType="Requisitioner">
+<fops:ContactNameOrLocation>Morgan, James </fops:ContactNameOrLocation>
+<fops:EntityName>Garcia Austin and Walsh</fops:EntityName>
+<fops:Contact Role="Contact">
+<fops:FirstName>George</fops:FirstName>
+<fops:LastName>Miranda</fops:LastName>
+<fops:EmailAddress>rramirez@jones.net</fops:EmailAddress>
+</fops:Contact>
+</fops:Contact>
+</fops:LineEntry>
+</fops:DocumentLines>
+</fops:DetailedInvoice>
+<fops:Attachments numOfAttachments="2">
+<fops:Attachment type="pdfInvoice" id="0genPdf198207537">
+<fops:LocationPath>/docp/supply-chain/v1/invoices/198207537/snapshot</fops:LocationPath>
+<fops:ContentType>application/pdf</fops:ContentType>
+</fops:Attachment>
+</fops:Attachments>
+</fops:StandardBillingDocument>
