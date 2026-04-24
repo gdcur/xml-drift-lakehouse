@@ -28,10 +28,6 @@ Environment variables (set in docker/.env or Airflow Variables):
   OLLAMA_MODEL        ollama model name (default: llama3)
   OLLAMA_HOST         ollama host (default: http://localhost:11434)
 
-PRIVATE:
-  - Add Airflow sensor after rag_mapping to block on pending_human decisions
-  - Add partition parameter (ds) to parser.py for date-partitioned output
-  - Add promote_to_final task after dbt_test
 """
 
 import json
@@ -93,7 +89,6 @@ with DAG(
         Writes invoices.parquet + line_items.parquet to output/.
         Idempotent — same input always produces same output.
 
-        PRIVATE: add --date {{ ds }} for date-partitioned output
         """,
     )
 
@@ -175,7 +170,6 @@ with DAG(
           - ollama: local, free, no API key needed
           - claude: Anthropic API, best quality, needs ANTHROPIC_API_KEY
 
-        PRIVATE: add Airflow sensor here to block on pending_human decisions
         """,
     )
 
@@ -192,7 +186,7 @@ with DAG(
         Builds stg_detailed_invoice and stg_summary_invoice views.
         Reads directly from Parquet via read_parquet().
         """,
-        trigger_rule="none_failed",   # runs even if check_drift short-circuited rag_mapping
+        trigger_rule="all_done",   # runs even if check_drift short-circuited rag_mapping
     )
 
     # ── Task 6: dbt intermediate ──────────────────────────────────────────────
@@ -222,7 +216,6 @@ with DAG(
         doc_md="""
         Builds mart_invoices as a DuckDB table.
         Final analytical layer — both variants reconciled, enriched.
-        PRIVATE: add promote_to_final step after this
         """,
     )
 
@@ -254,14 +247,15 @@ with DAG(
         task_id="cleanup_staging",
         python_callable=_cleanup_staging,
         doc_md="""
-        Removes staging Parquets after successful mart build + tests.
-        Only runs if dbt_test passed — data is safe in lakehouse.duckdb.
-        PRIVATE: replace with promote_to_final → archive staging
+        Removes staging Parquets from the previous run before parsing begins.
+        Ensures each run starts clean with no stale data from failed previous runs.
         """,
     )
 
     # ── Dependencies ───────────────────────────────────────────────────────────
     #
+    # cleanup_staging
+    #      ↓
     #  parse_xmls
     #      ↓
     #  schema_diff
@@ -279,9 +273,7 @@ with DAG(
     #               dbt_mart
     #                    ↓
     #               dbt_test
-    #                    ↓
-    #            cleanup_staging
     #
-    parse_xmls >> schema_diff >> check_drift >> rag_mapping >> dbt_staging
+    cleanup_staging >> parse_xmls >> schema_diff >> check_drift >> rag_mapping >> dbt_staging
     check_drift >> dbt_staging   # direct path when short-circuited
-    dbt_staging >> dbt_intermediate >> dbt_mart >> dbt_test >> cleanup_staging
+    dbt_staging >> dbt_intermediate >> dbt_mart >> dbt_test 

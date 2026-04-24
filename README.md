@@ -1,11 +1,25 @@
 # xml-drift-lakehouse
 ![Status](https://img.shields.io/badge/status-work%20in%20progress-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow-informational)
+![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow%20%7C%20Docker-informational)
+
+> Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
 
 A production-grade, schema-on-read XML ingestion toolkit with automated structural drift detection and AI-assisted field mapping.
 
-Built as a portfolio project to demonstrate real-world data engineering patterns: immutable raw storage, replayable transformations, and a RAG pipeline that handles schema evolution without manual intervention.
+Built as a portfolio project to demonstrate real-world data engineering patterns: immutable raw storage, replayable transformations, and an LLM-assisted pipeline that handles schema evolution without manual intervention.
+
+### Benchmark
+
+Tested on a standard Linux workstation (32GB RAM, 8GB GPU, SSD), no cloud dependencies. GPU used by Ollama for LLM inference during drift mapping; the pipeline itself runs entirely on CPU.
+
+| Dataset | Files | Line Items | Duration | dbt Tests |
+|---------|-------|------------|----------|-----------|
+| Sample  | 10 | ~53 | ~5s | 51/51 ✅ |
+| Standard | 3,000 | 16,151 | 96s | 51/51 ✅ |
+| Stress | 100,000 | 549,938 | 7m 28s | 51/51 ✅ |
+
+Half a million rows reconciled across two structural XML variants, fully tested, on a local stack. No cloud required.
 
 ---
 
@@ -36,7 +50,7 @@ Key patterns:
 - **Relational explosion** — hierarchical XML nodes are flattened into separate tables preserving parent-child relationships
 - **Variant reconciliation** — multiple structural variants of the same entity are unified at the analytical layer via UNION ALL and COALESCE across divergent field names
 - **Defensive casting** — CAST/COALESCE/NULLIF patterns handle empty strings, null fields, and type mismatches across variants
-- **RAG-assisted drift detection** — new or unknown fields are semantically mapped to the known schema using an LLM, with confidence-tiered routing to auto-approve, human review, or pipeline pause
+- **LLM-assisted drift mapping** — new or unknown fields are mapped to the known schema by sending the full field corpus directly in the LLM prompt, with confidence-tiered routing to auto-approve, human review, or pipeline pause. The architecture is designed to support a full RAG implementation (local vector store + semantic retrieval) as a drop-in upgrade — not included here to keep the stack lightweight and dependency-free
 
 ---
 
@@ -58,7 +72,10 @@ XML Source
   - diff.json + diff.md written for audit trail
     |
     v
-[ RAG Field Mapping ]  ← only fires if drift detected
+[ LLM Field Mapping ]  ← only fires if drift detected
+  - Full schema corpus injected into LLM prompt
+  - LLM suggests mapping + confidence + reasoning
+  - Vector store retrieval (true RAG) ready as drop-in upgrade
   - New fields sent to LLM with full schema context
   - Confidence-tiered routing:
       ≥ 0.90  auto_approved  → pipeline continues
@@ -104,7 +121,7 @@ The dataset contains two structurally distinct invoice types, both handled trans
 
 | Feature | DetailedInvoice | SummaryInvoice |
 |---------|----------------|----------------|
-| Distribution | 60.2% (938 files) | 39.8% (620 files) |
+| Distribution | ~60% of test dataset | ~40% of test dataset |
 | Line items | Full unit economics | Lean |
 | ProductDescription / ServiceCode | Yes | No |
 | LineSubTotal / LinePretaxTotal | Yes | No |
@@ -119,7 +136,7 @@ The reconciliation logic uses `COALESCE` across variants in the mart layer — t
 
 ## Phase 2 in Action — Real Run Output
 
-Schema drift detected on a live run with 1,558 XML files:
+Schema drift detected on a live run with 3,000 AI-generated XML files:
 
 ```
 ⚠️  Schema drift detected:
@@ -217,6 +234,43 @@ Then delete the affected partition and re-run dbt. Raw data unchanged.
 
 ---
 
+## Customizing the Baseline
+
+The baseline is the `BASELINE_FIELDS` dictionary in `ingestion/schema_diff.py`. It defines what the pipeline considers a known, expected field. Anything not in this dictionary is treated as drift and routed to the RAG mapper.
+
+The baseline shipped with this repo was built from hands-on experience with real invoice XML feeds. It covers the field set most commonly found in vendor billing documents: header fields (document identifiers, dates, amounts, vendor info, contact details), line fields (quantities, prices, service codes, categories), and allocation fields (cost centers, project codes, account codes). It is a solid starting point for any invoice-style XML feed, but it will need to be adapted to your specific source system and vendor agreements.
+
+**Adapting the baseline to your feed:**
+
+Open `ingestion/schema_diff.py` and edit `BASELINE_FIELDS` directly. For each field you want to declare as known:
+
+```python
+"YourFieldName": {
+    "type":        "string",       # string, decimal, integer, date, datetime
+    "position":    "header",       # header, line, allocation
+    "variants":    ["both"],       # ["both"], ["DetailedInvoice"], ["SummaryInvoice"]
+    "description": "What this field contains"
+},
+```
+
+Run the pipeline once against a sample of your files. Any field not in the dictionary will appear in `diff.json` and be routed to the RAG mapper. Review the results, confirm the mappings, add the confirmed fields to `BASELINE_FIELDS`, and commit. That is your baseline.
+
+**Growing the baseline over time:**
+
+When the RAG mapper approves a new field mapping, it writes the decision to `mapping_registry` but does not automatically update the baseline. That is intentional — a human should confirm before a new field becomes a permanent part of the known schema.
+
+The workflow is:
+
+1. RAG mapper flags a new field, writes decision to `mapping_registry`
+2. Human reviews the mapping (correct it in `mapping_registry` if wrong)
+3. Add the confirmed field to `BASELINE_FIELDS` in `schema_diff.py`
+4. Commit the updated file
+5. Next run: the field is known, no drift triggered
+
+This keeps the baseline under version control, auditable, and deliberately maintained rather than auto-updated by the pipeline.
+
+---
+
 ## Local Stack
 
 This toolkit runs entirely locally without cloud dependencies, making it portable and easy to evaluate.
@@ -224,7 +278,6 @@ This toolkit runs entirely locally without cloud dependencies, making it portabl
 | Layer | Tool |
 |-------|------|
 | XML parsing | Python + lxml |
-| Data anonymization | Faker |
 | Storage | Local Parquet files |
 | Query engine | DuckDB |
 | Transformation | dbt Core + dbt-duckdb |
@@ -249,15 +302,12 @@ The local stack is deliberately designed to mirror the architectural patterns of
 ```
 xml-drift-lakehouse/
 ├── data/
-│   └── sample/              # Sanitized XML samples (2 variants, 1558 files)
+│   └── sample/              # Sample XML files (2 variants, 10 files — see Data section)
 ├── ingestion/
-│   ├── sanitize.py          # Anonymize raw XMLs with Faker (idempotent)
-│   ├── remap.py             # Remap to public domain-agnostic schema
-│   ├── verify.py            # Pre-commit sensitive data scanner
-│   ├── parser.py            # Schema-on-read XML to Parquet
-│   ├── schema_discovery.py  # Structural profiler — field coverage per variant
-│   ├── schema_diff.py       # Compare today's schema vs known baseline
-│   └── rag_mapper.py        # LLM field mapper + confidence scorer + registry
+│   ├── parser.py               # Schema-on-read XML to Parquet
+│   ├── schema_discovery.py     # Structural profiler, field coverage per variant
+│   ├── schema_diff.py          # Compare today's schema vs known baseline
+│   └── rag_mapper.py           # LLM field mapper + confidence scorer + registry
 ├── dbt/
 │   ├── models/
 │   │   ├── staging/         # stg_detailed_invoice, stg_summary_invoice
@@ -289,7 +339,7 @@ xml-drift-lakehouse/
 git clone https://github.com/gdcur/xml-drift-lakehouse
 cd xml-drift-lakehouse
 python -m venv .venv && source .venv/bin/activate
-pip install lxml polars dbt-duckdb faker duckdb
+pip install lxml polars dbt-duckdb duckdb
 
 # Run ingestion
 python ingestion/parser.py --src ./data/sample --dst ./output
@@ -364,18 +414,13 @@ stg_summary_invoice  ---+
 
 ---
 
-## Data Sanitization
+## Sample Data
 
-The XML samples in `data/sample/` are fully anonymized:
+The XML files in `data/sample/` are 10 AI-generated samples covering both structural variants and representative field combinations. They are included for reference and local testing only.
 
-- All company names, addresses, invoice IDs replaced with Faker-generated values
-- Dates shifted by a deterministic random offset per invoice
-- Location names replaced with generic fake names
-- Domain namespace remapped from production schema to `fieldops-demo.io`
-- O&G-specific terminology renamed to generic industry-agnostic equivalents
-- PII elements (named individuals, phone numbers) replaced
+The pipeline has been tested against 100,000 AI-generated XML files covering both structural variants, multiple drift scenarios, and edge cases, producing 549,938 reconciled line items in under 8 minutes. The full dataset is not included in this repository for size reasons. The generation scripts are not included in this public repo but the samples provided are sufficient to run the full pipeline locally.
 
-The sanitization pipeline (`sanitize.py -> remap.py -> verify.py`) is **fully idempotent** — the same input always produces the same output. A `--strict` flag on `verify.py` can be wired into a pre-commit hook.
+The generated XMLs follow the `fieldops-demo.io` namespace and structural patterns visible in the samples, with parametric control over date ranges, amounts, line item counts, and vendor distributions to produce realistic variability across the test dataset.
 
 ---
 
@@ -383,7 +428,6 @@ The sanitization pipeline (`sanitize.py -> remap.py -> verify.py`) is **fully id
 
 ### Phase 1 — Core Pipeline
 
-- [x] XML anonymization pipeline (sanitize, remap, verify)
 - [x] Schema-on-read parser with surrogate key injection
 - [x] Schema discovery — field coverage report per variant
 - [x] Parquet landing zone
@@ -395,10 +439,10 @@ The sanitization pipeline (`sanitize.py -> remap.py -> verify.py`) is **fully id
 - [ ] Apache Superset dashboard
 - [ ] Incremental loads
 
-### Phase 2 — RAG-Assisted Schema Intelligence
+### Phase 2 — LLM-Assisted Schema Intelligence
 
 - [x] Schema diff engine — detect new fields, variant drift, type conflicts
-- [x] LLM-assisted field mapping — Claude API + Ollama (local) support
+- [x] LLM-assisted field mapping — Claude API + Ollama (local) support, full schema corpus injected in prompt
 - [x] Confidence-tiered routing — auto_approved / flagged_review / pending_human
 - [x] Mapping registry — immutable audit trail in DuckDB
 - [x] Airflow integration — ShortCircuitOperator, RAG branch wired into full pipeline
@@ -422,7 +466,11 @@ This toolkit grew out of a production problem involving large-scale XML ingestio
 
 The patterns here — schema-on-read, surrogate key propagation, variant reconciliation — are generalized from that experience and designed to work with any XML source that has accumulated structural drift over time, regardless of industry or platform.
 
-The local stack (DuckDB + dbt + Airflow) replicates the same architectural patterns without cloud dependencies, making the approach portable across environments and deployable to any cloud platform without changes to the core logic.
+Before building this, I looked for existing tools that solved the same problem. Drift detection tools like Soda Core, Great Expectations, and Monte Carlo are excellent at alerting when a schema changes, but they stop there. They don't attempt to map the new fields to anything. Academic schema matching frameworks go further, but they are research prototypes, not production pipelines. Nothing combined drift detection, semantic field mapping, confidence-tiered routing, and pipeline orchestration in a way that was straightforward to run locally and extend.
+
+So this is an attempt to do that: take a real production problem and rebuild it with a modern, lightweight stack that anyone can run, understand, and adapt.
+
+The local stack (DuckDB + dbt + Airflow + Docker) replicates the same architectural patterns without cloud dependencies, making the approach portable across environments and deployable to any cloud platform without changes to the core logic.
 
 ---
 

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:DocumentNumber>SI-1533224</fops:DocumentNumber>
+    <fops:LineCount>8</fops:LineCount>
+    <fops:DiscountTotal>16538.67</fops:DiscountTotal>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:DocumentDate>2020-03-02</fops:DocumentDate>
+    <fops:Total>674518.38</fops:Total>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:SubmissionMethod>EDI</fops:SubmissionMethod>
+    <fops:VendorTotal>686762.67</fops:VendorTotal>
+    <fops:ContentType>CreditNote</fops:ContentType>
+    <fops:PeriodDate>2023-05-11</fops:PeriodDate>
+    <fops:Action>
+      <fops:ActionType>Reject</fops:ActionType>
+      <fops:Status>Disputed</fops:Status>
+      <fops:TransactionDateTime>2021-05-05T01:15:56</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-86149359</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V250165</fops:EntityCode>
+        <fops:EntityName>Basin Logistics LLC</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0006</fops:LocationCode>
+        <fops:LocationName>Site 6</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>4415 Oak St</fops:AddressLine>
+          <fops:City>Calgary</fops:City>
+          <fops:StateProvinceCode>WY</fops:StateProvinceCode>
+          <fops:StateProvince>Wyoming</fops:StateProvince>
+          <fops:PostalZipCode>93748</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Carlos</fops:FirstName>
+        <fops:LastName>Wilson</fops:LastName>
+        <fops:DepartmentName>Engineering</fops:DepartmentName>
+        <fops:PhoneNumber>+1-356-482-3646</fops:PhoneNumber>
+        <fops:EmailAddress>contact553@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-016</fops:EntityCode>
+        <fops:EntityName>Client 18</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0011</fops:LocationCode>
+        <fops:LocationName>Office 5</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Midland</fops:City>
+          <fops:StateProvinceCode>WY</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>674518.38</fops:Total>
+          <fops:CostCenter>CC-0008</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-017</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-6400</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:UnitPrice>5060.85</fops:UnitPrice>
+    <fops:PeriodDate>2021-11-27</fops:PeriodDate>
+    <fops:ProductDescription>Drilling services</fops:ProductDescription>
+    <fops:Quantity>29.87</fops:Quantity>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:Total>151167.59</fops:Total>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2023-01-03</fops:PeriodDate>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:UnitPrice>2156.28</fops:UnitPrice>
+    <fops:CategoryCode>CAT-004</fops:CategoryCode>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Quantity>18.59</fops:Quantity>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:Total>40085.25</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:Quantity>35.52</fops:Quantity>
+    <fops:UnitPrice>295.94</fops:UnitPrice>
+    <fops:CategoryCode>CAT-008</fops:CategoryCode>
+    <fops:PeriodDate>2024-10-17</fops:PeriodDate>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Total>10511.79</fops:Total>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:Total>18887.84</fops:Total>
+    <fops:UnitPrice>1675.94</fops:UnitPrice>
+    <fops:ProductDescription>Generator rental</fops:ProductDescription>
+    <fops:Quantity>11.27</fops:Quantity>
+    <fops:CategoryCode>CAT-008</fops:CategoryCode>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:PeriodDate>2022-12-29</fops:PeriodDate>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>5</fops:LineNumber>
+    <fops:PeriodDate>2022-04-01</fops:PeriodDate>
+    <fops:Total>205249.75</fops:Total>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:UnitPrice>4852.24</fops:UnitPrice>
+    <fops:Quantity>42.30</fops:Quantity>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:LineNumber>6</fops:LineNumber>
+    <fops:ProductDescription>Cementing services</fops:ProductDescription>
+    <fops:Total>116565.14</fops:Total>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:PeriodDate>2020-10-12</fops:PeriodDate>
+    <fops:UnitPrice>5716.78</fops:UnitPrice>
+    <fops:Quantity>20.39</fops:Quantity>
+    <fops:CategoryCode>CAT-008</fops:CategoryCode>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>49.87</fops:Quantity>
+    <fops:PeriodDate>2024-10-29</fops:PeriodDate>
+    <fops:ProductDescription>Cementing services</fops:ProductDescription>
+    <fops:LineNumber>7</fops:LineNumber>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:UnitPrice>873.19</fops:UnitPrice>
+    <fops:Total>43545.99</fops:Total>
+    <fops:CategoryCode>CAT-004</fops:CategoryCode>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2023-10-28</fops:PeriodDate>
+    <fops:Total>88505.03</fops:Total>
+    <fops:CategoryCode>CAT-018</fops:CategoryCode>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:LineNumber>8</fops:LineNumber>
+    <fops:UnitPrice>2930.63</fops:UnitPrice>
+    <fops:Quantity>30.20</fops:Quantity>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+  <fops:DetailedInvoice>
+    <fops:DocumentHeader>
+    <fops:PeriodDate>2020-08-28</fops:PeriodDate>
+    <fops:DocumentDate>2021-06-28</fops:DocumentDate>
+    <fops:SubmissionMethod>API</fops:SubmissionMethod>
+    <fops:LineCount>2</fops:LineCount>
+    <fops:DocumentType>Invoice</fops:DocumentType>
+    <fops:DocumentNumber>DOC-3499627</fops:DocumentNumber>
+    <fops:ContentType>Adjustment</fops:ContentType>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:Total>697777.56</fops:Total>
+    <fops:VendorTotal>709714.38</fops:VendorTotal>
+    <fops:Action>
+      <fops:ActionType>Reject</fops:ActionType>
+      <fops:Status>Re-Submitted</fops:Status>
+      <fops:TransactionDateTime>2022-11-08T22:17:26</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-74759996</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V107589</fops:EntityCode>
+        <fops:EntityName>Lakeview Equipment Rental</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0031</fops:LocationCode>
+        <fops:LocationName>Site 16</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>8041 Main St</fops:AddressLine>
+          <fops:City>Bismarck</fops:City>
+          <fops:StateProvinceCode>CA</fops:StateProvinceCode>
+          <fops:StateProvince>California</fops:StateProvince>
+          <fops:PostalZipCode>41365</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Robert</fops:FirstName>
+        <fops:LastName>Jones</fops:LastName>
+        <fops:DepartmentName>Operations</fops:DepartmentName>
+        <fops:PhoneNumber>+1-765-517-2527</fops:PhoneNumber>
+        <fops:EmailAddress>contact231@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-017</fops:EntityCode>
+        <fops:EntityName>Client 5</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0005</fops:LocationCode>
+        <fops:LocationName>Office 5</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Oklahoma City</fops:City>
+          <fops:StateProvinceCode>CA</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+      <fops:LineEntry>
+    <fops:UnitPrice>7609.24</fops:UnitPrice>
+    <fops:Total>360677.98</fops:Total>
+    <fops:EligibleFlag>Y</fops:EligibleFlag>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:Units>DAY</fops:Units>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:PeriodStartDate>2021-07-11</fops:PeriodStartDate>
+    <fops:ProductCategory>EQUIP</fops:ProductCategory>
+    <fops:Quantity>47.40</fops:Quantity>
+    <fops:PeriodDate>2021-07-11</fops:PeriodDate>
+    <fops:LinePretaxTotal>360677.98</fops:LinePretaxTotal>
+    <fops:LineSubTotal>360677.98</fops:LineSubTotal>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:CategoryCode>CAT-014</fops:CategoryCode>
+    <fops:ServiceCode>SVC-0020</fops:ServiceCode>
+    <fops:ProductDescription>Production testing</fops:ProductDescription>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>360677.98</fops:Total>
+          <fops:CostCenter>CC-0002</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-019</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+          <fops:ProjectCode>PRJ-2024-0018</fops:ProjectCode>
+          <fops:WorkOrder>WO-00087</fops:WorkOrder>
+          <fops:OrderReference>PO-45325</fops:OrderReference>
+        </fops:Allocation>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>41.43</fops:Quantity>
+    <fops:PeriodStartDate>2022-04-23</fops:PeriodStartDate>
+    <fops:ServiceCode>SVC-0027</fops:ServiceCode>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Pump installation</fops:ProductDescription>
+    <fops:ProductCategory>TRANSPORT</fops:ProductCategory>
+    <fops:CategoryCode>CAT-002</fops:CategoryCode>
+    <fops:PeriodDate>2022-04-23</fops:PeriodDate>
+    <fops:LineSubTotal>332817.55</fops:LineSubTotal>
+    <fops:Total>337099.58</fops:Total>
+    <fops:Units>EA</fops:Units>
+    <fops:LinePretaxTotal>337099.58</fops:LinePretaxTotal>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:UnitPrice>8033.25</fops:UnitPrice>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>337099.58</fops:Total>
+          <fops:CostCenter>CC-0001</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-017</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-8100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+          <fops:ProjectCode>PRJ-2024-0005</fops:ProjectCode>
+          <fops:WorkOrder>WO-00070</fops:WorkOrder>
+          <fops:OrderReference>PO-70552</fops:OrderReference>
+        </fops:Allocation>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:DetailedInvoice>
+</fops:StandardBillingDocument>

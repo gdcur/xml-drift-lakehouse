@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:VendorTotal>410356.08</fops:VendorTotal>
+    <fops:Total>405311.70</fops:Total>
+    <fops:SubmissionMethod>Email</fops:SubmissionMethod>
+    <fops:PeriodDate>2024-10-27</fops:PeriodDate>
+    <fops:DocumentType>CreditNote</fops:DocumentType>
+    <fops:DocumentDate>2023-02-11</fops:DocumentDate>
+    <fops:DocumentNumber>SI-9196976</fops:DocumentNumber>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:ContentType>Adjustment</fops:ContentType>
+    <fops:LineCount>4</fops:LineCount>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2023-06-02T23:06:48</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-37888820</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V247402</fops:EntityCode>
+        <fops:EntityName>Ridgeline Contractors</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0041</fops:LocationCode>
+        <fops:LocationName>Site 14</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>1495 Oak St</fops:AddressLine>
+          <fops:City>Anchorage</fops:City>
+          <fops:StateProvinceCode>OK</fops:StateProvinceCode>
+          <fops:StateProvince>Oklahoma</fops:StateProvince>
+          <fops:PostalZipCode>64548</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Angela</fops:FirstName>
+        <fops:LastName>Wilson</fops:LastName>
+        <fops:DepartmentName>Engineering</fops:DepartmentName>
+        <fops:PhoneNumber>+1-994-635-7232</fops:PhoneNumber>
+        <fops:EmailAddress>contact462@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-003</fops:EntityCode>
+        <fops:EntityName>Client 6</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0001</fops:LocationCode>
+        <fops:LocationName>Office 7</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Midland</fops:City>
+          <fops:StateProvinceCode>OK</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>34.01</fops:AllocationRate>
+          <fops:Total>137846.51</fops:Total>
+          <fops:CostCenter>CC-0041</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-009</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-8100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+        <fops:Allocation>
+          <fops:AllocationRate>65.99</fops:AllocationRate>
+          <fops:Total>267465.19</fops:Total>
+          <fops:CostCenter>CC-0013</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-019</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:Total>116378.08</fops:Total>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:ProductDescription>Cementing services</fops:ProductDescription>
+    <fops:Quantity>16.00</fops:Quantity>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-03-07</fops:PeriodDate>
+    <fops:CategoryCode>CAT-018</fops:CategoryCode>
+    <fops:UnitPrice>7273.63</fops:UnitPrice>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2021-03-19</fops:PeriodDate>
+    <fops:Total>16690.28</fops:Total>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:UnitPrice>2415.38</fops:UnitPrice>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Transportation and logistics</fops:ProductDescription>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:CategoryCode>CAT-016</fops:CategoryCode>
+    <fops:Quantity>6.91</fops:Quantity>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Total>139968.30</fops:Total>
+    <fops:ProductDescription>Equipment rental</fops:ProductDescription>
+    <fops:PeriodDate>2020-04-21</fops:PeriodDate>
+    <fops:CategoryCode>CAT-018</fops:CategoryCode>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:UnitPrice>8853.15</fops:UnitPrice>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Quantity>15.81</fops:Quantity>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2024-10-30</fops:PeriodDate>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:UnitPrice>5511.46</fops:UnitPrice>
+    <fops:Quantity>24.00</fops:Quantity>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:Total>132275.04</fops:Total>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:CategoryCode>CAT-016</fops:CategoryCode>
+    <fops:ProductDescription>Equipment rental</fops:ProductDescription>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

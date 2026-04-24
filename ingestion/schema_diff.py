@@ -37,7 +37,6 @@ FOPS = f"{{{NS}}}"
 
 # ── Baseline schema ───────────────────────────────────────────────────────────
 # This is the ground truth — fields we know, their types, positions, variants
-# PRIVATE: in production this lives in pgvector + is updated after every human approval
 BASELINE_FIELDS = {
     # field_name: {type, position, variants, description}
 
@@ -99,7 +98,7 @@ BASELINE_FIELDS = {
     # ── Allocation fields ──────────────────────────────────────────────────────
     "AllocationRate":       {"type": "decimal", "position": "allocation", "variants": ["both"],           "description": "Allocation rate or percentage"},
     "CostCenter":           {"type": "string",  "position": "allocation", "variants": ["both"],           "description": "Cost center identifier"},
-    "ProjectCode":          {"type": "string",  "position": "allocation", "variants": ["DetailedInvoice"],"description": "Project or AFE code"},
+    "ProjectCode":          {"type": "string",  "position": "allocation", "variants": ["DetailedInvoice"],"description": "Project or BudgetNumber code"},
     "WorkOrder":            {"type": "string",  "position": "allocation", "variants": ["DetailedInvoice"],"description": "Work order number"},
     "OrderReference":       {"type": "string",  "position": "allocation", "variants": ["DetailedInvoice"],"description": "Purchase order reference"},
     "SiteRefName":          {"type": "string",  "position": "allocation", "variants": ["both"],           "description": "Site or location reference name"},

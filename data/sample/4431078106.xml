@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:ContentType>CreditNote</fops:ContentType>
+    <fops:DocumentDate>2021-12-07</fops:DocumentDate>
+    <fops:PeriodDate>2022-07-30</fops:PeriodDate>
+    <fops:DocumentNumber>SI-9125900</fops:DocumentNumber>
+    <fops:LineCount>4</fops:LineCount>
+    <fops:DocumentType>CreditNote</fops:DocumentType>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:Total>770791.78</fops:Total>
+    <fops:VendorTotal>759864.10</fops:VendorTotal>
+    <fops:SubmissionMethod>Email</fops:SubmissionMethod>
+    <fops:Action>
+      <fops:ActionType>Pay</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2021-08-12T21:34:10</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-19913576</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V554316</fops:EntityCode>
+        <fops:EntityName>Apex Production Services</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0029</fops:LocationCode>
+        <fops:LocationName>Site 23</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>6851 Oak Ave</fops:AddressLine>
+          <fops:City>Midland</fops:City>
+          <fops:StateProvinceCode>ND</fops:StateProvinceCode>
+          <fops:StateProvince>North Dakota</fops:StateProvince>
+          <fops:PostalZipCode>20350</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Angela</fops:FirstName>
+        <fops:LastName>Miller</fops:LastName>
+        <fops:DepartmentName>Engineering</fops:DepartmentName>
+        <fops:PhoneNumber>+1-709-697-3344</fops:PhoneNumber>
+        <fops:EmailAddress>contact238@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-007</fops:EntityCode>
+        <fops:EntityName>Client 13</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0031</fops:LocationCode>
+        <fops:LocationName>Office 2</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Bakersfield</fops:City>
+          <fops:StateProvinceCode>ND</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>53.96</fops:AllocationRate>
+          <fops:Total>415919.24</fops:Total>
+          <fops:CostCenter>CC-0048</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-022</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-8100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+        <fops:Allocation>
+          <fops:AllocationRate>46.04</fops:AllocationRate>
+          <fops:Total>354872.54</fops:Total>
+          <fops:CostCenter>CC-0048</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-002</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:Total>220736.51</fops:Total>
+    <fops:CategoryCode>CAT-005</fops:CategoryCode>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:UnitPrice>5140.58</fops:UnitPrice>
+    <fops:Quantity>42.94</fops:Quantity>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:PeriodDate>2022-03-01</fops:PeriodDate>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:CategoryCode>CAT-005</fops:CategoryCode>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:Quantity>5.89</fops:Quantity>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:UnitPrice>11381.42</fops:UnitPrice>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Total>67036.56</fops:Total>
+    <fops:PeriodDate>2024-11-18</fops:PeriodDate>
+    <fops:ProductDescription>Drilling services</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Total>455426.33</fops:Total>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:UnitPrice>10655.74</fops:UnitPrice>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Valve replacement</fops:ProductDescription>
+    <fops:PeriodDate>2023-07-07</fops:PeriodDate>
+    <fops:Quantity>42.74</fops:Quantity>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:CategoryCode>CAT-016</fops:CategoryCode>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:UnitPrice>1239.55</fops:UnitPrice>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:ProductDescription>Consulting services</fops:ProductDescription>
+    <fops:Quantity>22.26</fops:Quantity>
+    <fops:Total>27592.38</fops:Total>
+    <fops:PeriodDate>2020-12-06</fops:PeriodDate>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+    <fops:LineNumber>4</fops:LineNumber>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

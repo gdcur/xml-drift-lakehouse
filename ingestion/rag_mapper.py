@@ -12,9 +12,6 @@ Takes the diff produced by schema_diff.py and for each new/unknown field:
 No local embeddings, no PyTorch, no sentence-transformers.
 The LLM does the full semantic matching in one prompt.
 
-PRIVATE: replace with sentence-transformers + pgvector for production-grade
-         vector similarity search with pre-computed corpus embeddings.
-
 LLM providers (set via env var LLM_PROVIDER):
   - claude : Anthropic Claude API (needs ANTHROPIC_API_KEY)
   - ollama : Local Ollama (needs Ollama running, set OLLAMA_MODEL)
@@ -23,7 +20,6 @@ Confidence tiers:
   >= 0.90  → auto-approved, pipeline continues
   >= 0.70  → flagged for review, pipeline continues with suggestion
   <  0.70  → pending human decision (logged, pipeline uses best guess)
-             PRIVATE: Airflow sensor blocks pipeline here
 
 Usage:
     python rag_mapper.py
@@ -53,7 +49,6 @@ CONFIDENCE_REVIEW = float(os.getenv("CONFIDENCE_REVIEW", "0.70"))
 
 # ── Known schema corpus ───────────────────────────────────────────────────────
 # Sent to LLM as context for semantic matching.
-# PRIVATE: replace with pgvector pre-computed embeddings lookup
 CORPUS = [
     # (field_name, type, position, description)
     ("invoice_total",         "decimal",  "header",     "total monetary value of the invoice"),
@@ -256,7 +251,6 @@ def score_confidence(new_field: dict, mapped_to: str, llm_confidence: float) -> 
       type_match     * 0.30
       position_match * 0.20
 
-    PRIVATE: add vector_similarity * 0.40 and reduce llm weight
     """
     if mapped_to == "UNKNOWN":
         return 0.0
@@ -302,7 +296,6 @@ def score_confidence(new_field: dict, mapped_to: str, llm_confidence: float) -> 
 def init_registry(db_path: str) -> duckdb.DuckDBPyConnection:
     """
     Initialize mapping_registry table in DuckDB.
-    PRIVATE: replace with Postgres + pgvector
     """
     con = duckdb.connect(db_path)
     con.execute("""
@@ -397,7 +390,6 @@ def process_diff(diff: dict, llm: BaseLLMMapper,
             decision_type = "pending_human"
             status        = "pending"
             tier          = "🛑 HUMAN REQUIRED"
-            # PRIVATE: trigger Airflow sensor here
 
         print(f"    {tier}\n")
 

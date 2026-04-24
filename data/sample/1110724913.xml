@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:DocumentDate>2023-07-27</fops:DocumentDate>
+    <fops:ContentType>CreditNote</fops:ContentType>
+    <fops:PeriodDate>2020-05-04</fops:PeriodDate>
+    <fops:LineCount>5</fops:LineCount>
+    <fops:DocumentNumber>BILL-4674286</fops:DocumentNumber>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:VendorTotal>317099.82</fops:VendorTotal>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:Total>311626.99</fops:Total>
+    <fops:Notes>Invoice ref 3001</fops:Notes>
+    <fops:SubmissionMethod>Email</fops:SubmissionMethod>
+    <fops:Action>
+      <fops:ActionType>Pay</fops:ActionType>
+      <fops:Status>Approved</fops:Status>
+      <fops:TransactionDateTime>2020-07-06T21:13:41</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-95831286</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V667686</fops:EntityCode>
+        <fops:EntityName>Summit Equipment Co</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0039</fops:LocationCode>
+        <fops:LocationName>Site 2</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>636 Industrial Ave</fops:AddressLine>
+          <fops:City>Bakersfield</fops:City>
+          <fops:StateProvinceCode>OK</fops:StateProvinceCode>
+          <fops:StateProvince>Oklahoma</fops:StateProvince>
+          <fops:PostalZipCode>68287</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Sarah</fops:FirstName>
+        <fops:LastName>Garcia</fops:LastName>
+        <fops:DepartmentName>Finance</fops:DepartmentName>
+        <fops:PhoneNumber>+1-902-476-9920</fops:PhoneNumber>
+        <fops:EmailAddress>contact924@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-003</fops:EntityCode>
+        <fops:EntityName>Client 18</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0014</fops:LocationCode>
+        <fops:LocationName>Office 10</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Bismarck</fops:City>
+          <fops:StateProvinceCode>TX</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>311626.99</fops:Total>
+          <fops:CostCenter>CC-0008</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-026</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-6200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:UnitPrice>343.31</fops:UnitPrice>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:PeriodDate>2021-08-27</fops:PeriodDate>
+    <fops:Quantity>39.64</fops:Quantity>
+    <fops:CategoryCode>CAT-011</fops:CategoryCode>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Total>13608.81</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Total>107440.55</fops:Total>
+    <fops:Quantity>41.69</fops:Quantity>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:UnitPrice>2577.13</fops:UnitPrice>
+    <fops:CategoryCode>CAT-011</fops:CategoryCode>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:PeriodDate>2024-03-08</fops:PeriodDate>
+    <fops:ProductDescription>Valve replacement</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Quantity>5.42</fops:Quantity>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:PeriodDate>2022-01-24</fops:PeriodDate>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:UnitPrice>3951.80</fops:UnitPrice>
+    <fops:Total>21418.76</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:CategoryCode>CAT-014</fops:CategoryCode>
+    <fops:Quantity>45.85</fops:Quantity>
+    <fops:UnitPrice>2221.46</fops:UnitPrice>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:PeriodDate>2023-08-22</fops:PeriodDate>
+    <fops:Total>101853.94</fops:Total>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Transportation and logistics</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>12.51</fops:Quantity>
+    <fops:ProductDescription>Wireline services</fops:ProductDescription>
+    <fops:PeriodDate>2023-10-05</fops:PeriodDate>
+    <fops:CategoryCode>CAT-018</fops:CategoryCode>
+    <fops:LineNumber>5</fops:LineNumber>
+    <fops:UnitPrice>5380.09</fops:UnitPrice>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Total>67304.93</fops:Total>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>
