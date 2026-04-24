@@ -27,7 +27,6 @@ Environment variables (set in docker/.env or Airflow Variables):
   ANTHROPIC_API_KEY   required if LLM_PROVIDER=claude
   OLLAMA_MODEL        ollama model name (default: llama3)
   OLLAMA_HOST         ollama host (default: http://localhost:11434)
-
 """
 
 import json
