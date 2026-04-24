@@ -8,10 +8,6 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Raw / sanitized data — NEVER in repo
-data/raw/
-data/sanitized/
-
 # dbt
 dbt/target/
 dbt/logs/

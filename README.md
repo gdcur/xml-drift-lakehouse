@@ -324,9 +324,8 @@ xml-drift-lakehouse/
 ├── tests/
 │   └── test_rag_flow.py     # 33 integration tests — no API key needed
 ├── output/                  # Generated — not committed
-└── docs/
-    └── schema_report.md     # Living schema documentation (auto-generated)
-```
+└── tests/
+    └── test_rag_flow.py     # 33 integration tests — no API key needed
 
 ---
 
