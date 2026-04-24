@@ -2,6 +2,7 @@
 -- Deduplication layer — one row per invoice_id, latest version wins
 -- Unions both variants first, then deduplicates on invoice_id
 -- ordered by action_datetime DESC (latest approval/status wins)
+-- Deduplication uses QUALIFY (DuckDB native) — no subquery needed
 -- Materialised as view — no storage cost, always reflects latest staging
 
 {{
@@ -185,103 +186,16 @@ unioned as (
     union all
     select * from summary
 
-),
-
--- Rank by invoice_id + line_number, latest action_datetime wins
--- Handles both duplicate invoices (same invoice_id, different file)
--- and corrected invoices (same invoice_id, updated status/amounts)
-ranked as (
-
-    select
-        *,
-        row_number() over (
-            partition by invoice_id, line_number
-            order by
-                action_datetime desc nulls last,
-                ingested_at desc
-        ) as _row_num
-
-    from unioned
-
 )
 
-select
-    -- drop the ranking helper column
-    line_sk,
-    invoice_sk,
-    invoice_sk_header,
-    ingested_at,
-    source_file,
-    variant,
-    invoice_id,
-    invoice_db_id,
-    document_date,
-    document_type,
-    submission_method,
-    currency_code,
-    invoice_total,
-    vendor_total,
-    line_count,
-    invoice_notes,
-    invoice_discount_total,
-    action_type,
-    action_status,
-    action_datetime,
-    vendor_entity_code,
-    vendor_entity_code_type,
-    vendor_entity_name,
-    vendor_location_code,
-    vendor_location_name,
-    vendor_city,
-    vendor_state,
-    vendor_country_code,
-    client_entity_code,
-    client_entity_code_type,
-    client_entity_name,
-    client_location_code,
-    client_location_name,
-    client_city,
-    client_state,
-    client_country_code,
-    line_number,
-    charge_class,
-    period_start_date,
-    header_period_date,
-    line_period_date,
-    line_notes,
-    purchase_category,
-    service_code,
-    product_description,
-    product_category,
-    quantity,
-    units,
-    unit_price,
-    line_subtotal,
-    line_pretax_total,
-    line_total,
-    line_discount_total,
-    line_discount_rate,
-    category_code,
-    category_scheme,
-    alloc_rate,
-    alloc_total,
-    alloc_cost_center,
-    alloc_project_code,
-    alloc_work_order,
-    alloc_order_ref,
-    alloc_site_ref_name,
-    alloc_account_major,
-    alloc_account_minor,
-    alloc_account_type,
-    tax_type,
-    tax_total,
-    tax_exempt_code,
-    early_pay_due_date,
-    early_pay_days_due,
-    early_pay_eligible,
-    cross_ref_doc_number,
-    cross_ref_doc_type,
-    cross_ref_date
+-- Deduplicate using QUALIFY — DuckDB native, no subquery needed
+-- latest action_datetime wins per invoice_id + line_number
 
-from ranked
-where _row_num = 1
+select *
+from unioned
+qualify row_number() over (
+    partition by invoice_id, line_number
+    order by
+        action_datetime desc nulls last,
+        ingested_at desc
+) = 1
