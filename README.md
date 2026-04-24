@@ -446,7 +446,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] Confidence-tiered routing — auto_approved / flagged_review / pending_human
 - [x] Mapping registry — immutable audit trail in DuckDB
 - [x] Airflow integration — ShortCircuitOperator, RAG branch wired into full pipeline
-- [x] 29 integration tests — full RAG flow, no API key needed
+- [x] 29 integration tests — full RAG flow, no API key needed ![RAG mapping output](docs/rag_mapping_output.png)
 - [x] Ollama vs Claude comparison — same drift, both providers tested live
 - [ ] Flask human review UI — approve/reject pending mappings via web interface
 - [ ] Airflow sensor — block pipeline on pending_human until resolved
