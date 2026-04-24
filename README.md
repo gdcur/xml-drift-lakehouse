@@ -304,12 +304,11 @@ The local stack is deliberately designed to mirror the architectural patterns of
 ```
 xml-drift-lakehouse/
 ├── data/
-│   └── sample/              # Sample XML files (2 variants, 10 files — see Data section)
+│   └── sample/              # Sample XML files (2 variants, 10 files)
 ├── ingestion/
-│   ├── parser.py               # Schema-on-read XML to Parquet
-│   ├── schema_discovery.py     # Structural profiler, field coverage per variant
-│   ├── schema_diff.py          # Compare today's schema vs known baseline
-│   └── rag_mapper.py           # LLM field mapper + confidence scorer + registry
+│   ├── parser.py            # Schema-on-read XML to Parquet
+│   ├── schema_diff.py       # Compare today's schema vs known baseline
+│   └── rag_mapper.py        # LLM field mapper + confidence scorer + registry
 ├── dbt/
 │   ├── models/
 │   │   ├── staging/         # stg_detailed_invoice, stg_summary_invoice
@@ -322,12 +321,12 @@ xml-drift-lakehouse/
 ├── docker/
 │   ├── docker-compose.yml   # Airflow + Postgres stack
 │   ├── Dockerfile           # Custom Airflow image with project deps
+│   ├── .env.example         # Environment template — copy to .env
 │   └── requirements.txt
 ├── tests/
 │   └── test_rag_flow.py     # 33 integration tests — no API key needed
-├── output/                  # Generated — not committed
-└── tests/
-    └── test_rag_flow.py     # 33 integration tests — no API key needed
+└── output/                  # Generated — not committed
+```
 
 ---
 
