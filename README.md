@@ -34,7 +34,7 @@ Instead of defining what the XML should look like, the pipeline discovers what i
 Key patterns:
 
 - **Schema-on-read ingestion** — no hard-coded field mapping at the ingestion stage
-- **Surrogate key injection** — a timestamp-based epoch key is injected at ingestion and propagated through all child records to maintain join integrity across entities
+- **Surrogate key injection** — a deterministic SHA-256 key is injected at ingestion and propagated through all child records to maintain join integrity across entities
 - **Relational explosion** — hierarchical XML nodes are flattened into separate tables preserving parent-child relationships
 - **Variant reconciliation** — multiple structural variants of the same entity are unified at the analytical layer via UNION ALL and COALESCE across divergent field names
 - **Defensive casting** — CAST/COALESCE/NULLIF patterns handle empty strings, null fields, and type mismatches across variants
@@ -48,33 +48,53 @@ XML Source
     |
     v
 [ Ingestion Layer ]
-  - XML parsed via xmltodict
-  - Surrogate key injected (epoch timestamp)
+  - XML parsed via lxml
+  - Surrogate key injected (SHA-256 of source_file + invoice_id)
   - Stored as Parquet in landing zone
     |
     v
 [ Schema Discovery ]
   - Schema-on-read variant detection
   - Structural variants auto-discovered
-  - Raw tables generated per variant
+  - Field coverage report generated per variant
     |
     v
 [ Relational Layer ]
   - Hierarchical nodes exploded into tables
   - Parent-child joins via surrogate key
-  - Partitioned by date for incremental loads
+  - Both variants handled transparently
     |
     v
 [ Reconciliation Layer ]
   - Variant UNION ALL with COALESCE on divergent fields
+  - Deduplication: latest status wins per invoice + line
   - Defensive type casting
-  - Consumer-ready analytical views
+  - Consumer-ready analytical table
     |
     v
 [ Analytics ]
-  - Clean, queryable datasets
+  - Clean, queryable DuckDB table
   - BI / reporting ready
 ```
+
+---
+
+## XML Variants
+
+The dataset contains two structurally distinct invoice types, both handled transparently by the pipeline:
+
+| Feature | DetailedInvoice | SummaryInvoice |
+|---------|----------------|----------------|
+| Distribution | 60.2% (938 files) | 39.8% (620 files) |
+| Line items | Full unit economics | Lean |
+| ProductDescription / ServiceCode | Yes | No |
+| LineSubTotal / LinePretaxTotal | Yes | No |
+| Allocation position | Inside each LineEntry | Header level |
+| PeriodDate | Line level | Header level |
+| Tax entries | Yes (sparse) | No |
+| Early payment terms | Yes (sparse) | No |
+
+The reconciliation logic uses `COALESCE` across variants in the mart layer — the same pattern used in the production Athena views this project is based on.
 
 ---
 
@@ -84,12 +104,13 @@ This toolkit runs entirely locally without cloud dependencies, making it portabl
 
 | Layer | Tool |
 |-------|------|
-| XML parsing | Python, xmltodict |
+| XML parsing | Python + lxml |
+| Data anonymization | Faker |
 | Storage | Local Parquet files |
 | Query engine | DuckDB |
-| Transformation | dbt Core |
+| Transformation | dbt Core + dbt-duckdb |
 | Orchestration | Apache Airflow (Docker) |
-| Visualization | Apache Superset |
+| Visualization | Apache Superset (coming) |
 
 ### Cloud Portability
 
@@ -110,63 +131,119 @@ The transformation logic, surrogate key patterns, and reconciliation models are 
 
 ```
 xml-drift-lakehouse/
-├── ingestion/
-│   ├── parser.py            # XML to Parquet with surrogate key injection
-│   ├── schema_discovery.py  # Schema-on-read, variant detection
-│   └── compaction.py        # Small file compaction for query performance
-├── models/
-│   ├── staging/             # Raw variant tables, one per structural variant
-│   ├── intermediate/        # Exploded relational tables
-│   └── marts/               # Reconciled consumer-ready views
-├── dbt/
-│   ├── models/              # dbt transformation models
-│   ├── tests/               # dbt data quality tests
-│   └── dbt_project.yml
-├── airflow/
-│   └── dags/                # Pipeline orchestration DAGs
-├── docker/
-│   └── docker-compose.yml   # Full local stack
 ├── data/
-│   └── sample/              # Sample XML files with intentional schema drift
+│   └── sample/              # Sanitized XML samples (2 variants, 1558 files)
+├── ingestion/
+│   ├── sanitize.py          # Anonymize raw XMLs with Faker (idempotent)
+│   ├── remap.py             # Remap to public domain-agnostic schema
+│   ├── verify.py            # Pre-commit sensitive data scanner
+│   ├── parser.py            # Schema-on-read XML to Parquet
+│   └── schema_discovery.py  # Structural profiler — field coverage per variant
+├── dbt/
+│   ├── models/
+│   │   ├── staging/         # stg_detailed_invoice, stg_summary_invoice
+│   │   ├── intermediate/    # int_invoices_deduped
+│   │   └── marts/           # mart_invoices (final analytical table)
+│   └── tests/
+├── airflow/
+│   └── dags/
+│       └── xml_drift_pipeline.py  # Full pipeline DAG
+├── docker/
+│   ├── docker-compose.yml   # Airflow + Postgres stack
+│   ├── Dockerfile           # Custom Airflow image with project deps
+│   └── requirements.txt
+├── output/                  # Generated — not committed
 └── docs/
-    └── architecture.md      # Architecture decisions and patterns
+    └── schema_report.md     # Living schema documentation (auto-generated)
 ```
 
 ---
 
 ## Quickstart
 
+### Local (Python)
+
 ```bash
-# Clone the repository
+# Clone and setup
 git clone https://github.com/gdcur/xml-drift-lakehouse
 cd xml-drift-lakehouse
+python -m venv .venv && source .venv/bin/activate
+pip install lxml polars dbt-duckdb faker
 
-# Start the local stack
+# Run ingestion
+python ingestion/parser.py --src ./data/sample --dst ./output
+
+# Run dbt transformations + tests
+cd dbt && dbt run && dbt test
+```
+
+### With Airflow (Docker)
+
+```bash
+cd docker
+
+# First time only
+docker compose build
+docker compose run --rm airflow-init
+
+# Start
 docker compose up -d
 
-# Run ingestion on sample data
-python ingestion/parser.py --source data/sample/
-
-# Run dbt transformations
-cd dbt && dbt run
-
-# Open Superset dashboard
-# http://localhost:8088
+# Open UI: http://localhost:8080  (admin / admin)
+# Trigger DAG: xml_drift_pipeline
 ```
+
+---
+
+## dbt Lineage
+
+```
+stg_detailed_invoice ---+
+                        +--> int_invoices_deduped --> mart_invoices
+stg_summary_invoice  ---+
+```
+
+| Model | Type | Description |
+|-------|------|-------------|
+| `stg_detailed_invoice` | view | Staged DetailedInvoice — full unit economics |
+| `stg_summary_invoice` | view | Staged SummaryInvoice — lean lines, header allocation |
+| `int_invoices_deduped` | view | Deduplicated — latest status per invoice_id + line_number |
+| `mart_invoices` | table | Final analytical table — both variants reconciled |
+
+**51 DQ tests** — `not_null`, `unique`, `accepted_values` across all layers.
+
+---
+
+## Data Sanitization
+
+The XML samples in `data/sample/` are fully anonymized:
+
+- All company names, addresses, invoice IDs replaced with Faker-generated values
+- Dates shifted by a deterministic random offset per invoice
+- Location names replaced with generic fake names
+- Domain namespace remapped from production schema to `fieldops-demo.io`
+- O&G-specific terminology renamed to generic industry-agnostic equivalents
+- PII elements (named individuals, phone numbers) replaced
+
+The sanitization pipeline (`sanitize.py -> remap.py -> verify.py`) is **fully idempotent** — the same input always produces the same output. A `--strict` flag on `verify.py` can be wired into a pre-commit hook.
 
 ---
 
 ## Roadmap
 
-### Phase 1 — Core Pipeline (in progress)
+### Phase 1 — Core Pipeline
 
-- [ ] Core XML parser with surrogate key injection
-- [ ] Schema-on-read variant detection
-- [ ] Local Parquet storage layer
-- [ ] Sample dataset with 3+ structural variants demonstrating drift
-- [ ] dbt staging models — one per structural variant
-- [ ] Multi-variant UNION ALL reconciliation mart
-- [ ] dbt data quality tests and freshness checks
+- [x] XML anonymization pipeline (sanitize, remap, verify)
+- [x] Schema-on-read parser with surrogate key injection
+- [x] Schema discovery — field coverage report per variant
+- [x] Parquet landing zone
+- [x] dbt staging models — one per structural variant
+- [x] dbt intermediate — deduplication layer
+- [x] dbt mart — UNION ALL + COALESCE reconciliation
+- [x] 51 DQ tests across all layers
+- [x] Airflow DAG (Docker)
+- [ ] Apache Superset dashboard
+- [ ] Incremental loads
 
 ### Phase 2 — RAG-Assisted Schema Intelligence
 
@@ -188,9 +265,24 @@ The local stack (DuckDB + dbt + Airflow) replicates the same architectural patte
 
 ---
 
+## AI Assistance
+
+This project was built with AI assistance (Claude by Anthropic) for code generation and scaffolding. All architectural decisions, data modeling choices, schema design, and quality validation were reviewed, challenged, and directed by the author.
+
+The core problem — schema-on-read XML processing with structural drift — is derived from real production work. The AI accelerated implementation; the engineering judgment is human.
+
+---
+
 ## Related
 
 - [ercot-plan-ranker](https://github.com/gdcur/ercot-plan-ranker) — A production-style lakehouse demo using the same patterns applied to ERCOT electricity market data
+
+---
+
+## Author
+
+Gianfranco — Data Engineer
+[github.com/gdcur](https://github.com/gdcur)
 
 ---
 
