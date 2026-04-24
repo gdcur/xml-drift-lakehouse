@@ -3,6 +3,7 @@
 <fops:DocumentHeader>
 <fops:DocumentNumber>1025603911</fops:DocumentNumber>
 <fops:Party PartyRole="Vendor">
+<fops:InvoiceAmount>1250.00</InvoiceAmount>
 <fops:Entity>
 <fops:EntityCode EntityCodeType="VendorID">VEND273394</fops:EntityCode>
 <fops:EntityName>Guzman-Lopez</fops:EntityName>
