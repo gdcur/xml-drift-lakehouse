@@ -324,7 +324,7 @@ xml-drift-lakehouse/
 │   ├── .env.example         # Environment template — copy to .env
 │   └── requirements.txt
 ├── tests/
-│   └── test_rag_flow.py     # 33 integration tests — no API key needed
+│   └── test_rag_flow.py     # 29 integration tests — no API key needed
 └── output/                  # Generated — not committed
 ```
 
@@ -390,7 +390,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ```bash
 python tests/test_rag_flow.py -v
-# → 33 tests, 0 failures
+# → 29 tests, 0 failures
 ```
 
 ---
@@ -446,7 +446,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] Confidence-tiered routing — auto_approved / flagged_review / pending_human
 - [x] Mapping registry — immutable audit trail in DuckDB
 - [x] Airflow integration — ShortCircuitOperator, RAG branch wired into full pipeline
-- [x] 33 integration tests — full RAG flow, no API key needed
+- [x] 29 integration tests — full RAG flow, no API key needed
 - [x] Ollama vs Claude comparison — same drift, both providers tested live
 - [ ] Flask human review UI — approve/reject pending mappings via web interface
 - [ ] Airflow sensor — block pipeline on pending_human until resolved
