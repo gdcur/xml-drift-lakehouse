@@ -21,6 +21,8 @@ Tested on a standard Linux workstation (32GB RAM, 8GB GPU, SSD), no cloud depend
 
 Half a million rows reconciled across two structural XML variants, fully tested, on a local stack. No cloud required.
 
+On the stress run with 5% drift (~5,000 files containing unknown fields), the LLM was called **6 times** — once per unique unknown field discovered, not once per file. The system identifies all occurrences of a new field across the entire dataset in a single schema diff pass, then makes one mapping decision per field. This keeps LLM costs and latency negligible regardless of dataset size.
+
 ---
 
 ## The Problem
