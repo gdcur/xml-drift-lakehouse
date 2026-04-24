@@ -451,6 +451,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [ ] Flask human review UI — approve/reject pending mappings via web interface
 - [ ] Airflow sensor — block pipeline on pending_human until resolved
 - [ ] Corpus self-improvement — approved mappings feed back into baseline
+![Airflow DAG — all green run](docs/airflow_dag_run.png)
 
 ### Phase 3 — Observability
 
