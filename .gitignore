@@ -35,6 +35,7 @@ standalone_admin_password.txt
 .idea/
 .vscode/
 *.swp
+*.log
 
 # Docker
 docker/.env
