@@ -348,23 +348,11 @@ python ingestion/parser.py --src ./data/sample --dst ./output
 cd dbt && dbt run && dbt test
 ```
 
-### With Airflow (Docker)
+### LLM Configuration
 
 ```bash
-cd docker
-
-# First time only
-docker compose build
-docker compose run --rm airflow-init
-
-# Start
-docker compose up -d
-
-# Open UI: http://localhost:8080  (admin / admin)
-# Trigger DAG: xml_drift_pipeline
+cp docker/.env.example docker/.env
 ```
-
-### LLM Configuration
 
 Set in `docker/.env` before starting:
 
@@ -386,12 +374,52 @@ LLM_PROVIDER=claude
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
+### With Airflow (Docker)
+
+```bash
+cd docker
+
+# First time only
+docker compose build
+docker compose run --rm airflow-init
+
+# Start
+docker compose up -d
+
+# Open UI: http://localhost:8080  (admin / admin)
+# Trigger DAG: xml_drift_pipeline
+```
+
 ### Run tests (no API key, no Ollama needed)
 
 ```bash
 python tests/test_rag_flow.py -v
 # → 29 tests, 0 failures
 ```
+
+### Troubleshooting
+
+**First run on a machine where Docker has run before:**
+
+If you see `admin already exists` during `airflow-init` — that is safe to ignore, it means the database already has the admin user from a previous run.
+
+If you want a completely clean start (wipes all run history and volumes):
+
+```bash
+docker compose down -v
+docker compose up -d
+```
+
+**Permission errors on Parquet files or dbt logs:**
+
+If you see `PermissionError: [Errno 13] Permission denied` on `invoices.parquet` or `dbt.log`, Docker created the files with a different owner. Fix with:
+
+```bash
+sudo chown -R 1000:0 ./output/
+sudo chown -R 1000:0 ./dbt/
+```
+
+Then re-trigger the DAG.
 
 ---
 
@@ -446,12 +474,15 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] Confidence-tiered routing — auto_approved / flagged_review / pending_human
 - [x] Mapping registry — immutable audit trail in DuckDB
 - [x] Airflow integration — ShortCircuitOperator, RAG branch wired into full pipeline
-- [x] 29 integration tests — full RAG flow, no API key needed ![RAG mapping output](docs/rag_mapping_output.png)
+- [x] 29 integration tests — full RAG flow, no API key needed
 - [x] Ollama vs Claude comparison — same drift, both providers tested live
 - [ ] Flask human review UI — approve/reject pending mappings via web interface
 - [ ] Airflow sensor — block pipeline on pending_human until resolved
 - [ ] Corpus self-improvement — approved mappings feed back into baseline
+
 ![Airflow DAG — all green run](docs/airflow_dag_run.png)
+
+![RAG mapping output](docs/rag_mapping_output.png)
 
 ### Phase 3 — Observability
 
