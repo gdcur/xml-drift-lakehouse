@@ -145,25 +145,26 @@ def extract_allocation(alloc: etree._Element | None) -> dict[str, Any]:
 # ── Invoice header extraction ─────────────────────────────────────────────────
 
 def extract_header(inv_elem: etree._Element, variant: str,
-                   source_file: str, ingested_at: str) -> dict[str, Any]:
+                   source_file: str, ingested_at: str, root=None) -> dict[str, Any]:
     """Extract DocumentHeader into a flat dict."""
     header = inv_elem.find(tag("DocumentHeader"))
     if header is None:
         return {}
 
-    invoice_id = get(header, "DocumentNumber")
+    document_number = get(header, "DocumentNumber") #or get(header, "DocumentNbr") or get(header, "DocNumber")
+    invoice_id = root.attrib.get("invoice_id") if root is not None else None
     sk = surrogate(source_file, invoice_id or "")
-
+    print(document_number, invoice_id, sk)
     rec: dict[str, Any] = {
         # Surrogate key wrapper
         "sk":               sk,
         "ingested_at":      ingested_at,
         "source_file":      source_file,
         "variant":          variant,
-        "invoice_db_id":    inv_elem.attrib.get("id"),
+        "invoice_id":       invoice_id,
 
         # Core header fields
-        "invoice_id":       invoice_id,
+        "document_number":  document_number,
         "document_date":    get(header, "DocumentDate"),
         "document_type":    get(header, "DocumentType"),
         "submission_method":get(header, "SubmissionMethod"),
@@ -180,7 +181,7 @@ def extract_header(inv_elem: etree._Element, variant: str,
         "action_status":    get(header, "Action", "Status"),
         "action_datetime":  get(header, "Action", "TransactionDateTime"),
     }
-
+    print(rec)
     # Party blocks
     rec.update(extract_party(header, "Vendor"))
     rec.update(extract_party(header, "Client"))
@@ -296,7 +297,7 @@ def process_file(path: Path, ingested_at: str) -> tuple[dict, list[dict]]:
         return {}, []
 
     source_file = path.name
-    header      = extract_header(inv_elem, variant, source_file, ingested_at)
+    header      = extract_header(inv_elem, variant, source_file, ingested_at, root)
     invoice_id  = header.get("invoice_id")
     lines       = extract_line_items(inv_elem, variant, invoice_id or "",
                                      source_file, ingested_at)

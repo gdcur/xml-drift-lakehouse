@@ -34,7 +34,7 @@ reconciled as (
 
         -- ── Invoice identity ───────────────────────────────────────────────
         invoice_id,
-        invoice_db_id,
+        document_number,
         document_date,
         document_type,
         submission_method,

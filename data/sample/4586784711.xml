@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000008">
   <fops:DetailedInvoice>
     <fops:DocumentHeader>
     <fops:PeriodDate>2021-04-08</fops:PeriodDate>

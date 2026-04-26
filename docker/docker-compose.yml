@@ -71,7 +71,7 @@ services:
           --role Admin \
           --email admin@example.com \
           --password admin
-    restart: on-failure
+    restart: "no"
     networks:
       - lakehouse
 
