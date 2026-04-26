@@ -19,7 +19,9 @@ Built as a portfolio project to demonstrate real-world data engineering patterns
 - [Architecture](#architecture)
 - [XML Variants](#xml-variants)
 - [Phase 2 in Action](#phase-2-in-action--real-run-output)
+- [AI Stress Test](#ai-stress-test--how-far-can-the-llm-go)
 - [Mapping Registry](#mapping-registry)
+- [Resolving Drift](#resolving-drift)
 - [Customizing the Baseline](#customizing-the-baseline)
 - [Local Stack](#local-stack)
 - [Repository Structure](#repository-structure)
@@ -231,6 +233,46 @@ We ran the same drift against both supported LLM providers on the same data, cha
 Neither is universally better. The right choice depends on your tolerance for false positives vs false negatives:
 - **Ollama**: fewer human interruptions, higher risk of silent wrong mappings
 - **Claude**: more human reviews on genuinely ambiguous fields, lower risk of wrong auto-approvals
+
+---
+
+## AI Stress Test — How Far Can the LLM Go?
+
+To understand the real limits of the field mapper, we ran a progressive stress test against `document_number` — replacing the field name with increasingly distant alternatives across language, abbreviation, ambiguity, position, and type dimensions.
+
+| Field | Type | Position | Mapped To | Confidence | Notes |
+|-------|------|----------|-----------|------------|-------|
+| `NumeroDocumento` | string | header | `document_number` | 0.90 | Italian — semantic meaning recognized |
+| `NumeroDokument` | string | header | `document_number` | 0.90 | German — fell back to "Latin word for document" |
+| `DOCNR` | string | header | `document_number` | 0.95 | Abbreviation — position + type sufficient |
+| `BillingRef` | string | header | `document_number` | 0.95 | Value `BILL-4674286` used as evidence |
+| `SequenceNumber` | string | header | `document_number` | 0.90 | Misleading name — position anchor held |
+| `ExternalReference` | string | header | `document_number` | 0.90 | Genuinely ambiguous — overconfident |
+| `Field_A` | string | header | `document_number` | 0.90 | Opaque name — position anchor held |
+| `Field_A` | string | **line** | `document_number` | **0.80** | Position change → confidence drop → `flagged_review` |
+| `X001` | string | line | `document_number` | 0.80 | Opaque + wrong position — still maps |
+| `X001` | **float** | line | `line_total` | **0.95** | Type change → completely different mapping |
+![AI stress test — mapping registry output](docs/ai_stress_test.png)
+### Key findings
+
+**Type is the strongest signal.** Changing the data type from string to float caused a complete mapping flip — from `document_number` to `line_total` with 0.95 confidence. The LLM never needed the field name to reach high confidence.
+
+**Position is the second strongest signal.** Moving a field from header to line dropped confidence from 0.90 to 0.80, correctly routing `Field_A` and `X001` to `flagged_review` rather than auto-approve.
+
+**Field name is the weakest signal.** The LLM reached 0.90 on completely opaque names (`Field_A`, `X001`) using position and type alone. Foreign language names and abbreviations made no difference to the final confidence score.
+
+**Value is used when available.** For `BillingRef`, the LLM cited the example value `BILL-4674286` as evidence. This is only possible because the schema diff passes the first observed value to the prompt.
+
+### Prompt engineering considerations
+
+The current prompt instructs the LLM to consider abbreviations, data type compatibility, and position. The stress tests revealed that the LLM relies too heavily on type and position, often reaching 0.90 confidence even for completely opaque or genuinely ambiguous field names.
+
+This is acceptable for a development environment but has implications for production:
+
+- `ExternalReference` mapped to `document_number` at 0.90 — but it could legitimately be a PO number, contract reference, or cross-system ID
+- `Field_A` should never auto-approve at 0.90 — an opaque name with no semantic signal warrants human review regardless of position
+
+**Suggested improvement:** Force explicit reasoning order — name → type → position → value — and require the LLM to explicitly penalize confidence when the field name provides no semantic signal. The confidence thresholds (`CONFIDENCE_AUTO=0.90`, `CONFIDENCE_REVIEW=0.70`) should be tuned based on prompt quality and use-case risk tolerance before moving to production.
 
 ---
 
@@ -508,14 +550,6 @@ sudo chown -R 1000:0 ./dbt/
 
 Then re-trigger the DAG.
 
-## Permissions on output files
-If files in output/ are owned by root after a DAG run:
-  sudo chown -R $USER:$USER output/
-
-## Never use `docker compose down -v`
-The -v flag removes named volumes including airflow-logs and postgres-db,
-forcing a full re-initialization. Use `docker compose down` only.
-Use `docker compose down -v` only as a last resort full reset.
 
 
 ### Verify the results
@@ -661,7 +695,7 @@ The core problem — schema-on-read XML processing with structural drift — is 
 
 ## Author
 
-Gianfranco — Data Engineer
+Gianfranco De Curtis — Data Engineer
 [github.com/gdcur](https://github.com/gdcur)
 
 ---
