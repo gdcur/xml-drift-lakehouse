@@ -252,7 +252,9 @@ To understand the real limits of the field mapper, we ran a progressive stress t
 | `Field_A` | string | **line** | `document_number` | **0.80** | Position change → confidence drop → `flagged_review` |
 | `X001` | string | line | `document_number` | 0.80 | Opaque + wrong position — still maps |
 | `X001` | **float** | line | `line_total` | **0.95** | Type change → completely different mapping |
+
 ![AI stress test — mapping registry output](docs/ai_stress_test.png)
+
 ### Key findings
 
 **Type is the strongest signal.** Changing the data type from string to float caused a complete mapping flip — from `document_number` to `line_total` with 0.95 confidence. The LLM never needed the field name to reach high confidence.
