@@ -9,6 +9,30 @@ A production-grade, schema-on-read XML ingestion toolkit with automated structur
 
 Built as a portfolio project to demonstrate real-world data engineering patterns: immutable raw storage, replayable transformations, and an LLM-assisted pipeline that handles schema evolution without manual intervention.
 
+---
+
+## Contents
+
+- [Benchmark](#benchmark)
+- [The Problem](#the-problem)
+- [The Approach](#the-approach)
+- [Architecture](#architecture)
+- [XML Variants](#xml-variants)
+- [Phase 2 in Action](#phase-2-in-action--real-run-output)
+- [Mapping Registry](#mapping-registry)
+- [Customizing the Baseline](#customizing-the-baseline)
+- [Local Stack](#local-stack)
+- [Repository Structure](#repository-structure)
+- [Quickstart](#quickstart)
+- [dbt Lineage](#dbt-lineage)
+- [Sample Data](#sample-data)
+- [Testing Drift Detection](#testing-drift-detection)
+- [Roadmap](#roadmap)
+- [Background](#background)
+- [AI Assistance](#ai-assistance)
+
+---
+
 ### Benchmark
 
 Tested on a standard Linux workstation (32GB RAM, 8GB GPU, SSD), no cloud dependencies. GPU used by Ollama for LLM inference during drift mapping; the pipeline itself runs entirely on CPU.
@@ -236,9 +260,38 @@ Then delete the affected partition and re-run dbt. Raw data unchanged.
 
 ---
 
+## Resolving Drift
+
+When `verify.py` reports open fields in the mapping registry, follow these three steps:
+
+### 1. Add the field to the baseline
+
+Open `ingestion/schema_diff.py` and add the new field to `BASELINE_FIELDS`:
+
+```python
+"DocumentNbr": {"type": "string", "position": "header", "variants": ["both"], "description": "Vendor abbreviation for DocumentNumber"},
+```
+
+### 2. Add an alias in the parser
+
+Open `ingestion/parser.py` and add the field as a fallback in the relevant extraction line:
+
+```python
+document_number = get(header, "DocumentNumber") or get(header, "DocumentNbr") or get(header, "DocNumber")
+```
+
+### 3. Mark the field as resolved
+
+```bash
+python verify.py --resolve DocumentNbr
+```
+
+Then re-run the DAG to confirm no drift remains. `verify.py` will show `Resolved: N` and `Open: 0`.
+
+---
 ## Customizing the Baseline
 
-The baseline is the `BASELINE_FIELDS` dictionary in `ingestion/schema_diff.py`. It defines what the pipeline considers a known, expected field. Anything not in this dictionary is treated as drift and routed to the RAG mapper.
+The baseline is the `BASELINE_FIELDS` dictionary in `ingestion/schema_diff.py`. It defines what the pipeline considers a known, expected field. Anything not in this dictionary is treated as drift and routed to the field mapper.
 
 The baseline shipped with this repo was built from hands-on experience with real invoice XML feeds. It covers the field set most commonly found in vendor billing documents: header fields (document identifiers, dates, amounts, vendor info, contact details), line fields (quantities, prices, service codes, categories), and allocation fields (cost centers, project codes, account codes). It is a solid starting point for any invoice-style XML feed, but it will need to be adapted to your specific source system and vendor agreements.
 
@@ -255,21 +308,52 @@ Open `ingestion/schema_diff.py` and edit `BASELINE_FIELDS` directly. For each fi
 },
 ```
 
-Run the pipeline once against a sample of your files. Any field not in the dictionary will appear in `diff.json` and be routed to the RAG mapper. Review the results, confirm the mappings, add the confirmed fields to `BASELINE_FIELDS`, and commit. That is your baseline.
+Run the pipeline once against a sample of your files. Any field not in the dictionary will appear in `diff.json` and be routed to the field mapper. Review the results, confirm the mappings, add the confirmed fields to `BASELINE_FIELDS`, and commit. That is your baseline.
 
-**Growing the baseline over time:**
+**What rag_mapper.py actually does:**
 
-When the RAG mapper approves a new field mapping, it writes the decision to `mapping_registry` but does not automatically update the baseline. That is intentional — a human should confirm before a new field becomes a permanent part of the known schema.
+`rag_mapper.py` is a suggestion engine, not an automatic mapper. It detects unknown fields, asks the LLM what they likely correspond to in the known schema, scores the confidence, and records the decision in `mapping_registry`. It does not automatically apply the mapping to the parser or transformation layer — that step requires a human decision.
 
-The workflow is:
+The `mapping_registry` entry tells you: "this new XML field name probably represents this known concept." For example:
 
-1. RAG mapper flags a new field, writes decision to `mapping_registry`
-2. Human reviews the mapping (correct it in `mapping_registry` if wrong)
-3. Add the confirmed field to `BASELINE_FIELDS` in `schema_diff.py`
-4. Commit the updated file
-5. Next run: the field is known, no drift triggered
+```
+DocumentNbr → invoice_id   (flagged_review, 0.90)
+```
 
-This keeps the baseline under version control, auditable, and deliberately maintained rather than auto-updated by the pipeline.
+This means: the LLM thinks `DocumentNbr` in the XML is the same concept as `invoice_id` in the output schema — likely a vendor abbreviation of `DocumentNumber`.
+
+**Applying a confirmed mapping — the human workflow:**
+
+When you agree with a mapping decision, there are two things to do:
+
+1. **Add the field to `BASELINE_FIELDS`** in `ingestion/schema_diff.py` so it is no longer detected as drift:
+
+```python
+"DocumentNbr": {
+    "type":        "string",
+    "position":    "header",
+    "variants":    ["both"],
+    "description": "Vendor abbreviation for DocumentNumber"
+},
+```
+
+2. **Add an alias in `ingestion/parser.py`** so the parser reads `DocumentNbr` as `DocumentNumber` at ingestion time. Find the line where `invoice_id` is assigned in `extract_header` and extend it with an `or` fallback:
+
+```python
+# Before
+invoice_id = get(header, "DocumentNumber")
+
+# After
+invoice_id = get(header, "DocumentNumber") or get(header, "DocumentNbr")
+```
+
+The `get()` function returns `None` if the field is not found, so the `or` chain tries `DocumentNumber` first and falls back to `DocumentNbr` if it is missing. Add one `or get(header, "...")` per alias you need to support.
+
+3. **Re-run the pipeline** — `DocumentNbr` is now known, no drift triggered, the field is correctly parsed and flows through dbt as `invoice_id`.
+
+4. **Commit both files** — the baseline and the parser update are the permanent record of this decision. The `mapping_registry` entry remains as the audit trail of how the decision was reached.
+
+This keeps every mapping change under version control, human-approved, and traceable back to the LLM reasoning that suggested it.
 
 ---
 
@@ -325,6 +409,7 @@ xml-drift-lakehouse/
 │   └── requirements.txt
 ├── tests/
 │   └── test_rag_flow.py     # 29 integration tests — no API key needed
+├── verify.py                # Query results after a pipeline run
 └── output/                  # Generated — not committed
 ```
 
@@ -379,16 +464,18 @@ ANTHROPIC_API_KEY=sk-ant-...
 ```bash
 cd docker
 
-# First time only
+# First time only — build image and initialize the database
 docker compose build
 docker compose run --rm airflow-init
 
-# Start
+# Start all services
 docker compose up -d
 
 # Open UI: http://localhost:8080  (admin / admin)
 # Trigger DAG: xml_drift_pipeline
 ```
+
+`airflow-init` is configured with `restart: "no"` — it runs once and stays stopped. Every subsequent `docker compose up -d` starts only the scheduler, webserver, and Postgres. If you need to re-initialize (e.g. after `docker compose down -v`), run `docker compose run --rm airflow-init` again.
 
 ### Run tests (no API key, no Ollama needed)
 
@@ -401,7 +488,7 @@ python tests/test_rag_flow.py -v
 
 **First run on a machine where Docker has run before:**
 
-If you see `admin already exists` during `airflow-init` — that is safe to ignore, it means the database already has the admin user from a previous run.
+If you see `admin already exists` during `airflow-init` — that is safe to ignore, the database already has the admin user from a previous run.
 
 If you want a completely clean start (wipes all run history and volumes):
 
@@ -420,6 +507,61 @@ sudo chown -R 1000:0 ./dbt/
 ```
 
 Then re-trigger the DAG.
+
+## Permissions on output files
+If files in output/ are owned by root after a DAG run:
+  sudo chown -R $USER:$USER output/
+
+## Never use `docker compose down -v`
+The -v flag removes named volumes including airflow-logs and postgres-db,
+forcing a full re-initialization. Use `docker compose down` only.
+Use `docker compose down -v` only as a last resort full reset.
+
+
+### Verify the results
+
+After a successful run, use the included script to query the results directly:
+
+```bash
+python verify.py
+```
+
+This prints a summary of what was processed — row counts, variant distribution, sample invoices, and mapping registry decisions if drift was detected. No DuckDB CLI needed.
+
+Expected output with the 10 sample files:
+
+```
+mart_invoices
+  Total rows       : 55
+  Unique invoices  : 10
+  DetailedInvoice  : 34
+  SummaryInvoice   : 21
+
+  Status distribution:
+    Submitted            16
+    Approved             16
+    ...
+
+mapping_registry  (empty — no drift detected on clean run)
+```
+
+### Testing drift detection
+
+The sample files are clean by design — no unknown fields, no drift. To see the full RAG pipeline fire, manually add one or more unknown fields to any XML file in `data/sample/`.
+
+Open any `.xml` file and add a field that does not exist in `BASELINE_FIELDS` in `ingestion/schema_diff.py`. For example, inside `<fops:DocumentHeader>`:
+
+```xml
+<fops:InvoiceAmount>1250.00</fops:InvoiceAmount>
+```
+
+Save the file, re-trigger the DAG, then run `verify.py` again. You will see:
+
+- `schema_diff` detecting the new field
+- `rag_mapping` firing and mapping it to a known field
+- `mapping_registry` populated with the decision, confidence score, and LLM reasoning
+
+You can add as many unknown fields as you like across multiple files. The system detects each unique unknown field once, regardless of how many files contain it — the LLM is called once per unique field, not once per file.
 
 ---
 
@@ -474,15 +616,12 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] Confidence-tiered routing — auto_approved / flagged_review / pending_human
 - [x] Mapping registry — immutable audit trail in DuckDB
 - [x] Airflow integration — ShortCircuitOperator, RAG branch wired into full pipeline
-- [x] 29 integration tests — full RAG flow, no API key needed
+- [x] 29 integration tests — full RAG flow, no API key needed ![RAG mapping output](docs/rag_mapping_output.png)
 - [x] Ollama vs Claude comparison — same drift, both providers tested live
 - [ ] Flask human review UI — approve/reject pending mappings via web interface
 - [ ] Airflow sensor — block pipeline on pending_human until resolved
 - [ ] Corpus self-improvement — approved mappings feed back into baseline
-
 ![Airflow DAG — all green run](docs/airflow_dag_run.png)
-
-![RAG mapping output](docs/rag_mapping_output.png)
 
 ### Phase 3 — Observability
 

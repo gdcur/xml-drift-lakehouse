@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns">
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000006">
   <fops:SummaryInvoice>
     <fops:DocumentHeader>
     <fops:ContentType>CreditNote</fops:ContentType>

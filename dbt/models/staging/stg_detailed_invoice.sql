@@ -42,7 +42,7 @@ staged as (
 
         -- ── Invoice header ─────────────────────────────────────────────────
         inv.invoice_id,
-        inv.invoice_db_id,
+        inv.document_number,
         inv.document_date,
         inv.document_type,
         inv.submission_method,

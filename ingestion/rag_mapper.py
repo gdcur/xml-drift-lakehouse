@@ -56,7 +56,11 @@ CORPUS = [
     ("line_total",            "decimal",  "line",       "total amount for a single line item"),
     ("line_subtotal",         "decimal",  "line",       "line item subtotal before tax"),
     ("line_pretax_total",     "decimal",  "line",       "line item total before tax is applied"),
-    ("invoice_id",            "string",   "header",     "unique invoice document identifier"),
+    ("document_number",       "string",   "header",     "invoice document number as assigned by the vendor — not guaranteed unique across vendors"),
+     # Common alternative field names for document_number seen in the wild:
+    # ("DocumentNbr",         "string",   "header",     "alternative field name for document_number used by some vendors"),
+    # ("DocNumber",           "string",   "header",     "short-form alternative field name for document_number"),
+    # ("InvoiceNumber",       "string",   "header",     "generic invoice number, maps to document_number"),   
     ("document_date",         "date",     "header",     "date the invoice was issued"),
     ("document_type",         "string",   "header",     "type classification of the document"),
     ("currency_code",         "string",   "header",     "ISO currency code for monetary values"),

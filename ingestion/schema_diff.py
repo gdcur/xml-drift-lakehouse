@@ -40,8 +40,23 @@ FOPS = f"{{{NS}}}"
 BASELINE_FIELDS = {
     # field_name: {type, position, variants, description}
 
+#    # ── Custom / drifted fields — add confirmed mappings here ──────────────────
+
+#    "DocumentNbr": {
+#        "type":        "string",
+#        "position":    "header",
+#        "variants":    ["both"],
+#        "description": "Vendor abbreviation for DocumentNumber"
+#    },
+#    "DocNumber": {
+#        "type":        "string",
+#        "position":    "header",
+#        "variants":    ["both"],
+#        "description": "Vendor abbreviation for DocumentNumber"
+#    },
+
     # ── Header fields ──────────────────────────────────────────────────────────
-    "DocumentNumber":       {"type": "string",  "position": "header", "variants": ["both"],           "description": "Unique invoice identifier"},
+    "DocumentNumber":       {"type": "string",  "position": "header", "variants": ["both"],           "description": "Invoice document number as assigned by the vendor — not guaranteed unique across vendors"},
     "DocumentDate":         {"type": "date",    "position": "header", "variants": ["both"],           "description": "Invoice date"},
     "DocumentType":         {"type": "string",  "position": "header", "variants": ["both"],           "description": "Type of document (invoice, credit note etc)"},
     "SubmissionMethod":     {"type": "string",  "position": "header", "variants": ["both"],           "description": "How document was submitted"},
