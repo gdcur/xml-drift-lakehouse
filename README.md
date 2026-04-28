@@ -3,11 +3,11 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20Snowflake%20%7C%20dbt%20%7C%20Airflow%20%7C%20Superset%20%7C%20Docker-informational)
 
-> Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
-
 A production-grade, schema-on-read XML ingestion toolkit with automated structural drift detection and AI-assisted field mapping.
 
 Built as a portfolio project to demonstrate real-world data engineering patterns: immutable raw storage, replayable transformations, and an LLM-assisted pipeline that handles schema evolution without manual intervention.
+
+Feedback and contributions welcome.
 
 ---
 
