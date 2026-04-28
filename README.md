@@ -1,7 +1,7 @@
 # xml-drift-lakehouse
-![Status](https://img.shields.io/badge/status-work%20in%20progress-yellow)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow%20%7C%20Docker-informational)
+![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow%20%7C%20Superset%20%7C%20Docker-informational)
 
 > Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
 
@@ -26,6 +26,7 @@ Built as a portfolio project to demonstrate real-world data engineering patterns
 - [Local Stack](#local-stack)
 - [Repository Structure](#repository-structure)
 - [Quickstart](#quickstart)
+- [Reporting](#reporting)
 - [dbt Lineage](#dbt-lineage)
 - [Sample Data](#sample-data)
 - [Testing Drift Detection](#testing-drift-detection)
@@ -128,6 +129,13 @@ XML Source
 [ Analytics ]
   - Clean, queryable DuckDB table
   - BI / reporting ready
+    |
+    v
+[ Reporting Layer ]
+  - Apache Superset connected via duckdb-engine
+  - Invoice Analytics dashboard (6 charts)
+  - KPI tiles: total invoice value, invoice count, vendor count
+  - Vendor spend breakdown, status distribution, category analysis
 ```
 
 ### Why partitioned final output?
@@ -564,6 +572,12 @@ python verify.py
 
 This prints a summary of what was processed — row counts, variant distribution, sample invoices, and mapping registry decisions if drift was detected. No DuckDB CLI needed.
 
+For a full formatted business report, run:
+
+```bash
+python scripts/report.py
+```
+
 Expected output with the 10 sample files:
 
 ```
@@ -598,6 +612,120 @@ Save the file, re-trigger the DAG, then run `verify.py` again. You will see:
 - `mapping_registry` populated with the decision, confidence score, and LLM reasoning
 
 You can add as many unknown fields as you like across multiple files. The system detects each unique unknown field once, regardless of how many files contain it — the LLM is called once per unique field, not once per file.
+
+---
+
+## Reporting
+
+### report.py — Business Analytics Summary
+
+An intermediate reporting script that runs business-level queries directly against `lakehouse.duckdb` and prints a clean summary to the terminal. More than a pipeline health check, less than a full BI tool — useful for quick validation after every run without opening a browser.
+
+```bash
+python scripts/report.py
+# or with options:
+python scripts/report.py --db output/lakehouse.duckdb --top 10
+```
+
+Sample output:
+
+```
+────────── invoice summary ───────────────────────
+  Total invoices     : 10
+  Total line items   : 55
+  Total spend        : $8,756,688.32
+  Avg invoice value  : $875,668.83
+
+────────── by year ───────────────────────────────
+  2020    3 invoices    $1,955,451.90
+  2021    3 invoices    $2,905,647.95
+  2022    1 invoice     $1,195,280.06
+  2023    2 invoices    $  716,938.69
+  2024    1 invoice     $1,633,989.22
+
+────────── by vendor (top 5) ─────────────────────
+  Ridgeline Contractors        $2,039,300.92
+  Valley Maintenance Group     $1,510,078.61
+  ...
+
+────────── by status ─────────────────────────────
+  Approved       3    $2,718,904.83    31.1%
+  Submitted      3    $2,371,601.54    27.1%
+  ...
+
+────────── by variant ────────────────────────────
+  DetailedInvoice    6    $7,100,524.78
+  SummaryInvoice     4    $1,656,163.54
+
+────────── pipeline info ─────────────────────────
+  Last run         : 2026-04-26 13:30:11 UTC
+  Source files     : 10 XML files
+  Database         : output/lakehouse.duckdb
+```
+
+No pandas, no dependencies beyond `duckdb`. Runs anywhere the lakehouse file is present.
+
+---
+
+### Superset Dashboard
+
+The final layer is an Apache Superset dashboard connected directly to `lakehouse.duckdb` via `duckdb-engine`.
+
+### Invoice Analytics Dashboard
+
+![Superset dashboard](docs/superset_dashboard.png)
+
+| Chart | Type | Description |
+|-------|------|-------------|
+| Total invoice value | Big Number | $50.2M across all invoices |
+| Total invoices | Big Number | 10 unique invoices |
+| Total vendors | Big Number | 8 distinct vendors |
+| Invoice Total by Vendor | Bar chart | Spend breakdown per vendor |
+| Invoices by Status | Pie chart | Approved / Submitted / Pending / Disputed / Rejected / Re-Submitted |
+| Spend by Purchase Category | Bar chart | MAINTENANCE / CAPEX / EMERGENCY / OPEX |
+
+The dashboard definition is exported and committed to `superset/` — import it via **Dashboards → Import** to recreate the full layout in a fresh Superset instance.
+
+### CLI Report
+
+A lightweight terminal report is also available — no Superset needed:
+
+```bash
+python scripts/report.py
+```
+
+Queries `lakehouse.duckdb` directly and prints a formatted summary:
+
+```
+────────── invoice summary ─────────────────────────
+  Total invoices     : 10
+  Total line items   : 55
+  Total spend        : $ 50,191,841.81
+  Avg invoice value  : $    912,578.94
+  Date range         : 2020-02-13  →  2024-06-05
+
+────────── top 5 vendors by spend ──────────────────
+  Vendor                         Invoices      Total Spend
+  ────────────────────────────── ────────   ──────────────
+  Ridgeline Contractors                 3   $ 18,007,713.21
+  ...
+
+────────── by approval status ──────────────────────
+────────── by invoice variant ──────────────────────
+────────── spend by status × year ──────────────────
+────────── pipeline info ───────────────────────────
+```
+
+Useful for quick validation after a pipeline run without opening a browser.
+
+### Superset connection
+
+SQLAlchemy URI:
+```
+duckdb:////opt/project/output/lakehouse.duckdb
+```
+
+The Superset service is included in `docker/docker-compose.yml` and runs on `http://localhost:8088` (admin / admin).
 
 ---
 
@@ -642,7 +770,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] dbt mart — UNION ALL + COALESCE reconciliation
 - [x] 51 DQ tests across all layers
 - [x] Airflow DAG (Docker)
-- [ ] Apache Superset dashboard
+- [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
 - [ ] Incremental loads
 
 ### Phase 2 — LLM-Assisted Schema Intelligence
@@ -661,7 +789,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 
 ### Phase 3 — Observability
 
-- [ ] Apache Superset dashboard
+- [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
 - [ ] Incremental loads
 - [ ] Drift trend reporting
 
