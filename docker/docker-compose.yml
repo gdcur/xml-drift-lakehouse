@@ -1,12 +1,14 @@
 ---
-# xml-drift-lakehouse — Airflow stack
+# xml-drift-lakehouse — Airflow + Superset stack
 # Usage:
 #   cd docker
-#   docker compose up airflow-init   # first time only
-#   docker compose up -d             # start all services
-#   open http://localhost:8080        # admin / admin
-#   docker compose down              # stop all services
-#   docker compose down -v           # stop + remove volumes (full reset)
+#   docker compose up airflow-init      # first time only
+#   docker compose up superset-init     # first time only
+#   docker compose up -d                # start all services
+#   open http://localhost:8080          # Airflow  — admin / admin
+#   open http://localhost:8088          # Superset — admin / admin
+#   docker compose down                 # stop all services
+#   docker compose down -v              # stop + remove volumes (full reset)
 
 x-airflow-common: &airflow-common
   build:
@@ -105,10 +107,61 @@ services:
     networks:
       - lakehouse
 
+  # ── Superset init (runs once) ──────────────────────────────────────────────
+  superset-init:
+    image: apache/superset:latest
+    environment:
+      SUPERSET_SECRET_KEY: "superset-lakehouse-secret-change-in-prod"
+      SUPERSET_LOAD_EXAMPLES: "no"
+    volumes:
+      - superset-home:/app/superset_home
+      - ..:/opt/project                        # access to lakehouse.duckdb
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        /app/.venv/bin/pip install duckdb-engine sqlalchemy --quiet
+        superset db upgrade
+        superset fab create-admin \
+          --username admin \
+          --firstname Admin \
+          --lastname User \
+          --email admin@example.com \
+          --password admin
+        superset init
+    restart: "no"
+    networks:
+      - lakehouse
+
+  # ── Superset webserver ─────────────────────────────────────────────────────
+  superset:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.superset
+    environment:
+      SUPERSET_SECRET_KEY: "superset-lakehouse-secret-change-in-prod"
+      SUPERSET_LOAD_EXAMPLES: "no"
+    volumes:
+      - superset-home:/app/superset_home
+      - ..:/opt/project                        # access to lakehouse.duckdb
+    ports:
+      - "8088:8088"
+    command: superset run -h 0.0.0.0 -p 8088 --with-threads --reload
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8088/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    networks:
+      - lakehouse
+
 volumes:
   postgres-db:
   airflow-plugins:
   airflow-logs:
+  superset-home:
 
 networks:
   lakehouse:
