@@ -16,17 +16,23 @@
 
 with invoices as (
 
-    select *
-    from read_parquet('{{ env_var("DBT_PARQUET_PATH", "../output") }}/invoices/invoices.parquet')
-    where variant = 'SummaryInvoice'
+    {% if target.type == 'snowflake' %}
+        select * from {{ source('raw', 'invoices') }}
+    {% else %}
+        select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/invoices/invoices.parquet')
+    {% endif %}
+    where variant = 'DetailedInvoice'
 
 ),
 
 line_items as (
 
-    select *
-    from read_parquet('{{ env_var("DBT_PARQUET_PATH", "../output") }}/line_items/line_items.parquet')
-    where variant = 'SummaryInvoice'
+    {% if target.type == 'snowflake' %}
+        select * from {{ source('raw', 'line_items') }}
+    {% else %}
+        select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/line_items/line_items.parquet')
+    {% endif %}
+    where variant = 'DetailedInvoice'
 
 ),
 
@@ -98,7 +104,7 @@ staged as (
         -- ── Unit economics — NULL for SummaryInvoice ───────────────────────
         li.quantity,
         li.unit_price,
-        null::double                            as units,
+        null::varchar                            as units,
         null::double                            as line_subtotal,
         null::double                            as line_pretax_total,
         li.line_total,
@@ -123,12 +129,12 @@ staged as (
 
         -- ── Tax — NULL for SummaryInvoice ─────────────────────────────────
         null::varchar                           as tax_type,
-        null::double                            as tax_total,
+        null::varchar                            as tax_total,
         null::varchar                           as tax_exempt_code,
 
         -- ── Early payment — NULL for SummaryInvoice ───────────────────────
         null::varchar                           as early_pay_due_date,
-        null::integer                           as early_pay_days_due,
+        null::varchar                           as early_pay_days_due,
         null::varchar                           as early_pay_eligible,
 
         -- ── Cross reference — NULL for SummaryInvoice ─────────────────────

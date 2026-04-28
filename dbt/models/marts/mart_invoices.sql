@@ -142,7 +142,11 @@ reconciled as (
         coalesce(line_total, invoice_total)             as effective_line_total,
 
         -- Flags
-        (tax_total is not null and tax_total > 0)       as has_tax,
+        {% if target.type == 'snowflake' %}
+        (try_to_double(tax_total) is not null and try_to_double(tax_total) > 0)  as has_tax,
+        {% else %}
+        (tax_total is not null and try_cast(tax_total as double) > 0)            as has_tax,
+        {% endif %}
         (early_pay_due_date is not null)                as has_early_payment,
         (alloc_cost_center is not null)                 as has_cost_center,
         (alloc_project_code is not null)                as has_project_code,
