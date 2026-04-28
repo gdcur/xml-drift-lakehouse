@@ -36,5 +36,4 @@ standalone_admin_password.txt
 # Docker
 docker/.env
 .env
-*.envlogs/
-logs/
+*.env
