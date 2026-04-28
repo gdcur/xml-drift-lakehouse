@@ -1,7 +1,7 @@
 # xml-drift-lakehouse
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20dbt%20%7C%20Airflow%20%7C%20Superset%20%7C%20Docker-informational)
+![Stack](https://img.shields.io/badge/stack-Python%20%7C%20DuckDB%20%7C%20Snowflake%20%7C%20dbt%20%7C%20Airflow%20%7C%20Superset%20%7C%20Docker-informational)
 
 > Work in progress. The architecture, patterns and folder structure are documented and reflect real production experience. Implementation is being built incrementally. Feedback and contributions welcome.
 
@@ -27,6 +27,7 @@ Built as a portfolio project to demonstrate real-world data engineering patterns
 - [Repository Structure](#repository-structure)
 - [Quickstart](#quickstart)
 - [Reporting](#reporting)
+- [Snowflake Target](#snowflake-target)
 - [dbt Lineage](#dbt-lineage)
 - [Sample Data](#sample-data)
 - [Testing Drift Detection](#testing-drift-detection)
@@ -729,6 +730,67 @@ The Superset service is included in `docker/docker-compose.yml` and runs on `htt
 
 ---
 
+## Snowflake Target
+
+The dbt project supports a dual-engine setup — the same models run against both DuckDB (local default) and Snowflake (cloud target) without any SQL changes.
+
+### How it works
+
+The staging models use a target-aware source pattern:
+
+```sql
+{% if target.type == 'snowflake' %}
+    select * from {{ source('raw', 'invoices') }}
+{% else %}
+    select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/invoices/invoices.parquet')
+{% endif %}
+```
+
+Intermediate and mart models are unchanged — they run identically on both engines.
+
+### Setup
+
+1. Set environment variables in `.env` (never committed):
+
+```bash
+SNOWFLAKE_ACCOUNT=your_account_identifier
+SNOWFLAKE_USER=your_username
+SNOWFLAKE_PASSWORD=your_password
+SNOWFLAKE_ROLE=ACCOUNTADMIN
+SNOWFLAKE_WAREHOUSE=COMPUTE_WH
+SNOWFLAKE_DATABASE=XML_DRIFT_LAKEHOUSE
+SNOWFLAKE_SCHEMA=PUBLIC
+```
+
+2. Load Parquet files into Snowflake RAW schema:
+
+```bash
+set -a && source .env && set +a
+python scripts/load_to_snowflake.py
+```
+
+3. Run dbt against Snowflake:
+
+```bash
+cd dbt
+set -a && source ../.env && set +a
+dbt run --target snowflake
+```
+
+### Result
+
+![Snowflake mart_invoices](docs/snowflake_mart_invoices.png)
+
+`MART_INVOICES` table in Snowflake — 34 rows, both XML variants reconciled, full lineage preserved via surrogate keys.
+
+### Install Snowflake adapter
+
+```bash
+pip install dbt-snowflake
+```
+
+---
+
 ## dbt Lineage
 
 ```
@@ -771,6 +833,7 @@ The generated XMLs follow the `fieldops-demo.io` namespace and structural patter
 - [x] 51 DQ tests across all layers
 - [x] Airflow DAG (Docker)
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
+- [x] Snowflake target — dual-engine dbt (DuckDB + Snowflake), same models, no SQL changes
 - [ ] Incremental loads
 
 ### Phase 2 — LLM-Assisted Schema Intelligence

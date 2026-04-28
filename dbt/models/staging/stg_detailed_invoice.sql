@@ -12,16 +12,22 @@
 
 with invoices as (
 
-    select *
-    from read_parquet('{{ env_var("DBT_PARQUET_PATH", "../output") }}/invoices/invoices.parquet')
+    {% if target.type == 'snowflake' %}
+        select * from {{ source('raw', 'invoices') }}
+    {% else %}
+        select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/invoices/invoices.parquet')
+    {% endif %}
     where variant = 'DetailedInvoice'
 
 ),
 
 line_items as (
 
-    select *
-    from read_parquet('{{ env_var("DBT_PARQUET_PATH", "../output") }}/line_items/line_items.parquet')
+    {% if target.type == 'snowflake' %}
+        select * from {{ source('raw', 'line_items') }}
+    {% else %}
+        select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/line_items/line_items.parquet')
+    {% endif %}
     where variant = 'DetailedInvoice'
 
 ),
@@ -93,7 +99,7 @@ staged as (
 
         -- ── Unit economics (DetailedInvoice only) ──────────────────────────
         li.quantity,
-        li.units,
+        cast(li.units as varchar)              as units,
         li.unit_price,
         li.line_subtotal,
         li.line_pretax_total,
@@ -119,12 +125,12 @@ staged as (
 
         -- ── Tax (sparse) ──────────────────────────────────────────────────
         li.tax_type,
-        li.tax_total,
+        cast(li.tax_total as varchar)          as tax_total,
         li.tax_exempt_code,
 
         -- ── Early payment (sparse) ────────────────────────────────────────
         li.early_pay_due_date,
-        li.early_pay_days_due,
+        cast(li.early_pay_days_due as varchar) as early_pay_days_due,
         li.early_pay_eligible,
 
         -- ── Cross reference (sparse) ──────────────────────────────────────
