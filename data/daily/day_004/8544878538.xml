@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000018">
+  <fops:DetailedInvoice>
+    <fops:DocumentHeader>
+    <fops:SubmissionMethod>API</fops:SubmissionMethod>
+    <fops:DiscountTotal>75509.02</fops:DiscountTotal>
+    <fops:PeriodDate>2024-12-08</fops:PeriodDate>
+    <fops:Notes>Invoice ref 2996</fops:Notes>
+    <fops:LineCount>1</fops:LineCount>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:DocumentNumber>SI-8745704</fops:DocumentNumber>
+    <fops:Total>2818234.45</fops:Total>
+    <fops:DocumentDate>2024-12-29</fops:DocumentDate>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:VendorTotal>2794209.50</fops:VendorTotal>
+    <fops:ContentType>CreditNote</fops:ContentType>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-04T11:50:04</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-56278607</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V754116</fops:EntityCode>
+        <fops:EntityName>Horizon Drilling Inc</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0039</fops:LocationCode>
+        <fops:LocationName>Site 35</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>2373 Commerce Rd</fops:AddressLine>
+          <fops:City>Bismarck</fops:City>
+          <fops:StateProvinceCode>CA</fops:StateProvinceCode>
+          <fops:StateProvince>California</fops:StateProvince>
+          <fops:PostalZipCode>10688</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Maria</fops:FirstName>
+        <fops:LastName>Smith</fops:LastName>
+        <fops:DepartmentName>Maintenance</fops:DepartmentName>
+        <fops:PhoneNumber>+1-420-955-3449</fops:PhoneNumber>
+        <fops:EmailAddress>contact562@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-001</fops:EntityCode>
+        <fops:EntityName>Client 20</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0023</fops:LocationCode>
+        <fops:LocationName>Office 4</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Calgary</fops:City>
+          <fops:StateProvinceCode>TX</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    <fops:OriginalSystem>SAP</fops:OriginalSystem>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+      <fops:LineEntry>
+    <fops:PeriodStartDate>2024-12-08</fops:PeriodStartDate>
+    <fops:Quantity>64.48</fops:Quantity>
+    <fops:Total>2818234.45</fops:Total>
+    <fops:LineSubTotal>2818234.45</fops:LineSubTotal>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:LinePretaxTotal>2818234.45</fops:LinePretaxTotal>
+    <fops:ProductCategory>LABOR</fops:ProductCategory>
+    <fops:ServiceCode>SVC-0025</fops:ServiceCode>
+    <fops:DaysDue>43</fops:DaysDue>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:Units>DAY</fops:Units>
+    <fops:ProductDescription>Pump installation</fops:ProductDescription>
+    <fops:UnitPrice>43707.11</fops:UnitPrice>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-12-08</fops:PeriodDate>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>2818234.45</fops:Total>
+          <fops:CostCenter>CC-0002</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-029</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-6300</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+          <fops:ProjectCode>PRJ-2022-0014</fops:ProjectCode>
+          <fops:WorkOrder>WO-00007</fops:WorkOrder>
+          <fops:OrderReference>PO-61964</fops:OrderReference>
+        </fops:Allocation>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:DetailedInvoice>
+</fops:StandardBillingDocument>

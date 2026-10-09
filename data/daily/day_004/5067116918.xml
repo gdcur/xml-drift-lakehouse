@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000011">
+  <fops:DetailedInvoice>
+    <fops:DocumentHeader>
+    <fops:ContentType>Adjustment</fops:ContentType>
+    <fops:DocumentDate>2024-12-05</fops:DocumentDate>
+    <fops:VendorTotal>2640999.79</fops:VendorTotal>
+    <fops:LineCount>2</fops:LineCount>
+    <fops:SubmissionMethod>EDI</fops:SubmissionMethod>
+    <fops:PeriodDate>2024-12-24</fops:PeriodDate>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:DocumentNumber>BILL-2714803</fops:DocumentNumber>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:Total>2603396.03</fops:Total>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-02T09:15:03</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-42329237</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V086875</fops:EntityCode>
+        <fops:EntityName>Valley Maintenance Group</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0001</fops:LocationCode>
+        <fops:LocationName>Site 47</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>2721 Commerce St</fops:AddressLine>
+          <fops:City>Tulsa</fops:City>
+          <fops:StateProvinceCode>CO</fops:StateProvinceCode>
+          <fops:StateProvince>Colorado</fops:StateProvince>
+          <fops:PostalZipCode>60019</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Angela</fops:FirstName>
+        <fops:LastName>Davis</fops:LastName>
+        <fops:DepartmentName>Maintenance</fops:DepartmentName>
+        <fops:PhoneNumber>+1-766-981-1188</fops:PhoneNumber>
+        <fops:EmailAddress>contact697@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-017</fops:EntityCode>
+        <fops:EntityName>Client 20</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0013</fops:LocationCode>
+        <fops:LocationName>Office 3</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Calgary</fops:City>
+          <fops:StateProvinceCode>WY</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+      <fops:LineEntry>
+    <fops:UnitPrice>20736.82</fops:UnitPrice>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:ProductCategory>LABOR</fops:ProductCategory>
+    <fops:LinePretaxTotal>1154004.03</fops:LinePretaxTotal>
+    <fops:Units>HR</fops:Units>
+    <fops:LineSubTotal>1154004.03</fops:LineSubTotal>
+    <fops:Total>1154004.03</fops:Total>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:ServiceCode>SVC-0022</fops:ServiceCode>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-30</fops:PeriodDate>
+    <fops:Quantity>55.65</fops:Quantity>
+    <fops:PeriodStartDate>2024-12-30</fops:PeriodStartDate>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>1154004.03</fops:Total>
+          <fops:CostCenter>CC-0011</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-027</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-6300</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+          <fops:ProjectCode>PRJ-2022-0008</fops:ProjectCode>
+          <fops:WorkOrder>WO-00046</fops:WorkOrder>
+          <fops:OrderReference>PO-37460</fops:OrderReference>
+        </fops:Allocation>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodStartDate>2024-12-10</fops:PeriodStartDate>
+    <fops:LineSubTotal>1449392.00</fops:LineSubTotal>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:CategoryCode>CAT-007</fops:CategoryCode>
+    <fops:Units>EA</fops:Units>
+    <fops:ProductDescription>Valve replacement</fops:ProductDescription>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductCategory>EQUIP</fops:ProductCategory>
+    <fops:UnitPrice>21072.87</fops:UnitPrice>
+    <fops:Total>1449392.00</fops:Total>
+    <fops:Quantity>68.78</fops:Quantity>
+    <fops:ServiceCode>SVC-0009</fops:ServiceCode>
+    <fops:LinePretaxTotal>1449392.00</fops:LinePretaxTotal>
+    <fops:PeriodDate>2024-12-10</fops:PeriodDate>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>1449392.00</fops:Total>
+          <fops:CostCenter>CC-0030</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-029</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+          <fops:ProjectCode>PRJ-2020-0019</fops:ProjectCode>
+          <fops:WorkOrder>WO-00034</fops:WorkOrder>
+          <fops:OrderReference>PO-28301</fops:OrderReference>
+        </fops:Allocation>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:DetailedInvoice>
+</fops:StandardBillingDocument>

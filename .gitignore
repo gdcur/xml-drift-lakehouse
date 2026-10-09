@@ -37,3 +37,6 @@ standalone_admin_password.txt
 docker/.env
 .env
 *.env
+
+# Large local daily runs (data/daily is tracked)
+data/daily_full/

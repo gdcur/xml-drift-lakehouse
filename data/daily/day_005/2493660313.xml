@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000020">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:LineCount>9</fops:LineCount>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:Total>783666.65</fops:Total>
+    <fops:VendorTotal>769929.23</fops:VendorTotal>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:ContentType>StandardBillingDocument</fops:ContentType>
+    <fops:SubmissionMethod>API</fops:SubmissionMethod>
+    <fops:DocumentDate>2024-12-15</fops:DocumentDate>
+    <fops:DocumentNumber>BILL-3457461</fops:DocumentNumber>
+    <fops:PeriodDate>2024-12-31</fops:PeriodDate>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-05T21:55:34</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-27849589</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V273424</fops:EntityCode>
+        <fops:EntityName>Acme Energy Services</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0047</fops:LocationCode>
+        <fops:LocationName>Site 2</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>8381 Oak Ave</fops:AddressLine>
+          <fops:City>Midland</fops:City>
+          <fops:StateProvinceCode>ND</fops:StateProvinceCode>
+          <fops:StateProvince>North Dakota</fops:StateProvince>
+          <fops:PostalZipCode>53007</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Carlos</fops:FirstName>
+        <fops:LastName>Davis</fops:LastName>
+        <fops:DepartmentName>Finance</fops:DepartmentName>
+        <fops:PhoneNumber>+1-896-310-9008</fops:PhoneNumber>
+        <fops:EmailAddress>contact94@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-002</fops:EntityCode>
+        <fops:EntityName>Client 14</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0023</fops:LocationCode>
+        <fops:LocationName>Office 2</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Bismarck</fops:City>
+          <fops:StateProvinceCode>CA</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    <fops:OriginalSystem>SAP</fops:OriginalSystem>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>783666.65</fops:Total>
+          <fops:CostCenter>CC-0027</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-024</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:PeriodDate>2024-12-25</fops:PeriodDate>
+    <fops:Total>44680.54</fops:Total>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:Quantity>14.29</fops:Quantity>
+    <fops:UnitPrice>3126.70</fops:UnitPrice>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:CategoryCode>CAT-019</fops:CategoryCode>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:ProductDescription>Pump installation</fops:ProductDescription>
+    <fops:CategoryCode>CAT-005</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-27</fops:PeriodDate>
+    <fops:Quantity>3.57</fops:Quantity>
+    <fops:Total>8218.10</fops:Total>
+    <fops:UnitPrice>2301.99</fops:UnitPrice>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:LineNumber>2</fops:LineNumber>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:UnitPrice>1602.93</fops:UnitPrice>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Quantity>38.04</fops:Quantity>
+    <fops:PeriodDate>2024-12-26</fops:PeriodDate>
+    <fops:Total>60975.46</fops:Total>
+    <fops:CategoryCode>CAT-019</fops:CategoryCode>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Total>42177.67</fops:Total>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:PeriodDate>2024-12-06</fops:PeriodDate>
+    <fops:Quantity>10.13</fops:Quantity>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:UnitPrice>4163.64</fops:UnitPrice>
+    <fops:ProductDescription>Valve replacement</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>14.37</fops:Quantity>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-12-26</fops:PeriodDate>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:Total>64597.75</fops:Total>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:UnitPrice>4495.32</fops:UnitPrice>
+    <fops:LineNumber>5</fops:LineNumber>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>41.52</fops:Quantity>
+    <fops:Total>119059.43</fops:Total>
+    <fops:CategoryCode>CAT-005</fops:CategoryCode>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:LineNumber>6</fops:LineNumber>
+    <fops:ProductDescription>Transportation and logistics</fops:ProductDescription>
+    <fops:UnitPrice>2867.52</fops:UnitPrice>
+    <fops:PeriodDate>2024-12-11</fops:PeriodDate>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:Quantity>37.93</fops:Quantity>
+    <fops:ProductDescription>Field inspection</fops:ProductDescription>
+    <fops:Total>201053.65</fops:Total>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:CategoryCode>CAT-012</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-26</fops:PeriodDate>
+    <fops:UnitPrice>5300.65</fops:UnitPrice>
+    <fops:LineNumber>7</fops:LineNumber>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>8</fops:LineNumber>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Quantity>34.62</fops:Quantity>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-26</fops:PeriodDate>
+    <fops:Total>177570.83</fops:Total>
+    <fops:ProductDescription>Generator rental</fops:ProductDescription>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:UnitPrice>5129.14</fops:UnitPrice>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:ProductDescription>Cementing services</fops:ProductDescription>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:Total>65333.22</fops:Total>
+    <fops:LineNumber>9</fops:LineNumber>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:UnitPrice>3055.81</fops:UnitPrice>
+    <fops:Quantity>21.38</fops:Quantity>
+    <fops:PeriodDate>2024-12-27</fops:PeriodDate>
+    <fops:CategoryCode>CAT-003</fops:CategoryCode>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

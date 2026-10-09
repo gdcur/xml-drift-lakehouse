@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000013">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:DocumentNumber>SI-5163555</fops:DocumentNumber>
+    <fops:Notes>Invoice ref 7547</fops:Notes>
+    <fops:DocumentType>CreditNote</fops:DocumentType>
+    <fops:DocumentDate>2024-12-11</fops:DocumentDate>
+    <fops:SubmissionMethod>Portal</fops:SubmissionMethod>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:DiscountTotal>41318.20</fops:DiscountTotal>
+    <fops:VendorTotal>1121511.39</fops:VendorTotal>
+    <fops:LineCount>6</fops:LineCount>
+    <fops:Total>1140053.81</fops:Total>
+    <fops:ContentType>Adjustment</fops:ContentType>
+    <fops:PeriodDate>2024-12-25</fops:PeriodDate>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-02T08:49:49</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-79967676</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V718828</fops:EntityCode>
+        <fops:EntityName>Delta Field Ops</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0012</fops:LocationCode>
+        <fops:LocationName>Site 45</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>5185 Oak Ave</fops:AddressLine>
+          <fops:City>Midland</fops:City>
+          <fops:StateProvinceCode>CO</fops:StateProvinceCode>
+          <fops:StateProvince>Colorado</fops:StateProvince>
+          <fops:PostalZipCode>13201</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>James</fops:FirstName>
+        <fops:LastName>Brown</fops:LastName>
+        <fops:DepartmentName>Contracts</fops:DepartmentName>
+        <fops:PhoneNumber>+1-825-970-2193</fops:PhoneNumber>
+        <fops:EmailAddress>contact467@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-005</fops:EntityCode>
+        <fops:EntityName>Client 15</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0043</fops:LocationCode>
+        <fops:LocationName>Office 9</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Denver</fops:City>
+          <fops:StateProvinceCode>ND</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>1140053.81</fops:Total>
+          <fops:CostCenter>CC-0041</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-025</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-6200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:PeriodDate>2024-12-24</fops:PeriodDate>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:Quantity>15.95</fops:Quantity>
+    <fops:CategoryCode>CAT-007</fops:CategoryCode>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:UnitPrice>6629.93</fops:UnitPrice>
+    <fops:Total>105747.38</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:UnitPrice>7032.07</fops:UnitPrice>
+    <fops:CategoryCode>CAT-009</fops:CategoryCode>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-12-31</fops:PeriodDate>
+    <fops:Total>241200.00</fops:Total>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:Quantity>34.30</fops:Quantity>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-12-11</fops:PeriodDate>
+    <fops:UnitPrice>8202.12</fops:UnitPrice>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Transportation and logistics</fops:ProductDescription>
+    <fops:CategoryCode>CAT-002</fops:CategoryCode>
+    <fops:Quantity>22.38</fops:Quantity>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:Total>183563.45</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:ProductDescription>Safety equipment supply</fops:ProductDescription>
+    <fops:PeriodDate>2024-12-26</fops:PeriodDate>
+    <fops:Total>364432.56</fops:Total>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:UnitPrice>7673.88</fops:UnitPrice>
+    <fops:Quantity>47.49</fops:Quantity>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:ProductDescription>Consulting services</fops:ProductDescription>
+    <fops:UnitPrice>1606.75</fops:UnitPrice>
+    <fops:PeriodDate>2024-12-22</fops:PeriodDate>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:LineNumber>5</fops:LineNumber>
+    <fops:CategoryCode>CAT-019</fops:CategoryCode>
+    <fops:Total>45262.15</fops:Total>
+    <fops:Quantity>28.17</fops:Quantity>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Quantity>39.50</fops:Quantity>
+    <fops:LineNumber>6</fops:LineNumber>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:UnitPrice>5059.45</fops:UnitPrice>
+    <fops:Total>199848.27</fops:Total>
+    <fops:PeriodDate>2024-12-17</fops:PeriodDate>
+    <fops:CategoryCode>CAT-007</fops:CategoryCode>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

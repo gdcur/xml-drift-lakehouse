@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000023">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:Total>432570.59</fops:Total>
+    <fops:LineCount>5</fops:LineCount>
+    <fops:DocumentDate>2024-12-14</fops:DocumentDate>
+    <fops:VendorTotal>425985.88</fops:VendorTotal>
+    <fops:DocumentType>CreditNote</fops:DocumentType>
+    <fops:PeriodDate>2024-12-31</fops:PeriodDate>
+    <fops:ContentType>StandardBillingDocument</fops:ContentType>
+    <fops:SubmissionMethod>EDI</fops:SubmissionMethod>
+    <fops:Notes>Invoice ref 8034</fops:Notes>
+    <fops:DiscountTotal>5430.87</fops:DiscountTotal>
+    <fops:DocumentNumber>BILL-3345961</fops:DocumentNumber>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-06T21:57:03</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-34071191</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V626729</fops:EntityCode>
+        <fops:EntityName>Horizon Drilling Inc</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0032</fops:LocationCode>
+        <fops:LocationName>Site 37</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>2348 Main Ave</fops:AddressLine>
+          <fops:City>Bakersfield</fops:City>
+          <fops:StateProvinceCode>WY</fops:StateProvinceCode>
+          <fops:StateProvince>Wyoming</fops:StateProvince>
+          <fops:PostalZipCode>55443</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Carlos</fops:FirstName>
+        <fops:LastName>Rodriguez</fops:LastName>
+        <fops:DepartmentName>Maintenance</fops:DepartmentName>
+        <fops:PhoneNumber>+1-370-480-3079</fops:PhoneNumber>
+        <fops:EmailAddress>contact768@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-004</fops:EntityCode>
+        <fops:EntityName>Client 8</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0048</fops:LocationCode>
+        <fops:LocationName>Office 9</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Denver</fops:City>
+          <fops:StateProvinceCode>CO</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    <fops:OriginalSystem>JDE</fops:OriginalSystem>
+    <fops:InvoiceAmount>432570.59</fops:InvoiceAmount>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>432570.59</fops:Total>
+          <fops:CostCenter>CC-0042</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-023</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-7200</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:Quantity>11.07</fops:Quantity>
+    <fops:UnitPrice>6073.20</fops:UnitPrice>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:Total>67230.32</fops:Total>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:CategoryCode>CAT-002</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-27</fops:PeriodDate>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:CategoryCode>CAT-019</fops:CategoryCode>
+    <fops:ChargeClass>Non-Itemized</fops:ChargeClass>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:PurchaseCategory>OPEX</fops:PurchaseCategory>
+    <fops:ProductDescription>Chemical supply</fops:ProductDescription>
+    <fops:PeriodDate>2024-12-19</fops:PeriodDate>
+    <fops:Quantity>26.89</fops:Quantity>
+    <fops:UnitPrice>9777.19</fops:UnitPrice>
+    <fops:Total>262908.64</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:LineNumber>3</fops:LineNumber>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:PeriodDate>2025-01-06</fops:PeriodDate>
+    <fops:Total>4401.48</fops:Total>
+    <fops:UnitPrice>147.80</fops:UnitPrice>
+    <fops:Quantity>29.78</fops:Quantity>
+    <fops:CategoryCode>CAT-013</fops:CategoryCode>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2024-12-09</fops:PeriodDate>
+    <fops:LineNumber>4</fops:LineNumber>
+    <fops:UnitPrice>5370.28</fops:UnitPrice>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:Quantity>5.04</fops:Quantity>
+    <fops:CategoryCode>CAT-010</fops:CategoryCode>
+    <fops:Total>27066.21</fops:Total>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:ProductDescription>Safety equipment supply</fops:ProductDescription>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:CategoryCode>CAT-003</fops:CategoryCode>
+    <fops:PeriodDate>2024-12-14</fops:PeriodDate>
+    <fops:LineNumber>5</fops:LineNumber>
+    <fops:UnitPrice>4380.49</fops:UnitPrice>
+    <fops:Quantity>16.20</fops:Quantity>
+    <fops:PurchaseCategory>CAPEX</fops:PurchaseCategory>
+    <fops:ProductDescription>Valve replacement</fops:ProductDescription>
+    <fops:Total>70963.94</fops:Total>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>
