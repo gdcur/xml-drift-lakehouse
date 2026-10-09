@@ -1,6 +1,6 @@
 # ADR-0002: Business-key identity and file lineage
 
-- Status: Proposed
+- Status: Accepted
 - Date: 2026-10-08
 - Updated: 2026-10-09
 - Supersedes: ADR-0000 decision D2 (surrogate keys)
@@ -54,3 +54,4 @@ When the same `invoice_id` appears more than once, the latest version wins: grea
 
 - 2026-10-08: Proposed.
 - 2026-10-09: Added `version_sk` to identify a specific delivery of an invoice.
+- 2026-10-09: Accepted after review.

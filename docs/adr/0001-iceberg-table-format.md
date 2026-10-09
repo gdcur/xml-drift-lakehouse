@@ -1,6 +1,6 @@
 # ADR-0001: Apache Iceberg as the lakehouse table format
 
-- Status: Proposed (all decisions taken, awaiting review before it becomes Accepted)
+- Status: Accepted
 - Date: 2026-10-08
 - Updated: 2026-10-09
 - Supersedes: none
@@ -82,3 +82,4 @@ Compaction scheduling, row-level deletes beyond the per-invoice line replacement
 - 2026-10-08: Proposed.
 - 2026-10-09: Updated with spike results, the version decision and the dependency on ADR-0002.
 - 2026-10-09: Three open decisions taken (unpartitioned `line_items`, version hint file, fixed explicit schema). Remains Proposed until reviewed.
+- 2026-10-09: Accepted after review.
