@@ -2,6 +2,7 @@
 
 - Status: Proposed
 - Date: 2026-10-08
+- Updated: 2026-10-09
 - Supersedes: ADR-0000 decision D2 (surrogate keys)
 - Related: ADR-0001 (Iceberg table format)
 
@@ -9,7 +10,7 @@
 
 Today the surrogate key `sk` is a truncated SHA-256 (16 hex characters) of `source_file`, `invoice_id` and, for lines, `line_number` (ADR-0000, D2). Because the file name is part of the hash, the same invoice delivered in a different file gets a different `sk`.
 
-The pipeline is currently a one-shot full rebuild: every run re-reads every XML and rewrites the Parquet files. Daily movements were never implemented. Once invoices arrive over several days, the same `invoice_id` will appear again in a later file with updated content, for example `inv/day1/003.xml` and `inv/day4/003.xml`. The file name may or may not repeat. The identity of a record must therefore come from the business data, not from the file that carried it.
+The pipeline is currently a one-shot full rebuild: every run re-reads every XML and rewrites the Parquet files. Handling daily movements was not part of its original design. Once invoices arrive over several days, the same `invoice_id` will appear again in a later file with updated content, for example `inv/day1/003.xml` and `inv/day4/003.xml`. The file name may or may not repeat. The identity of a record must therefore come from the business data, not from the file that carried it.
 
 ## Decision
 
@@ -29,6 +30,7 @@ Every row records where it came from:
 - `source_file`: the file name, for example `003.xml`.
 - `source_path`: the path relative to the input root, for example `day4/003.xml`, so two files with the same name remain distinguishable and the original document can be found quickly, both for our own checks and for business users.
 - `ingested_at`: recorded per file or per input batch, not once per run, so it can order versions.
+- `version_sk`: truncated SHA-256 of `invoice_id` and `source_path`. It identifies one specific delivery (version) of an invoice, whereas `sk` identifies the invoice itself. It is a plain column, not an upsert key. Line items carry the `version_sk` of the invoice version they belong to. It uses `source_path` and not the bare file name because file names can repeat across days (`day1/003.xml` and `day4/003.xml`).
 
 The current table keeps the lineage of the latest version of each invoice. Earlier versions, and the paths they came from, remain available through Iceberg snapshots (time travel).
 
@@ -38,7 +40,7 @@ When the same `invoice_id` appears more than once, the latest version wins: grea
 
 ## Consequences
 
-- Breaking change: every `sk` and `line_sk` value changes. Affected: `parser.py`, the dbt models and their tests, the Snowflake load, and the README. All 51 dbt tests must still pass after the change.
+- Breaking change: every `sk` and `line_sk` value changes, and a new column `version_sk` is added to invoices and line items. Affected: `parser.py`, the dbt models and their tests, the Snowflake load, and the README. All 51 dbt tests must still pass after the change.
 - Re-delivery of an unchanged invoice becomes a no-op upsert instead of a second row.
 - Truncation to 16 hex characters is kept for continuity. At this data size collision risk is negligible, and the choice is recorded here so it is deliberate.
 - ADR-0000 D2 is superseded by this ADR. ADR-0000 itself is left unedited, apart from its status log.
@@ -51,3 +53,4 @@ When the same `invoice_id` appears more than once, the latest version wins: grea
 ## Status log
 
 - 2026-10-08: Proposed.
+- 2026-10-09: Added `version_sk` to identify a specific delivery of an invoice.

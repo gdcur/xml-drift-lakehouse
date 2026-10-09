@@ -6,9 +6,9 @@
 
 ## Context
 
-xml-drift-lakehouse is a personal portfolio project. It is not production experience. It reproduces, with a fictional schema (domain `fieldops-demo.io`), the shape of a problem solved in production by the OpenInvoice pipeline at Vital Energy: XML invoices arriving in two structural variants with different field names and node ordering, handled schema-on-read.
+xml-drift-lakehouse is a personal portfolio project, modeled on a real-world pipeline built on AWS Glue and Amazon Athena. In that pipeline, XML invoices arrived in two structural variants with different field names and node ordering, and were reconciled schema-on-read with hand-written SQL views. The data and schema here are fictional (domain `fieldops-demo.io`).
 
-In production the stack was Glue + Athena with hand-written views. Here DuckDB stands in for Athena and dbt Core stands in for the hand-written views. The private repo (`adaptive-lakehouse`) carries the full-fidelity schema and is out of scope for this ADR.
+DuckDB stands in for Athena, and dbt Core stands in for the hand-written views.
 
 ## Decisions recorded
 
@@ -28,14 +28,14 @@ In production the stack was Glue + Athena with hand-written views. Here DuckDB s
 
 **D8. Quality.** 51 dbt data quality tests across the layers, plus 29 pytest integration tests (`tests/test_rag_flow.py`) that run without an API key.
 
-## Known gaps and deviations at this date
+## Scope limits and known deviations at this date
 
 - `scripts/load_to_snowflake.py` uses pandas (`write_pandas`). The "no pandas" convention applies to new code only.
 - `tests/test_parser.py` is a script and contains no test functions.
-- No incremental loads: the Parquet landing zone is rewritten in full each run.
+- Full load by design: the Parquet landing zone is rewritten in full each run, and invoices that change after loading are not handled. ADR-0001 and ADR-0002 add that capability.
 - `dbt/profiles.yml` is tracked despite a `.gitignore` rule that never matched (inline comment is invalid in `.gitignore`). It holds no literal secrets; Snowflake values come from `env_var(...)`.
 - `sources.yml` describes `invoice_id` as "Document number", which contradicts D2. Documentation fix pending.
-- Version drift: `docker/requirements.txt` pins `duckdb==1.1.3`, while the local virtualenv runs a newer DuckDB. Neither is currently declared authoritative.
+- Version drift: `docker/requirements.txt` pins `duckdb==1.1.3`, which is not the version used in recent development runs. Neither is currently declared authoritative; ADR-0001 settles this.
 
 ## Consequences
 

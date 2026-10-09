@@ -1,26 +1,29 @@
 # ADR-0001: Apache Iceberg as the lakehouse table format
 
-- Status: Proposed
+- Status: Proposed (all decisions taken, awaiting review before it becomes Accepted)
 - Date: 2026-10-08
+- Updated: 2026-10-09
 - Supersedes: none
-- Depends on: ADR-0000 (baseline)
+- Depends on: ADR-0000 (baseline), ADR-0002 (business-key identity and file lineage)
 
 ## Context
 
-The landing zone is plain Parquet (ADR-0000, D3): unpartitioned, fully rewritten on each run, with no table metadata, no snapshots and no schema history. The roadmap lists "Incremental loads" as open, and the schema-drift workflow (D6) has no table-level way to record that a column was added.
+The landing zone is plain Parquet (ADR-0000, D3): unpartitioned and fully rewritten on each run, with no table metadata, no snapshots and no schema history. This is by design: the original pipeline was built as a full load, re-reads every XML file on every run, and does not handle changes to invoices after they were loaded.
 
-Apache Iceberg addresses these gaps: snapshot isolation, hidden partitioning, schema evolution that does not rewrite data, and time travel. Athena has native Iceberg table support, and Athena was used in production on the OpenInvoice pipeline. This is a portfolio project, so the Athena link is a natural extension of a tool I used in production. It is not production experience with Iceberg, and all documentation must say so.
+To manage daily variations (details, statuses, amendments), this project introduces an Iceberg layer, which suits the required upserts well. Iceberg provides snapshot isolation, hidden partitioning, schema evolution that does not rewrite data, and time travel. Amazon Athena has native Iceberg table support, and Athena is the engine of the real-world pipeline this project is modeled on (ADR-0000). An optional Athena leg is therefore a natural extension of the same design, described below. Iceberg itself is new in this project.
+
+To exercise upserts, the repo now has a reproducible multi-day dataset (`scripts/daily_generator.py`, published as `data/daily/`, 6 days and 40 XML files). It contains new invoices, updated invoices (same `invoice_id`, changed content, valid approval workflow steps), exact re-deliveries, lines added or removed by an update, and new header fields that appear mid-run. Its `manifest.csv` is the expected result for the tests.
 
 ## Decision drivers
 
 1. Close the roadmap item credibly and in a short time.
 2. Stay reproducible: a fresh clone must run offline with no cloud account.
-3. Keep a defensible link to the Athena production background.
+3. Keep a link to Amazon Athena with the Glue catalog, the engine of the pipeline this project is modeled on, so the design is shown to carry over from the local setup to a managed cloud engine.
 4. Do not regress the existing Parquet path, the Snowflake target or the 51 dbt tests.
 
 ## Options considered
 
-**A. Athena only.** Strongest link to the production story. Requires an AWS account and S3, and fresh clones cannot run it.
+**A. Athena only.** Strongest link to the real pipeline this project is modeled on. Requires an AWS account and S3, and fresh clones cannot run it.
 
 **B. PyIceberg + DuckDB only.** Fully local and reproducible. No link to Athena.
 
@@ -30,36 +33,52 @@ Apache Iceberg addresses these gaps: snapshot isolation, hidden partitioning, sc
 
 Option C.
 
+Rationale: it keeps the project runnable by anyone from a fresh clone, with no cloud account, no cost and tests that run in seconds, which option A cannot offer. It also shows that the same design runs on a managed cloud engine, which option B cannot show. The price is a second target to maintain, so the Athena leg is kept small and optional.
+
 ### Design
 
-- **Tables:** `invoices` and `line_items`, keyed on the existing surrogate keys (`sk`, ADR-0000 D2).
-- **Writer:** a new `ingestion/iceberg_writer.py`. `parse_xmls` keeps producing Parquet. The writer reads it with Polars, converts to Arrow and merges into Iceberg on `sk`. No pandas in this module.
-- **Upsert vs rebuild:** use PyIceberg's upsert if the pinned version supports it. Otherwise fall back to a partition-scoped overwrite. The spike (below) decides.
-- **Partitioning:** `month(document_date)` as the only partition field. `variant` was considered and rejected as a partition field: it has two values with a 60/40 skew, so it prunes little. At about 550k line items the partitioning is demonstrative, not a performance need, and the README must say so.
-- **Schema evolution:** when the schema diff engine (D6) approves a new field, the writer applies `ADD COLUMN` to the Iceberg table instead of rewriting data.
-- **Reads in dbt:** a new source reads Iceberg through DuckDB `iceberg_scan`, behind an environment flag. The Parquet source remains the default. The Snowflake target is untouched.
+- **Tables:** `invoices` and `line_items`.
+- **Identity and upsert keys:** from ADR-0002, not from the file-based `sk` of ADR-0000. Invoices are keyed on `invoice_id`; line items on `(invoice_id, line_number)`. The identifier columns must be declared as required (non-null) in the Iceberg schema.
+- **Writer:** a new `ingestion/iceberg_writer.py`. `parse_xmls` keeps producing Parquet. The writer reads it with Polars, converts to Arrow, casts to the table schema and upserts. No pandas in this module.
+- **Fixed schema:** the Iceberg schema is declared explicitly in the writer and is not inferred from each batch (see spike result 4). New fields approved by the schema diff engine (ADR-0000, D6) are added with `ALTER TABLE ... ADD COLUMN`, never by re-inferring.
+- **Removed lines:** an update can remove a line. A plain upsert on `(invoice_id, line_number)` would leave the removed line behind as a stale row. The writer therefore replaces all lines of an invoice when a new version arrives: delete by `invoice_id`, then append the new lines. The test dataset covers this case.
+- **Partitioning:** `invoices` is partitioned by `month(document_date)`. `variant` was considered and rejected as a partition field: it has two values with a 60/40 skew, so it prunes almost nothing. `line_items` is not partitioned (decided 2026-10-09): a line has no date of its own, and copying the invoice date into every line would add a column to keep in sync for no real gain at this data size. At about 550k line items the partitioning is demonstrative, not a performance need, and the README must say so.
+- **Reads in dbt:** a new source reads Iceberg through DuckDB `iceberg_scan`, behind an environment flag. The Parquet source remains the default. The Snowflake target is untouched. The source finds the table through a version hint file written by the writer (see "Decisions taken after the spike").
 - **Catalogs:** SQLite (`sqlite:///...`) locally. Glue for the optional Athena leg.
 - **Athena leg:** minimal infrastructure (S3 bucket, Glue database, Athena workgroup), documented queries, time travel, and maintenance commands. Clearly labeled optional.
 
-### Spike required before implementation
+### Versions
 
-These are assumptions to verify, not facts:
+- DuckDB: bump from the 1.1.3 pin to the 1.5.x line (tested: 1.5.6). Reasons: 1.1.3 has no wheel for Python 3.14, cannot read the table when the warehouse path carries a `file://` scheme, and has no snapshot time travel. Updating `docker/requirements.txt` is a separate step.
+- PyIceberg 0.12.0, installed with the `pyiceberg-core` extra.
+- dbt-core 1.11.8 and dbt-duckdb 1.10.1 stay as they are.
 
-1. Which DuckDB version is authoritative: the pin (1.1.3) or a deliberate bump. Confirm what the `iceberg` extension supports in the chosen version. The design only needs DuckDB to read Iceberg, since writes go through PyIceberg.
-2. How `iceberg_scan` is pointed at a table created through a SQLite catalog (current metadata file resolution, moved-path handling).
-3. Whether the pinned PyIceberg version supports upsert.
-4. The physical type of `document_date` in the current Parquet output, since the month transform needs a date or timestamp type.
+## Spike results (verified by running them on 2026-10-09)
+
+1. **DuckDB versions.** The `iceberg` extension is read-only in both versions tested, which is enough because PyIceberg does all the writing. 1.1.3 reads PyIceberg tables only when the warehouse path has no `file://` scheme and has no snapshot time travel. 1.5.6 reads both forms and supports time travel (10 rows at snapshot 1, 5 after the delete in the spike).
+2. **dbt compatibility.** With dbt-duckdb 1.10.1 and dbt-core 1.11.8, `dbt build` passes all 51 tests and 4 models on both DuckDB 1.5.6 and 1.1.3, after the staging bug fix on `main` (commit 9e6a1ea: `stg_summary_invoice` filtered on the wrong variant).
+3. **SQLite catalog and `iceberg_scan`.** The SQLite catalog does not write `version-hint.text`, so scanning the table directory fails. Two ways work: pass the current metadata file from the catalog (`table.metadata_location`), or have the writer write `version-hint.text` itself. `allow_moved_paths` works only on a table directory with a version hint, not on a direct metadata file in 1.1.3.
+4. **PyIceberg upsert.** Confirmed in 0.12.0: changed rows update, a repeated batch changes nothing, new rows insert, and `ADD COLUMN` works without rewriting data (old rows read as null). Three requirements: the identifier column must be required; writes to a month-partitioned table need the `pyiceberg-core` extra; Arrow batches must be cast to the table schema before writing. Upsert is copy-on-write, so each run adds a delete snapshot and an append snapshot.
+5. **Physical types.** `document_date` is a VARCHAR in ISO `YYYY-MM-DD` form in the current Parquet output; casting to DATE works and month partitioning works after the cast. `line_items` has no `document_date` column. The parser also emits Arrow null-typed columns when a column is all null in a run (20 of them in the sample run), and PyIceberg rejects them. Types therefore vary between runs, which is why a fixed explicit schema is required.
+
+## Decisions taken after the spike (2026-10-09)
+
+1. **`line_items` is not partitioned.** Only `invoices` is partitioned, by month.
+2. **The dbt source finds the table through a version hint.** After every write, the writer creates or updates `version-hint.text` in the table's metadata folder. The dbt source then points at the fixed table folder and passes `version_name_format='%s%s.metadata.json'`, plus `allow_moved_paths` so the same table can be read from the host and from the Docker/Airflow containers, where the absolute paths differ. The alternative (the writer publishing the path of the newest metadata file for dbt to read) was rejected because it adds state that must travel with every run and does not solve moved paths. This step is needed only for the local DuckDB read path: PyIceberg and Athena ask their catalog (SQLite or Glue) which metadata file is current.
+3. **The writer uses a fixed explicit schema**, for the reasons in spike result 5.
 
 ## Consequences
 
-- Positive: snapshots and time travel on the landing zone, incremental loads become possible, schema drift gets a table-level record, and the Athena story gets a concrete artifact.
-- Negative: new dependencies (pyiceberg, pyarrow), a second read path to keep in parity, and extra CI surface.
-- The parity risk is mitigated by tests: Parquet vs Iceberg row counts, `sk` uniqueness after upsert, partition spec assertions, and a schema-evolution test.
+- Positive: snapshots and time travel on the landing zone, incremental loads become possible, schema drift gets a table-level record, earlier versions of an invoice stay reachable through snapshots, and the Athena story gets a concrete artifact.
+- Negative: new dependencies (pyiceberg, pyarrow), a second read path to keep in parity, a DuckDB version bump, and extra CI surface.
+- The parity risk is mitigated by tests: Parquet vs Iceberg row counts, key uniqueness after upsert, removed lines not left behind, repeated batches changing nothing, partition spec assertions, and a schema-evolution test.
 
 ## Out of scope
 
-Compaction scheduling, row-level deletes, Snowflake Iceberg tables, and any change to the resume. The resume decision comes last and keeps the portfolio-vs-production distinction intact.
+Compaction scheduling, row-level deletes beyond the per-invoice line replacement, and Snowflake Iceberg tables.
 
 ## Status log
 
-- 2026-10-08: Proposed. Becomes Accepted when the spike confirms the four assumptions above.
+- 2026-10-08: Proposed.
+- 2026-10-09: Updated with spike results, the version decision and the dependency on ADR-0002.
+- 2026-10-09: Three open decisions taken (unpartitioned `line_items`, version hint file, fixed explicit schema). Remains Proposed until reviewed.
