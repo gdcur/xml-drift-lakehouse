@@ -21,7 +21,7 @@ with invoices as (
     {% else %}
         select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/invoices/invoices.parquet')
     {% endif %}
-    where variant = 'DetailedInvoice'
+    where variant = 'SummaryInvoice'
 
 ),
 
@@ -32,7 +32,7 @@ line_items as (
     {% else %}
         select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/line_items/line_items.parquet')
     {% endif %}
-    where variant = 'DetailedInvoice'
+    where variant = 'SummaryInvoice'
 
 ),
 
