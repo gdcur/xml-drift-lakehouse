@@ -12,7 +12,7 @@ __pycache__/
 dbt/target/
 dbt/logs/
 dbt/.user.yml
-dbt/profiles.yml   # has local paths
+dbt/profiles.yml
 
 
 # Airflow
