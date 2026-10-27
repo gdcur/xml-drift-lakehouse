@@ -45,11 +45,14 @@ Feedback and contributions welcome.
 ### 6. Snowflake Target
 - [Snowflake Target](#snowflake-target)
 
-### 7. Reference
+### 7. Iceberg Landing Zone
+- [Iceberg Landing Zone](#iceberg-landing-zone)
+
+### 8. Reference
 - [Sample Data](#sample-data)
 - [Benchmark](#benchmark)
 
-### 8. Project Notes
+### 9. Project Notes
 - [AI Assistance](#ai-assistance)
 - [Related](#related)
 - [Author](#author)
@@ -126,7 +129,7 @@ Key patterns:
 - [x] Airflow DAG (Docker)
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
 - [x] Snowflake target — dual-engine dbt (DuckDB + Snowflake), same models, no SQL changes
-- [ ] Incremental loads
+- [x] Incremental loads — Iceberg landing zone with business-key upserts for daily movements (CLI path; the Airflow DAG still runs the full load)
 
 ### Phase 2 — LLM-Assisted Schema Intelligence
 
@@ -144,7 +147,6 @@ Key patterns:
 ### Phase 3 — Observability
 
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
-- [ ] Incremental loads
 - [ ] Drift trend reporting
 
 ---
@@ -302,9 +304,11 @@ The local stack is deliberately designed to mirror the architectural patterns of
 ```
 xml-drift-lakehouse/
 ├── data/
-│   └── sample/                    # Sample XML files (2 variants, 10 files)
+│   ├── sample/                    # Sample XML files (2 variants, 10 files)
+│   └── daily/                     # 6 days, 40 XML files + manifest.csv (Iceberg tests)
 ├── ingestion/
 │   ├── parser.py                  # Schema-on-read XML to Parquet
+│   ├── iceberg_writer.py          # Iceberg tables, upsert loader, consistency check
 │   ├── schema_diff.py             # Compare today's schema vs known baseline
 │   └── rag_mapper.py              # LLM field mapper + confidence scorer + registry
 ├── dbt/
@@ -326,9 +330,13 @@ xml-drift-lakehouse/
 ├── scripts/
 │   ├── verify.py                  # Pipeline health check + drift registry
 │   ├── report.py                  # Business analytics summary (terminal)
+│   ├── xml_generator.py           # Reproducible sample XML (--count 10 --seed 42)
+│   ├── daily_generator.py         # Multi-day movements for the Iceberg tests
+│   ├── replay_daily.sh            # Replay data/daily into the Iceberg tables
 │   └── load_to_snowflake.py       # Load Parquet files into Snowflake RAW schema
 ├── superset/
 │   └── dashboard_export_*.zip     # Exportable Superset dashboard definition
+├── docs/adr/                      # Architecture decision records (0000 baseline, 0001 Iceberg, 0002 identity)
 ├── docs/
 │   ├── airflow_dag_run.png
 │   ├── ai_stress_test.png
@@ -337,6 +345,9 @@ xml-drift-lakehouse/
 │   └── superset_dashboard.png
 ├── tests/
 │   ├── test_rag_flow.py            # 29 integration tests — no API key needed
+│   ├── test_parser_keys.py         # ADR-0002 key and lineage tests
+│   ├── test_iceberg_schema.py      # Iceberg table definitions
+│   ├── test_iceberg_load.py        # Upsert, versions, removed lines, idempotency, parity
 │   └── test_parser.py             # Parser diagnostic tool
 └── output/                        # Generated — not committed
 ```
@@ -884,6 +895,53 @@ dbt run --target snowflake
 ```bash
 pip install dbt-snowflake
 ```
+
+---
+
+---
+
+
+## Iceberg Landing Zone
+
+The default landing zone is plain Parquet, rewritten on every run. The Iceberg layer adds a second landing zone for **daily movements**: invoices that arrive again with changed content, re-deliveries of the same file, lines added or removed by an update. Design decisions are in [ADR-0001](docs/adr/0001-iceberg-table-format.md) (table format) and [ADR-0002](docs/adr/0002-business-key-identity-and-file-lineage.md) (identity and lineage).
+
+- **Engine:** PyIceberg writes, with a local SQLite catalog and warehouse folder (`output/iceberg`). No cloud account needed. DuckDB reads.
+- **Tables:** `lakehouse.invoices` (partitioned by month of `document_date`) and `lakehouse.line_items` (unpartitioned). Schemas are declared in `ingestion/iceberg_writer.py`, never inferred from a batch.
+- **Identity:** invoices are keyed on `invoice_id`, lines on `(invoice_id, line_number)`. File name and path are stored as lineage (`source_file`, `source_path`, `version_sk`, `ingested_at`), not as identity.
+- **Which version wins:** latest `action_datetime`, then latest `ingested_at`, then `source_path`. An older delivery that arrives late is ignored.
+- **Updates replace all lines of the invoice** (delete by `invoice_id`, then append), so a line removed by an update does not linger.
+- **Idempotent:** loading the same batch again, or re-parsing the same files later, creates no new snapshot. The same content delivered in another file keeps one row and moves its lineage columns to that delivery, so the table always points at the latest file that carried the invoice. (Replaying a whole history a second time therefore re-delivers older files and adds snapshots on the way; the final state is the same.)
+- **Time travel:** every change is an Iceberg snapshot, so earlier versions of an invoice stay reachable.
+
+### Try it
+
+```bash
+pip install -r docker/requirements.txt
+bash scripts/replay_daily.sh                       # data/daily, day by day, into output/iceberg
+python ingestion/iceberg_writer.py --check         # key uniqueness + invoice/line version agreement
+python scripts/iceberg_demo.py                    # report: tables, snapshots, history of one invoice
+python -m pytest tests/test_iceberg_load.py -v
+```
+
+`data/daily/` holds 6 days and 40 XML files (`scripts/daily_generator.py --days 6 --new-fields 2 --seed 42`). `manifest.csv` lists the expected events and is what the tests replay against. Single batches can be loaded with `python ingestion/iceberg_writer.py --load --src <parser output folder>`.
+
+### Reading from dbt
+
+The Parquet source stays the default. To build the models from the Iceberg tables instead (DuckDB target only):
+
+```bash
+cd dbt
+XDL_SOURCE=iceberg XDL_ICEBERG_WAREHOUSE=../output/iceberg dbt build
+```
+
+The writer creates `version-hint.text` next to the current metadata file after every load, because the SQLite catalog does not, and DuckDB `iceberg_scan` needs it to find the current snapshot from the table folder. `allow_moved_paths` lets the same warehouse be read from the host and from the Airflow container. DuckDB downloads its `iceberg` extension on first use, so that step needs internet access once.
+
+### Limits
+
+- The Airflow DAG still runs the full-load Parquet path. The Iceberg load is a separate command, not a DAG task.
+- `invoices` and `line_items` are committed as two separate transactions (PyIceberg has no multi-table transaction on a SQL catalog). Lines are written first and the invoice row last; `--check` flags a half-finished run and re-running the batch repairs it.
+- With about 550k line items at full scale the month partitioning is demonstrative, not a performance need.
+- The optional Athena/Glue leg described in ADR-0001 is not implemented.
 
 ---
 

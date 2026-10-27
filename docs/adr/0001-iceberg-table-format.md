@@ -67,6 +67,18 @@ Rationale: it keeps the project runnable by anyone from a fresh clone, with no c
 2. **The dbt source finds the table through a version hint.** After every write, the writer creates or updates `version-hint.text` in the table's metadata folder. The dbt source then points at the fixed table folder and passes `version_name_format='%s%s.metadata.json'`, plus `allow_moved_paths` so the same table can be read from the host and from the Docker/Airflow containers, where the absolute paths differ. The alternative (the writer publishing the path of the newest metadata file for dbt to read) was rejected because it adds state that must travel with every run and does not solve moved paths. This step is needed only for the local DuckDB read path: PyIceberg and Athena ask their catalog (SQLite or Glue) which metadata file is current.
 3. **The writer uses a fixed explicit schema**, for the reasons in spike result 5.
 
+## Implementation notes (2026-10-26)
+
+Found while writing the load path (step W2, `ingestion/iceberg_writer.py --load`):
+
+1. **`Table.upsert` is not used.** In PyIceberg 0.12.0 it fails on files written before an `ADD COLUMN` (the existing rows come back without the new column and the cast to the batch schema raises). The schema evolution test in `tests/test_iceberg_load.py` reproduces it. The writer does what upsert does underneath, delete by key and append, as one transaction per table.
+2. **Write order.** `line_items` is written first and `invoices` last, so the invoice row is the commit marker. PyIceberg has no multi-table transaction on a SQL catalog. A run that dies in between leaves lines from a newer version than their invoice; `--check` flags it and re-running the batch repairs it.
+3. **Re-delivery.** The same content delivered in another file moves the lineage columns of the one existing row (ADR-0002: the table keeps the lineage of the latest version). The same file again, or re-parsed later, is a no-op: `ingested_at` is excluded from the comparison.
+4. **Late older versions.** A delivery with an older `action_datetime` than the stored one is ignored ("stale"), even when it is ingested later.
+5. **Fixed schema, evolving table.** The batch is cast to the table's *current* schema, so columns added with `ADD COLUMN` are filled with null when a batch does not carry them. Unknown batch columns are dropped; new fields enter through the schema diff engine.
+6. **Type contract for dbt.** Iceberg stores real `DATE` and `TIMESTAMP` columns, while the Parquet path and Snowflake hand the models text. The mart relies on the text form (`left(document_date, 4)`, `coalesce` with `null::varchar`), and DuckDB refuses to mix `DATE` and `VARCHAR`. The Iceberg branch of the staging models therefore casts the temporal columns back to the same ISO text, so the models stay identical on every source. Found by running `dbt build` with `XDL_SOURCE=iceberg` on the full daily set.
+7. **Verification.** DuckDB reading through `version-hint.text` is covered by `test_duckdb_reads_through_the_hint`, which skips when the `iceberg` extension cannot be downloaded.
+
 ## Consequences
 
 - Positive: snapshots and time travel on the landing zone, incremental loads become possible, schema drift gets a table-level record, earlier versions of an invoice stay reachable through snapshots, and the Athena story gets a concrete artifact.
@@ -83,3 +95,4 @@ Compaction scheduling, row-level deletes beyond the per-invoice line replacement
 - 2026-10-09: Updated with spike results, the version decision and the dependency on ADR-0002.
 - 2026-10-09: Three open decisions taken (unpartitioned `line_items`, version hint file, fixed explicit schema). Remains Proposed until reviewed.
 - 2026-10-09: Accepted after review.
+- 2026-10-26: Write path implemented (W2); implementation notes added. `Table.upsert` replaced by transactional delete + append.
