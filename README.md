@@ -370,10 +370,10 @@ xml-drift-lakehouse/
 ### Local (Python)
 
 ```bash
-# Clone and setup
+# Clone and setup (Python 3.12 recommended: dbt and the pinned lxml do not install on 3.14 yet)
 git clone https://github.com/gdcur/xml-drift-lakehouse
 cd xml-drift-lakehouse
-python -m venv .venv && source .venv/bin/activate
+python3.12 -m venv .venv && source .venv/bin/activate
 pip install lxml polars dbt-duckdb duckdb
 
 # Run ingestion
