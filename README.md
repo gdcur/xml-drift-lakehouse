@@ -927,6 +927,36 @@ python -m pytest tests/test_iceberg_load.py -v
 
 `data/daily/` holds 6 days and 40 XML files (`scripts/daily_generator.py --days 6 --new-fields 2 --seed 42`). `manifest.csv` lists the expected events and is what the tests replay against. Single batches can be loaded with `python ingestion/iceberg_writer.py --load --src <parser output folder>`.
 
+### What the demo shows
+
+Output of `scripts/iceberg_demo.py` after replaying the 6 days (sections 1, 4 and 5 of 5; the full report also lists the snapshot log and the most revised invoices):
+
+```text
+1. What the tables hold now
+---------------------------
+warehouse     ./output/iceberg
+invoices      25 rows, one per invoice_id  (DetailedInvoice 15, SummaryInvoice 10)
+line_items    147 rows, one per (invoice_id, line_number)
+snapshots     invoices 15, line_items 11
+partitioning  invoices by month(document_date); line_items unpartitioned
+consistency   OK: keys unique, every line matches its invoice version
+
+4. History of invoice 900000003, read back with time travel
+-----------------------------------------------------------
+time      arrived in               action                 lines  what changed
+02:25:36  day_001/1367704871.xml   Reject/Approved            5  first delivery
+02:25:37  day_003/6242173772.xml   Reject/Disputed            5  workflow Reject/Approved -> Reject/Disputed, lines changed
+02:25:39  day_005/6242173772.xml   Reject/Disputed            5  same content, delivered again
+
+5. Line changes between first and last version of 900000003
+-----------------------------------------------------------
+first version 5 lines, last version 5 lines
+- line 5: Non-Itemized      55,193.67
++ line 5: Itemized         278,781.72
+```
+
+The six days carry 25 distinct invoices, and the table ends with exactly 25 rows and 147 lines, matching `data/daily/manifest.csv`. Invoice 900000003 arrived three times: the second delivery changed it, the third was the same content again, so the table keeps one row and points its lineage at the latest file.
+
 ### Reading from dbt
 
 The Parquet source stays the default. To build the models from the Iceberg tables instead (DuckDB target only):
