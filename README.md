@@ -45,11 +45,14 @@ Feedback and contributions welcome.
 ### 6. Snowflake Target
 - [Snowflake Target](#snowflake-target)
 
-### 7. Reference
+### 7. Iceberg Landing Zone
+- [Iceberg Landing Zone](#iceberg-landing-zone)
+
+### 8. Reference
 - [Sample Data](#sample-data)
 - [Benchmark](#benchmark)
 
-### 8. Project Notes
+### 9. Project Notes
 - [AI Assistance](#ai-assistance)
 - [Related](#related)
 - [Author](#author)
@@ -126,7 +129,7 @@ Key patterns:
 - [x] Airflow DAG (Docker)
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
 - [x] Snowflake target — dual-engine dbt (DuckDB + Snowflake), same models, no SQL changes
-- [ ] Incremental loads
+- [x] Incremental loads — Iceberg landing zone with business-key upserts for daily movements (CLI path; the Airflow DAG still runs the full load)
 
 ### Phase 2 — LLM-Assisted Schema Intelligence
 
@@ -144,7 +147,6 @@ Key patterns:
 ### Phase 3 — Observability
 
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
-- [ ] Incremental loads
 - [ ] Drift trend reporting
 
 ---
@@ -302,9 +304,11 @@ The local stack is deliberately designed to mirror the architectural patterns of
 ```
 xml-drift-lakehouse/
 ├── data/
-│   └── sample/                    # Sample XML files (2 variants, 10 files)
+│   ├── sample/                    # Sample XML files (2 variants, 10 files)
+│   └── daily/                     # 6 days, 40 XML files + manifest.csv (Iceberg tests)
 ├── ingestion/
 │   ├── parser.py                  # Schema-on-read XML to Parquet
+│   ├── iceberg_writer.py          # Iceberg tables, upsert loader, consistency check
 │   ├── schema_diff.py             # Compare today's schema vs known baseline
 │   └── rag_mapper.py              # LLM field mapper + confidence scorer + registry
 ├── dbt/
@@ -326,9 +330,13 @@ xml-drift-lakehouse/
 ├── scripts/
 │   ├── verify.py                  # Pipeline health check + drift registry
 │   ├── report.py                  # Business analytics summary (terminal)
+│   ├── xml_generator.py           # Reproducible sample XML (--count 10 --seed 42)
+│   ├── daily_generator.py         # Multi-day movements for the Iceberg tests
+│   ├── replay_daily.sh            # Replay data/daily into the Iceberg tables
 │   └── load_to_snowflake.py       # Load Parquet files into Snowflake RAW schema
 ├── superset/
 │   └── dashboard_export_*.zip     # Exportable Superset dashboard definition
+├── docs/adr/                      # Architecture decision records (0000 baseline, 0001 Iceberg, 0002 identity)
 ├── docs/
 │   ├── airflow_dag_run.png
 │   ├── ai_stress_test.png
@@ -337,6 +345,9 @@ xml-drift-lakehouse/
 │   └── superset_dashboard.png
 ├── tests/
 │   ├── test_rag_flow.py            # 29 integration tests — no API key needed
+│   ├── test_parser_keys.py         # ADR-0002 key and lineage tests
+│   ├── test_iceberg_schema.py      # Iceberg table definitions
+│   ├── test_iceberg_load.py        # Upsert, versions, removed lines, idempotency, parity
 │   └── test_parser.py             # Parser diagnostic tool
 └── output/                        # Generated — not committed
 ```
@@ -877,13 +888,92 @@ dbt run --target snowflake
 
 ![Snowflake mart_invoices](docs/snowflake_mart_invoices.png)
 
-`MART_INVOICES` table in Snowflake — 34 rows, both XML variants reconciled, full lineage preserved via surrogate keys.
+`MART_INVOICES` table in Snowflake, both XML variants reconciled, full lineage preserved via surrogate keys. The screenshot is a snapshot from an earlier run on a Snowflake trial account. The trial has since ended and the run was not repeated on Snowflake.
+
+After that run, a staging fix (`stg_summary_invoice` was filtering on the wrong variant) changed the mart on the sample data. The corrected models were verified on DuckDB: 55 `mart_invoices` rows on `data/sample`, and 147 rows for 25 invoices on the `data/daily` set read through the Iceberg landing zone. The models and the `target.type` branches for Snowflake are unchanged and still in the repo.
 
 ### Install Snowflake adapter
 
 ```bash
 pip install dbt-snowflake
 ```
+
+---
+
+---
+
+
+## Iceberg Landing Zone
+
+The default landing zone is plain Parquet, rewritten on every run. The Iceberg layer adds a second landing zone for **daily movements**: invoices that arrive again with changed content, re-deliveries of the same file, lines added or removed by an update. Design decisions are in [ADR-0001](docs/adr/0001-iceberg-table-format.md) (table format) and [ADR-0002](docs/adr/0002-business-key-identity-and-file-lineage.md) (identity and lineage).
+
+- **Engine:** PyIceberg writes, with a local SQLite catalog and warehouse folder (`output/iceberg`). No cloud account needed. DuckDB reads.
+- **Tables:** `lakehouse.invoices` (partitioned by month of `document_date`) and `lakehouse.line_items` (unpartitioned). Schemas are declared in `ingestion/iceberg_writer.py`, never inferred from a batch.
+- **Identity:** invoices are keyed on `invoice_id`, lines on `(invoice_id, line_number)`. File name and path are stored as lineage (`source_file`, `source_path`, `version_sk`, `ingested_at`), not as identity.
+- **Which version wins:** latest `action_datetime`, then latest `ingested_at`, then `source_path`. An older delivery that arrives late is ignored.
+- **Updates replace all lines of the invoice** (delete by `invoice_id`, then append), so a line removed by an update does not linger.
+- **Idempotent:** loading the same batch again, or re-parsing the same files later, creates no new snapshot. The same content delivered in another file keeps one row and moves its lineage columns to that delivery, so the table always points at the latest file that carried the invoice. (Replaying a whole history a second time therefore re-delivers older files and adds snapshots on the way; the final state is the same.)
+- **Time travel:** every change is an Iceberg snapshot, so earlier versions of an invoice stay reachable.
+
+### Try it
+
+```bash
+pip install -r docker/requirements.txt
+bash scripts/replay_daily.sh                       # data/daily, day by day, into output/iceberg
+python ingestion/iceberg_writer.py --check         # key uniqueness + invoice/line version agreement
+python scripts/iceberg_demo.py                    # report: tables, snapshots, history of one invoice
+python -m pytest tests/test_iceberg_load.py -v
+```
+
+`data/daily/` holds 6 days and 40 XML files (`scripts/daily_generator.py --days 6 --new-fields 2 --seed 42`). `manifest.csv` lists the expected events and is what the tests replay against. Single batches can be loaded with `python ingestion/iceberg_writer.py --load --src <parser output folder>`.
+
+### What the demo shows
+
+Output of `scripts/iceberg_demo.py` after replaying the 6 days (sections 1, 4 and 5 of 5; the full report also lists the snapshot log and the most revised invoices):
+
+```text
+1. What the tables hold now
+---------------------------
+warehouse     ./output/iceberg
+invoices      25 rows, one per invoice_id  (DetailedInvoice 15, SummaryInvoice 10)
+line_items    147 rows, one per (invoice_id, line_number)
+snapshots     invoices 15, line_items 11
+partitioning  invoices by month(document_date); line_items unpartitioned
+consistency   OK: keys unique, every line matches its invoice version
+
+4. History of invoice 900000003, read back with time travel
+-----------------------------------------------------------
+time      arrived in               action                 lines  what changed
+02:25:36  day_001/1367704871.xml   Reject/Approved            5  first delivery
+02:25:37  day_003/6242173772.xml   Reject/Disputed            5  workflow Reject/Approved -> Reject/Disputed, lines changed
+02:25:39  day_005/6242173772.xml   Reject/Disputed            5  same content, delivered again
+
+5. Line changes between first and last version of 900000003
+-----------------------------------------------------------
+first version 5 lines, last version 5 lines
+- line 5: Non-Itemized      55,193.67
++ line 5: Itemized         278,781.72
+```
+
+The six days carry 25 distinct invoices, and the table ends with exactly 25 rows and 147 lines, matching `data/daily/manifest.csv`. Invoice 900000003 arrived three times: the second delivery changed it, the third was the same content again, so the table keeps one row and points its lineage at the latest file.
+
+### Reading from dbt
+
+The Parquet source stays the default. To build the models from the Iceberg tables instead (DuckDB target only):
+
+```bash
+cd dbt
+XDL_SOURCE=iceberg XDL_ICEBERG_WAREHOUSE=../output/iceberg dbt build
+```
+
+The writer creates `version-hint.text` next to the current metadata file after every load, because the SQLite catalog does not, and DuckDB `iceberg_scan` needs it to find the current snapshot from the table folder. `allow_moved_paths` lets the same warehouse be read from the host and from the Airflow container. DuckDB downloads its `iceberg` extension on first use, so that step needs internet access once.
+
+### Limits
+
+- The Airflow DAG still runs the full-load Parquet path. The Iceberg load is a separate command, not a DAG task.
+- `invoices` and `line_items` are committed as two separate transactions (PyIceberg has no multi-table transaction on a SQL catalog). Lines are written first and the invoice row last; `--check` flags a half-finished run and re-running the batch repairs it.
+- With about 550k line items at full scale the month partitioning is demonstrative, not a performance need.
+- The optional Athena/Glue leg described in ADR-0001 is not implemented.
 
 ---
 

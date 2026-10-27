@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fops:StandardBillingDocument xmlns:fops="http://www.fieldops-demo.io/xml/ns" invoice_id="900000016">
+  <fops:SummaryInvoice>
+    <fops:DocumentHeader>
+    <fops:PeriodDate>2024-12-06</fops:PeriodDate>
+    <fops:LineCount>2</fops:LineCount>
+    <fops:VendorTotal>615540.65</fops:VendorTotal>
+    <fops:CurrencyCode>USD</fops:CurrencyCode>
+    <fops:Total>612868.67</fops:Total>
+    <fops:SubmissionMethod>API</fops:SubmissionMethod>
+    <fops:DocumentType>Adjustment</fops:DocumentType>
+    <fops:DocumentDate>2024-12-14</fops:DocumentDate>
+    <fops:DocumentNumber>BILL-8159911</fops:DocumentNumber>
+    <fops:ContentType>StandardBillingDocument</fops:ContentType>
+    <fops:Action>
+      <fops:ActionType>Submit</fops:ActionType>
+      <fops:Status>Submitted</fops:Status>
+      <fops:TransactionDateTime>2025-01-03T15:33:42</fops:TransactionDateTime>
+      <fops:TransactionIdentifier>TXN-51395350</fops:TransactionIdentifier>
+    </fops:Action>
+    <fops:Party PartyRole="Vendor">
+      <fops:Entity EntityCodeType="VendorID">
+        <fops:EntityCode>V296400</fops:EntityCode>
+        <fops:EntityName>Cascade Pipeline Co</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0030</fops:LocationCode>
+        <fops:LocationName>Site 22</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:AddressLine>4481 Main Ave</fops:AddressLine>
+          <fops:City>Calgary</fops:City>
+          <fops:StateProvinceCode>WY</fops:StateProvinceCode>
+          <fops:StateProvince>Wyoming</fops:StateProvince>
+          <fops:PostalZipCode>50499</fops:PostalZipCode>
+          <fops:CountryCode>US</fops:CountryCode>
+          <fops:Country>United States</fops:Country>
+        </fops:Address>
+      </fops:Location>
+      <fops:Contact>
+        <fops:FirstName>Jennifer</fops:FirstName>
+        <fops:LastName>Garcia</fops:LastName>
+        <fops:DepartmentName>Operations</fops:DepartmentName>
+        <fops:PhoneNumber>+1-385-990-3347</fops:PhoneNumber>
+        <fops:EmailAddress>contact580@fieldops-demo.io</fops:EmailAddress>
+      </fops:Contact>
+    </fops:Party>
+    <fops:Party PartyRole="Client">
+      <fops:Entity EntityCodeType="ClientID">
+        <fops:EntityCode>ENT-003</fops:EntityCode>
+        <fops:EntityName>Client 2</fops:EntityName>
+      </fops:Entity>
+      <fops:Location>
+        <fops:LocationCode>LOC-0010</fops:LocationCode>
+        <fops:LocationName>Office 3</fops:LocationName>
+        <fops:Address AddressType="Mailing">
+          <fops:City>Bismarck</fops:City>
+          <fops:StateProvinceCode>CO</fops:StateProvinceCode>
+          <fops:CountryCode>US</fops:CountryCode>
+        </fops:Address>
+      </fops:Location>
+    </fops:Party>
+    <fops:OriginalSystem>Ariba</fops:OriginalSystem>
+    </fops:DocumentHeader>
+    <fops:DocumentLines>
+        <fops:Allocation>
+          <fops:AllocationRate>100.00</fops:AllocationRate>
+          <fops:Total>612868.67</fops:Total>
+          <fops:CostCenter>CC-0033</fops:CostCenter>
+          <fops:SiteReference>
+            <fops:SiteRefName>SITE-007</fops:SiteRefName>
+          </fops:SiteReference>
+          <fops:AccountInfo>
+            <fops:AccountMajor>
+              <fops:AccountCode>GL-8100</fops:AccountCode>
+              <fops:AccountType>EXPENSE</fops:AccountType>
+            </fops:AccountMajor>
+          </fops:AccountInfo>
+        </fops:Allocation>
+      <fops:LineEntry>
+    <fops:Quantity>37.48</fops:Quantity>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:ProductDescription>Equipment rental</fops:ProductDescription>
+    <fops:LineNumber>1</fops:LineNumber>
+    <fops:PurchaseCategory>MAINTENANCE</fops:PurchaseCategory>
+    <fops:PeriodDate>2024-12-25</fops:PeriodDate>
+    <fops:CategoryCode>CAT-004</fops:CategoryCode>
+    <fops:UnitPrice>9322.45</fops:UnitPrice>
+    <fops:Total>349405.43</fops:Total>
+      </fops:LineEntry>
+      <fops:LineEntry>
+    <fops:PeriodDate>2024-12-11</fops:PeriodDate>
+    <fops:Total>263463.24</fops:Total>
+    <fops:PurchaseCategory>EMERGENCY</fops:PurchaseCategory>
+    <fops:ProductDescription>Maintenance services</fops:ProductDescription>
+    <fops:Quantity>18.23</fops:Quantity>
+    <fops:ChargeClass>Itemized</fops:ChargeClass>
+    <fops:LineNumber>2</fops:LineNumber>
+    <fops:CategoryCode>CAT-004</fops:CategoryCode>
+    <fops:UnitPrice>14452.18</fops:UnitPrice>
+      </fops:LineEntry>
+    </fops:DocumentLines>
+  </fops:SummaryInvoice>
+</fops:StandardBillingDocument>

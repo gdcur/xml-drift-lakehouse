@@ -12,12 +12,17 @@ Handles both variants transparently:
   DetailedInvoice  — full unit economics, ServiceItem, AccountInfo
   SummaryInvoice   — lean lines, header-level Allocation, no unit economics
 
-Surrogate key pattern: {ingested_at, source_file, invoice_id, ...}
+Keys (ADR-0002): identity comes from the business key, not from the file.
+  invoice sk  = surrogate(invoice_id)
+  line sk     = surrogate(invoice_id, line_number)
+  version_sk  = surrogate(invoice_id, source_path)   one delivery of an invoice
+source_path is the file path relative to --root; ingested_at is set per file.
 All fields nullable — schema-on-read, no variant is forced to fit the other.
 
 Usage:
     python parser.py                        # parse ./public → ./output
     python parser.py --src ./public --dst ./output
+    python parser.py --src ./data/daily/day_004 --root ./data/daily --dst ./output
     python parser.py --src ./public --dst ./output --fmt delta  # future
 """
 
@@ -66,9 +71,13 @@ def getall(elem, *path) -> list[etree._Element]:
     return cur.findall(tag(path[-1])) if cur is not None else []
 
 
-def surrogate(source_file: str, invoice_id: str, extra: str = "") -> str:
-    """Deterministic surrogate key: sha256(source_file + invoice_id + extra)[:16]."""
-    raw = f"{source_file}|{invoice_id}|{extra}"
+def surrogate(*parts: str) -> str:
+    """Deterministic surrogate key: sha256("|".join(parts))[:16].
+
+    Hashes only the parts it is given, e.g. surrogate(invoice_id) or
+    surrogate(invoice_id, line_number).
+    """
+    raw = "|".join(parts)
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
@@ -145,7 +154,8 @@ def extract_allocation(alloc: etree._Element | None) -> dict[str, Any]:
 # ── Invoice header extraction ─────────────────────────────────────────────────
 
 def extract_header(inv_elem: etree._Element, variant: str,
-                   source_file: str, ingested_at: str, root=None) -> dict[str, Any]:
+                   source_file: str, source_path: str,
+                   ingested_at: str, root=None) -> dict[str, Any]:
     """Extract DocumentHeader into a flat dict."""
     header = inv_elem.find(tag("DocumentHeader"))
     if header is None:
@@ -153,13 +163,14 @@ def extract_header(inv_elem: etree._Element, variant: str,
 
     document_number = get(header, "DocumentNumber") #or get(header, "DocumentNbr") or get(header, "DocNumber")
     invoice_id = root.attrib.get("invoice_id") if root is not None else None
-    sk = surrogate(source_file, invoice_id or "")
-    print(document_number, invoice_id, sk)
+    sk = surrogate(invoice_id or "")
     rec: dict[str, Any] = {
         # Surrogate key wrapper
         "sk":               sk,
+        "version_sk":       surrogate(invoice_id or "", source_path),
         "ingested_at":      ingested_at,
         "source_file":      source_file,
+        "source_path":      source_path,
         "variant":          variant,
         "invoice_id":       invoice_id,
 
@@ -181,7 +192,6 @@ def extract_header(inv_elem: etree._Element, variant: str,
         "action_status":    get(header, "Action", "Status"),
         "action_datetime":  get(header, "Action", "TransactionDateTime"),
     }
-    print(rec)
     # Party blocks
     rec.update(extract_party(header, "Vendor"))
     rec.update(extract_party(header, "Client"))
@@ -191,8 +201,8 @@ def extract_header(inv_elem: etree._Element, variant: str,
 # ── Line item extraction ──────────────────────────────────────────────────────
 
 def extract_line_items(inv_elem: etree._Element, variant: str,
-                       invoice_id: str, source_file: str,
-                       ingested_at: str) -> list[dict[str, Any]]:
+                       invoice_id: str, source_file: str, source_path: str,
+                       version_sk: str, ingested_at: str) -> list[dict[str, Any]]:
     """
     Extract all LineEntry elements into flat dicts.
 
@@ -205,7 +215,7 @@ def extract_line_items(inv_elem: etree._Element, variant: str,
     if doc_lines is None:
         return []
 
-    invoice_sk = surrogate(source_file, invoice_id or "")
+    invoice_sk = surrogate(invoice_id or "")
 
     # SummaryInvoice: capture header-level allocation (before any LineEntry)
     header_alloc = doc_lines.find(tag("Allocation"))
@@ -213,7 +223,7 @@ def extract_line_items(inv_elem: etree._Element, variant: str,
     rows = []
     for line in doc_lines.findall(tag("LineEntry")):
         line_num = get(line, "LineNumber")
-        line_sk  = surrogate(source_file, invoice_id or "", line_num or "")
+        line_sk  = surrogate(invoice_id or "", line_num or "")
 
         # Line-level allocation — prefer line's own, fall back to header alloc
         _line_alloc = line.find(tag("Allocation"))
@@ -223,8 +233,10 @@ def extract_line_items(inv_elem: etree._Element, variant: str,
             # Keys
             "sk":            line_sk,
             "invoice_sk":    invoice_sk,
+            "version_sk":    version_sk,
             "ingested_at":   ingested_at,
             "source_file":   source_file,
+            "source_path":   source_path,
             "variant":       variant,
             "invoice_id":    invoice_id,
             "line_number":   parse_int(line_num),
@@ -280,8 +292,12 @@ def extract_line_items(inv_elem: etree._Element, variant: str,
 
 # ── File processor ────────────────────────────────────────────────────────────
 
-def process_file(path: Path, ingested_at: str) -> tuple[dict, list[dict]]:
-    """Parse one XML. Returns (header_row, [line_item_rows])."""
+def process_file(path: Path, ingested_at: str,
+                 source_path: str | None = None) -> tuple[dict, list[dict]]:
+    """Parse one XML. Returns (header_row, [line_item_rows]).
+
+    source_path defaults to the bare file name when no --root is known.
+    """
     parser = etree.XMLParser(recover=True, remove_comments=True)
     try:
         tree = etree.parse(str(path), parser)
@@ -297,10 +313,13 @@ def process_file(path: Path, ingested_at: str) -> tuple[dict, list[dict]]:
         return {}, []
 
     source_file = path.name
-    header      = extract_header(inv_elem, variant, source_file, ingested_at, root)
+    source_path = source_path or source_file
+    header      = extract_header(inv_elem, variant, source_file, source_path,
+                                 ingested_at, root)
     invoice_id  = header.get("invoice_id")
     lines       = extract_line_items(inv_elem, variant, invoice_id or "",
-                                     source_file, ingested_at)
+                                     source_file, source_path,
+                                     header.get("version_sk"), ingested_at)
 
     return header, lines
 
@@ -310,10 +329,15 @@ def main():
     parser = argparse.ArgumentParser(description="Parse fieldops XMLs → Parquet")
     parser.add_argument("--src", default="./public", help="Public XML folder")
     parser.add_argument("--dst", default="./output", help="Parquet output folder")
+    parser.add_argument("--root", default=None,
+                        help="Input root for source_path (default: same as --src)")
     args = parser.parse_args()
 
-    src_dir = Path(args.src).resolve()
-    dst_dir = Path(args.dst).resolve()
+    src_dir  = Path(args.src).resolve()
+    dst_dir  = Path(args.dst).resolve()
+    root_dir = Path(args.root).resolve() if args.root else src_dir
+    if not src_dir.is_relative_to(root_dir):
+        raise SystemExit(f"--src {src_dir} is not inside --root {root_dir}")
     (dst_dir / "invoices").mkdir(parents=True, exist_ok=True)
     (dst_dir / "line_items").mkdir(parents=True, exist_ok=True)
 
@@ -322,7 +346,6 @@ def main():
         print(f"No XML files found in {src_dir}")
         return
 
-    ingested_at = datetime.now(timezone.utc).isoformat()
     print(f"\nParsing {len(xml_files)} file(s)  {src_dir} → {dst_dir}\n")
 
     all_headers    = []
@@ -330,7 +353,9 @@ def main():
     counts = {"DetailedInvoice": 0, "SummaryInvoice": 0, "skipped": 0}
 
     for f in xml_files:
-        header, lines = process_file(f, ingested_at)
+        ingested_at = datetime.now(timezone.utc).isoformat()
+        source_path = f.relative_to(root_dir).as_posix()
+        header, lines = process_file(f, ingested_at, source_path)
         if not header:
             counts["skipped"] += 1
             continue
