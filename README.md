@@ -48,11 +48,14 @@ Feedback and contributions welcome.
 ### 7. Iceberg Landing Zone
 - [Iceberg Landing Zone](#iceberg-landing-zone)
 
-### 8. Reference
+### 8. Databricks Target
+- [Databricks Target](#databricks-target)
+
+### 9. Reference
 - [Sample Data](#sample-data)
 - [Benchmark](#benchmark)
 
-### 9. Project Notes
+### 10. Project Notes
 - [AI Assistance](#ai-assistance)
 - [Related](#related)
 - [Author](#author)
@@ -130,6 +133,7 @@ Key patterns:
 - [x] Apache Superset dashboard — Invoice Analytics (6 charts, DuckDB-native)
 - [x] Snowflake target — dual-engine dbt (DuckDB + Snowflake), same models, no SQL changes
 - [x] Incremental loads — Iceberg landing zone with business-key upserts for daily movements (CLI path; the Airflow DAG still runs the full load)
+- [x] Databricks target — same invoices processed with Spark and Delta in Unity Catalog, reconciled against the DuckDB / Iceberg / dbt result (see [databricks/](databricks/README.md))
 
 ### Phase 2 — LLM-Assisted Schema Intelligence
 
@@ -334,6 +338,10 @@ xml-drift-lakehouse/
 │   ├── daily_generator.py         # Multi-day movements for the Iceberg tests
 │   ├── replay_daily.sh            # Replay data/daily into the Iceberg tables
 │   └── load_to_snowflake.py       # Load Parquet files into Snowflake RAW schema
+├── databricks/
+│   ├── notebooks/xml_drift_lakehouse.py   # Databricks notebook (raw, curated, consumer, reconciliation)
+│   ├── make_landing_zip.py                # Zip data/daily for upload to a UC volume
+│   └── export_duckdb_reference.py         # Per-invoice reference export for the reconciliation
 ├── superset/
 │   └── dashboard_export_*.zip     # Exportable Superset dashboard definition
 ├── docs/adr/                      # Architecture decision records (0000 baseline, 0001 Iceberg, 0002 identity)
@@ -974,6 +982,22 @@ The writer creates `version-hint.text` next to the current metadata file after e
 - `invoices` and `line_items` are committed as two separate transactions (PyIceberg has no multi-table transaction on a SQL catalog). Lines are written first and the invoice row last; `--check` flags a half-finished run and re-running the batch repairs it.
 - With about 550k line items at full scale the month partitioning is demonstrative, not a performance need.
 - The optional Athena/Glue leg described in ADR-0001 is not implemented.
+
+---
+
+---
+
+
+## Databricks Target
+
+The same `data/daily` invoices (40 XML files, 25 distinct invoices) are also processed on **Databricks Free Edition** with Spark, Delta Lake and Unity Catalog, and the result is reconciled against the DuckDB / Iceberg / dbt side.
+
+- **Raw:** each file stored untouched in a Delta table (content hash, source path), loaded with an idempotent `MERGE`.
+- **Curated:** `from_xml` with an explicit superset schema of both variants; latest version per invoice by the ADR-0002 rule; managed Delta tables.
+- **Consumer:** a Unity Catalog view with the dbt mart's derived metrics.
+- **Reconciliation:** 25 invoices and 147 line items on both engines, 0 differences across 11 per-invoice checks (keys, winning file, totals, line count, line-key hash), and identical `mart_invoices` aggregates.
+
+Notebook, helper scripts, findings and limits: [databricks/README.md](databricks/README.md). This is a hands-on project on the free tier, not production experience on Databricks.
 
 ---
 
