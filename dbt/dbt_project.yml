@@ -19,6 +19,12 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 log-path: logs
 
+# The Iceberg source (XDL_SOURCE=iceberg, DuckDB only) needs the iceberg extension.
+# For every other run these hooks are no-ops.
+on-run-start:
+  - "{{ 'install iceberg' if target.type == 'duckdb' and env_var('XDL_SOURCE', 'parquet') == 'iceberg' else 'select 1' }}"
+  - "{{ 'load iceberg' if target.type == 'duckdb' and env_var('XDL_SOURCE', 'parquet') == 'iceberg' else 'select 1' }}"
+
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"

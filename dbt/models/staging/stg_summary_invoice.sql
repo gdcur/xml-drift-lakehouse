@@ -18,6 +18,17 @@ with invoices as (
 
     {% if target.type == 'snowflake' %}
         select * from {{ source('raw', 'invoices') }}
+    {% elif env_var("XDL_SOURCE", "parquet") == "iceberg" %}
+        -- Iceberg keeps real DATE/TIMESTAMP types; the models expect the text form that the
+        -- Parquet path and Snowflake use, so the same SQL runs on every source.
+        select * replace (
+            cast(document_date as varchar)                as document_date,
+            cast(period_date as varchar)                  as period_date,
+            strftime(action_datetime, '%Y-%m-%dT%H:%M:%S') as action_datetime,
+            strftime(ingested_at at time zone 'UTC', '%Y-%m-%dT%H:%M:%S.%f') || '+00:00' as ingested_at
+        )
+        from iceberg_scan('{{ env_var("XDL_ICEBERG_WAREHOUSE", "../output/iceberg") }}/lakehouse/invoices',
+                                   version_name_format='%s%s.metadata.json', allow_moved_paths=true)
     {% else %}
         select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/invoices/invoices.parquet')
     {% endif %}
@@ -29,6 +40,18 @@ line_items as (
 
     {% if target.type == 'snowflake' %}
         select * from {{ source('raw', 'line_items') }}
+    {% elif env_var("XDL_SOURCE", "parquet") == "iceberg" %}
+        -- Iceberg keeps real DATE/TIMESTAMP types; the models expect the text form that the
+        -- Parquet path and Snowflake use, so the same SQL runs on every source.
+        select * replace (
+            cast(period_start_date as varchar)  as period_start_date,
+            cast(period_date as varchar)        as period_date,
+            cast(cross_ref_date as varchar)     as cross_ref_date,
+            cast(early_pay_due_date as varchar) as early_pay_due_date,
+            strftime(ingested_at at time zone 'UTC', '%Y-%m-%dT%H:%M:%S.%f') || '+00:00' as ingested_at
+        )
+        from iceberg_scan('{{ env_var("XDL_ICEBERG_WAREHOUSE", "../output/iceberg") }}/lakehouse/line_items',
+                                   version_name_format='%s%s.metadata.json', allow_moved_paths=true)
     {% else %}
         select * from read_parquet('{{ env_var("DBT_DUCKDB_PATH", "../output") }}/line_items/line_items.parquet')
     {% endif %}
