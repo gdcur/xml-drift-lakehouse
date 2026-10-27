@@ -888,7 +888,9 @@ dbt run --target snowflake
 
 ![Snowflake mart_invoices](docs/snowflake_mart_invoices.png)
 
-`MART_INVOICES` table in Snowflake — 34 rows, both XML variants reconciled, full lineage preserved via surrogate keys.
+`MART_INVOICES` table in Snowflake, both XML variants reconciled, full lineage preserved via surrogate keys. The screenshot is a snapshot from an earlier run on a Snowflake trial account. The trial has since ended and the run was not repeated on Snowflake.
+
+After that run, a staging fix (`stg_summary_invoice` was filtering on the wrong variant) changed the mart on the sample data. The corrected models were verified on DuckDB: 55 `mart_invoices` rows on `data/sample`, and 147 rows for 25 invoices on the `data/daily` set read through the Iceberg landing zone. The models and the `target.type` branches for Snowflake are unchanged and still in the repo.
 
 ### Install Snowflake adapter
 
